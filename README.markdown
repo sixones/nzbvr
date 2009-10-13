@@ -38,7 +38,6 @@ Installing
 	git clone git://github.com/sixones/nzbvr.git
 	
 	cd nzbvr
-	mkdir data
 	chmod 766 data/
 	
 	Go to your web browser and open up the virtual host or folder through your web server
