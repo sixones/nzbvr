@@ -1,0 +1,48 @@
+<section>
+	<h2>New Series</h2>
+	
+	<form action="/series/new" method="post">
+		<fieldset class="search">
+			<dl>
+				<dd>
+					<input id="name" autocomplete="off" type="text" value="Search ..." />
+				</dd>
+			</dl>
+			<ul id="results"></ul>
+		</fieldset>
+		
+		<fieldset class="info hide">
+			<dl>
+				<dt>
+					<label for="format">Format</label>
+				</dt>
+				<dd>
+					<? ViewHelper::select("format", nzbVR::$formats, "x264", false); ?>
+				</dd>
+				
+				<dt>
+					<label for="source">Source</label>
+				</dt>
+				<dd>
+					<? ViewHelper::select("source", nzbVR::$sources); ?>
+				</dd>
+			
+				<dt>
+					<label for="language">Language</label>
+				</dt>
+				<dd>
+					<? ViewHelper::select("language", nzbVR::$languages, null, false); ?>
+				</dd>
+			</dl>
+		</fieldset>
+		
+		<input id="tvrage_id" type="hidden" value="0" />
+		
+		<div class="buttons hide">
+			<button type="submit" class="save_btn">Save</button>
+			<button class="cancel_btn">Cancel</button>
+		</div>
+	</form>
+	
+	<script type="text/javascript">$nzbVR.series.applySearch();</script>
+</section>

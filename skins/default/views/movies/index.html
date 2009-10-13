@@ -1,0 +1,33 @@
+<section class="movies">
+	<h2>Movies</h2>
+	
+	<nav class="content_nav">
+		<a href="#movies/new" class="content">New Movie</a>
+		<a href="#movies/check" class="content">Check All</a>
+		<a href="#movies/update" class="content">Update All</a>
+	</nav>
+	
+	<dl>
+		<? foreach ($this->picnic()->controller()->movies as $movie): ?>
+			<dd class="movie">
+				<div class="coverart">
+					<img src="#" alt="Coverart" />
+				</div>
+				<div class="information">
+					<div class="identifier">
+						<h3><?= $movie->watcher->name; ?></h3>
+						<span class="runtime"><?= $movie->runtime; ?> minutes, released <?= $movie->released; ?></span>
+						<nav class="actions">
+							<a href="#movies/check/<?= $series->id; ?>" class="content">Check</a>
+							<a href="#movies/update/<?= $series->id; ?>" class="content">Update Info</a>
+							<a href="#movies/delete/<?= $series->id; ?>" class="content">Delete</a>
+						</nav>
+						<nav class="externals">
+							<a href="<?= $movie->imdbUrl(); ?>">IMDB</a>
+						</nav>
+					</div>
+				</div>
+			</dd>
+		<? endforeach; ?>
+	</dl>
+</section>

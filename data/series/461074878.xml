@@ -1,0 +1,1144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data class="Series">
+ <id>461074878</id>
+ <tvrage_id>6061</tvrage_id>
+ <tvdb_id>73244</tvdb_id>
+ <imdb_id>tt0386676</imdb_id>
+ <overview>Based on the popular British series of the same name, this faster-paced American version follows the daily interactions of a group of idiosyncratic office employees at paper company Dunder Mifflin's Scranton branch via a documentary film crew's cameras.</overview>
+ <poster>posters/73244-1.jpg</poster>
+ <banner>graphical/73244-g9.jpg</banner>
+ <fanart>fanart/original/73244-6.jpg</fanart>
+ <name>The Office</name>
+ <country>US</country>
+ <first_aired>Mar/24/2005</first_aired>
+ <last_aired></last_aired>
+ <network>NBC</network>
+ <season_count>6</season_count>
+ <airs_time>21:00</airs_time>
+ <airs_day>Thursday</airs_day>
+ <runtime>30</runtime>
+ <rage_url>http://tvrage.com/The_Office</rage_url>
+ <status>Returning Series</status>
+ <seasons class="array">
+  <Season class="Season">
+   <num>1</num>
+   <episodes class="array">
+    <Episode class="Episode">
+     <season>1</season>
+     <num>01</num>
+     <series_num>1</series_num>
+     <name>Pilot</name>
+     <airs_date>2005-03-24 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/200103</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/200103.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>02</num>
+     <series_num>2</series_num>
+     <name>Diversity Day</name>
+     <airs_date>2005-03-29 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/200104</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/200104.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>03</num>
+     <series_num>3</series_num>
+     <name>Health Care</name>
+     <airs_date>2005-04-05 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/200105</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/200105.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>04</num>
+     <series_num>4</series_num>
+     <name>The Alliance</name>
+     <airs_date>2005-04-12 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/200106</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/200106.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>05</num>
+     <series_num>5</series_num>
+     <name>Basketball</name>
+     <airs_date>2005-04-19 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/200107</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/200107.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>06</num>
+     <series_num>6</series_num>
+     <name>Hot Girl</name>
+     <airs_date>2005-04-26 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/200108</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/200108.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+   </episodes>
+  </Season>
+  <Season class="Season">
+   <num>2</num>
+   <episodes class="array">
+    <Episode class="Episode">
+     <season>2</season>
+     <num>01</num>
+     <series_num>7</series_num>
+     <name>The Dundies</name>
+     <airs_date>2005-09-20 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/200109</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/200109.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>02</num>
+     <series_num>8</series_num>
+     <name>Sexual Harassment</name>
+     <airs_date>2005-09-27 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/200110</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/200110.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>03</num>
+     <series_num>9</series_num>
+     <name>Office Olympics</name>
+     <airs_date>2005-10-04 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/200111</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/200111.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>04</num>
+     <series_num>10</series_num>
+     <name>The Fire</name>
+     <airs_date>2005-10-11 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/200112</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/200112.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>05</num>
+     <series_num>11</series_num>
+     <name>Halloween</name>
+     <airs_date>2005-10-18 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/200113</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/200113.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>06</num>
+     <series_num>12</series_num>
+     <name>The Fight</name>
+     <airs_date>2005-11-01 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/304676</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/304676.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>07</num>
+     <series_num>13</series_num>
+     <name>The Client</name>
+     <airs_date>2005-11-08 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/304135</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/304135.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>08</num>
+     <series_num>14</series_num>
+     <name>Performance Review</name>
+     <airs_date>2005-11-15 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/304136</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/304136.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>09</num>
+     <series_num>15</series_num>
+     <name>E-Mail Surveillance</name>
+     <airs_date>2005-11-22 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/304137</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/304137.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>10</num>
+     <series_num>16</series_num>
+     <name>Christmas Party</name>
+     <airs_date>2005-12-06 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/305826</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/305826.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>11</num>
+     <series_num>17</series_num>
+     <name>Booze Cruise</name>
+     <airs_date>2006-01-05 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/310705</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/310705.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>12</num>
+     <series_num>18</series_num>
+     <name>The Injury</name>
+     <airs_date>2006-01-12 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/305827</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/305827.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>13</num>
+     <series_num>19</series_num>
+     <name>The Secret</name>
+     <airs_date>2006-01-19 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/312650</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/312650.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>14</num>
+     <series_num>20</series_num>
+     <name>The Carpet</name>
+     <airs_date>2006-01-26 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/314688</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/314688.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>15</num>
+     <series_num>21</series_num>
+     <name>Boys &amp; Girls</name>
+     <airs_date>2006-02-02 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/315007</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/315007.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>16</num>
+     <series_num>22</series_num>
+     <name>Valentine's Day</name>
+     <airs_date>2006-02-09 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/315306</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/315306.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>17</num>
+     <series_num>23</series_num>
+     <name>Dwight's Speech</name>
+     <airs_date>2006-03-02 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/315307</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/315307.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>18</num>
+     <series_num>24</series_num>
+     <name>Take Your Daughter To Work Day</name>
+     <airs_date>2006-03-16 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/321344</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/321344.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>19</num>
+     <series_num>25</series_num>
+     <name>Michael's Birthday</name>
+     <airs_date>2006-03-30 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/321345</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/321345.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>20</num>
+     <series_num>26</series_num>
+     <name>Drug Testing</name>
+     <airs_date>2006-04-27 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/325780</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/325780.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>21</num>
+     <series_num>27</series_num>
+     <name>Conflict Resolution</name>
+     <airs_date>2006-05-04 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/323864</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/323864.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>22</num>
+     <series_num>28</series_num>
+     <name>Casino Night</name>
+     <airs_date>2006-05-11 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/327898</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/327898.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+   </episodes>
+  </Season>
+  <Season class="Season">
+   <num>3</num>
+   <episodes class="array">
+    <Episode class="Episode">
+     <season>3</season>
+     <num>01</num>
+     <series_num>29</series_num>
+     <name>Gay Witch Hunt</name>
+     <airs_date>2006-09-21 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/377063</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/377063.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>02</num>
+     <series_num>30</series_num>
+     <name>The Convention</name>
+     <airs_date>2006-09-28 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/440704</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/440704.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>03</num>
+     <series_num>31</series_num>
+     <name>The Coup</name>
+     <airs_date>2006-10-05 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/441605</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/441605.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>04</num>
+     <series_num>32</series_num>
+     <name>Grief Counseling</name>
+     <airs_date>2006-10-12 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/452990</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/452990.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>05</num>
+     <series_num>33</series_num>
+     <name>Initiation</name>
+     <airs_date>2006-10-19 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/447215</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/447215.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>06</num>
+     <series_num>34</series_num>
+     <name>Diwali</name>
+     <airs_date>2006-11-02 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/453119</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/453119.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>07</num>
+     <series_num>35</series_num>
+     <name>Branch Closing</name>
+     <airs_date>2006-11-09 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/464545</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/464545.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>08</num>
+     <series_num>36</series_num>
+     <name>The Merger</name>
+     <airs_date>2006-11-16 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/470484</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/470484.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>09</num>
+     <series_num>37</series_num>
+     <name>The Convict</name>
+     <airs_date>2006-11-30 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/473224</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/473224.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>10</num>
+     <series_num>38</series_num>
+     <name>A Benihana Christmas</name>
+     <airs_date>2006-12-14 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/473225</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/473225.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>11</num>
+     <series_num>39</series_num>
+     <name>Back From Vacation</name>
+     <airs_date>2007-01-04 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/492144</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/492144.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>12</num>
+     <series_num>40</series_num>
+     <name>Traveling Salesmen</name>
+     <airs_date>2007-01-11 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/494410</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/494410.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>13</num>
+     <series_num>41</series_num>
+     <name>The Return</name>
+     <airs_date>2007-01-18 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/497266</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/497266.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>14</num>
+     <series_num>42</series_num>
+     <name>Ben Franklin</name>
+     <airs_date>2007-02-01 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/508691</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/508691.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>15</num>
+     <series_num>43</series_num>
+     <name>Phyllis' Wedding</name>
+     <airs_date>2007-02-08 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/508692</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/508692.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>16</num>
+     <series_num>44</series_num>
+     <name>Business School</name>
+     <airs_date>2007-02-15 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/511485</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/511485.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>17</num>
+     <series_num>45</series_num>
+     <name>Cocktails</name>
+     <airs_date>2007-02-22 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/511486</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/511486.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>18</num>
+     <series_num>46</series_num>
+     <name>The Negotiation</name>
+     <airs_date>2007-04-05 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/521458</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/521458.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>19</num>
+     <series_num>47</series_num>
+     <name>Safety Training</name>
+     <airs_date>2007-04-12 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/532474</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/532474.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>20</num>
+     <series_num>48</series_num>
+     <name>Product Recall</name>
+     <airs_date>2007-04-26 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/537539</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/537539.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>21</num>
+     <series_num>49</series_num>
+     <name>Women's Appreciation</name>
+     <airs_date>2007-05-03 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/539167</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/539167.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>22</num>
+     <series_num>50</series_num>
+     <name>Beach Games</name>
+     <airs_date>2007-05-10 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/541391</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/541391.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>23</num>
+     <series_num>51</series_num>
+     <name>The Job</name>
+     <airs_date>2007-05-17 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/541392</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/541392.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+   </episodes>
+  </Season>
+  <Season class="Season">
+   <num>4</num>
+   <episodes class="array">
+    <Episode class="Episode">
+     <season>4</season>
+     <num>01</num>
+     <series_num>52</series_num>
+     <name>Fun Run</name>
+     <airs_date>2007-09-27 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/582248</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/582248.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>02</num>
+     <series_num>53</series_num>
+     <name>Dunder-Mifflin Infinity</name>
+     <airs_date>2007-10-04 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/602408</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/602408.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>03</num>
+     <series_num>54</series_num>
+     <name>Launch Party</name>
+     <airs_date>2007-10-11 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/602409</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/602409.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>04</num>
+     <series_num>55</series_num>
+     <name>Money</name>
+     <airs_date>2007-10-18 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/605046</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/605046.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>05</num>
+     <series_num>56</series_num>
+     <name>Local Ad</name>
+     <airs_date>2007-10-25 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/607489</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/607489.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>06</num>
+     <series_num>57</series_num>
+     <name>Branch Wars</name>
+     <airs_date>2007-11-01 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/611818</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/611818.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>07</num>
+     <series_num>58</series_num>
+     <name>Survivor Man</name>
+     <airs_date>2007-11-08 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/613913</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/613913.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>08</num>
+     <series_num>59</series_num>
+     <name>The Deposition</name>
+     <airs_date>2007-11-15 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/613914</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/613914.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>09</num>
+     <series_num>60</series_num>
+     <name>Dinner Party</name>
+     <airs_date>2008-04-10 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/641665</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/641665.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>10</num>
+     <series_num>61</series_num>
+     <name>Chair Model</name>
+     <airs_date>2008-04-17 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/647711</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/647711.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>11</num>
+     <series_num>62</series_num>
+     <name>Night Out</name>
+     <airs_date>2008-04-24 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/649753</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/649753.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>12</num>
+     <series_num>63</series_num>
+     <name>Did I Stutter?</name>
+     <airs_date>2008-05-01 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/649870</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/649870.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>13</num>
+     <series_num>64</series_num>
+     <name>Job Fair</name>
+     <airs_date>2008-05-08 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/651358</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/651358.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>14</num>
+     <series_num>65</series_num>
+     <name>Goodbye Toby</name>
+     <airs_date>2008-05-15 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/653797</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/653797.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+   </episodes>
+  </Season>
+  <Season class="Season">
+   <num>5</num>
+   <episodes class="array">
+    <Episode class="Episode">
+     <season>5</season>
+     <num>01</num>
+     <series_num>66</series_num>
+     <name>Weight Loss</name>
+     <airs_date>2008-09-25 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/662426</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/662426.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>02</num>
+     <series_num>67</series_num>
+     <name>Business Ethics</name>
+     <airs_date>2008-10-09 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/706011</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/706011.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>03</num>
+     <series_num>68</series_num>
+     <name>Baby Shower</name>
+     <airs_date>2008-10-16 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/716236</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/716236.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>04</num>
+     <series_num>69</series_num>
+     <name>Crime Aid</name>
+     <airs_date>2008-10-23 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/719349</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/719349.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>05</num>
+     <series_num>70</series_num>
+     <name>Employee Transfer</name>
+     <airs_date>2008-10-30 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/720695</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/720695.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>06</num>
+     <series_num>71</series_num>
+     <name>Customer Survey</name>
+     <airs_date>2008-11-06 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/725919</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/725919.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>07</num>
+     <series_num>72</series_num>
+     <name>Business Trip</name>
+     <airs_date>2008-11-13 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/728887</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/728887.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>08</num>
+     <series_num>73</series_num>
+     <name>Frame Toby</name>
+     <airs_date>2008-11-20 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/731256</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/731256.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>09</num>
+     <series_num>74</series_num>
+     <name>The Surplus</name>
+     <airs_date>2008-12-04 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/741109</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/741109.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>10</num>
+     <series_num>75</series_num>
+     <name>Moroccan Christmas</name>
+     <airs_date>2008-12-11 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/741110</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/741110.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>11</num>
+     <series_num>76</series_num>
+     <name>The Duel</name>
+     <airs_date>2009-01-15 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/754189</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/754189.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>12</num>
+     <series_num>77</series_num>
+     <name>Prince Family Paper</name>
+     <airs_date>2009-01-22 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/754190</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/754190.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>13</num>
+     <series_num>78</series_num>
+     <name>Stress Relief</name>
+     <airs_date>2009-02-01 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/756663</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/756663.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>14</num>
+     <series_num>79</series_num>
+     <name>Lecture Circuit (Part 1)</name>
+     <airs_date>2009-02-05 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/768823</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/768823.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>15</num>
+     <series_num>80</series_num>
+     <name>Lecture Circuit (Part 2)</name>
+     <airs_date>2009-02-12 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/768824</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/768824.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>16</num>
+     <series_num>81</series_num>
+     <name>Blood Drive</name>
+     <airs_date>2009-03-05 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/768825</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/768825.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>17</num>
+     <series_num>82</series_num>
+     <name>Golden Ticket</name>
+     <airs_date>2009-03-12 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/774596</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/774596.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>18</num>
+     <series_num>83</series_num>
+     <name>New Boss</name>
+     <airs_date>2009-03-19 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/782793</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/782793.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>19</num>
+     <series_num>84</series_num>
+     <name>Two Weeks</name>
+     <airs_date>2009-03-26 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/784967</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/784967.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>21</num>
+     <series_num>85</series_num>
+     <name>The Michael Scott Paper Company</name>
+     <airs_date>2009-04-09 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/1064798289</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/1064798289.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>23</num>
+     <series_num>86</series_num>
+     <name>Broke</name>
+     <airs_date>2009-04-23 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/1064800018</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/1064800018.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>24</num>
+     <series_num>87</series_num>
+     <name>Casual Friday</name>
+     <airs_date>2009-04-30 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/1064800019</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/31/6061/1064800019.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>25</num>
+     <series_num>88</series_num>
+     <name>Cafe Disco</name>
+     <airs_date>2009-05-07 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/1064801618</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>5</season>
+     <num>26</num>
+     <series_num>89</series_num>
+     <name>Company Picnic</name>
+     <airs_date>2009-05-14 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/1064801619</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+   </episodes>
+  </Season>
+  <Season class="Season">
+   <num>6</num>
+   <episodes class="array">
+    <Episode class="Episode">
+     <season>6</season>
+     <num>01</num>
+     <series_num>90</series_num>
+     <name>Gossip</name>
+     <airs_date>2009-09-17 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/1064829710</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>6</season>
+     <num>02</num>
+     <series_num>91</series_num>
+     <name>The Meeting</name>
+     <airs_date>2009-09-24 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/1064841422</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>6</season>
+     <num>03</num>
+     <series_num>92</series_num>
+     <name>The Promotion</name>
+     <airs_date>2009-10-01 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/1064841423</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>6</season>
+     <num>04</num>
+     <series_num>93</series_num>
+     <name>Niagara</name>
+     <airs_date>2009-10-08 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/1064844292</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>6</season>
+     <num>05</num>
+     <series_num>94</series_num>
+     <name>Mafia</name>
+     <airs_date>2009-10-15 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/1064854786</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>6</season>
+     <num>06</num>
+     <series_num>95</series_num>
+     <name>TBA</name>
+     <airs_date>2009-10-22 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/1064854787</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>6</season>
+     <num>07</num>
+     <series_num>96</series_num>
+     <name>TBA</name>
+     <airs_date>2009-10-29 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/1064854788</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>6</season>
+     <num>08</num>
+     <series_num>97</series_num>
+     <name>TBA</name>
+     <airs_date>2009-11-05 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/1064854789</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>6</season>
+     <num>09</num>
+     <series_num>98</series_num>
+     <name>TBA</name>
+     <airs_date>2009-11-12 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/1064854790</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>6</season>
+     <num>10</num>
+     <series_num>99</series_num>
+     <name>TBA</name>
+     <airs_date>2009-11-19 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/The_Office/episodes/1064854791</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+   </episodes>
+  </Season>
+ </seasons>
+ <string class="array"></string>
+</data>

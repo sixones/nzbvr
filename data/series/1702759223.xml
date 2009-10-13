@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data class="Series">
+ <id>1702759223</id>
+ <tvrage_id>8172</tvrage_id>
+ <tvdb_id>79501</tvdb_id>
+ <imdb_id>tt0813715</imdb_id>
+ <overview>Heroes is a serial saga about people all over the world discovering that they have superpowers and trying to deal with how this change affects their lives. Not only are they discovering what having superpowers means to them but also the larger picture of where those powers come from and what they might mean to the rest of the world.</overview>
+ <poster>posters/79501-4.jpg</poster>
+ <banner>graphical/79501-g28.jpg</banner>
+ <fanart>fanart/original/79501-18.jpg</fanart>
+ <name>Heroes</name>
+ <country>US</country>
+ <first_aired>Sep/25/2006</first_aired>
+ <last_aired></last_aired>
+ <network>NBC</network>
+ <season_count>4</season_count>
+ <airs_time>20:00</airs_time>
+ <airs_day>Monday</airs_day>
+ <runtime>60</runtime>
+ <rage_url>http://tvrage.com/Heroes</rage_url>
+ <status>Returning Series</status>
+ <seasons class="array">
+  <Season class="Season">
+   <num>1</num>
+   <episodes class="array">
+    <Episode class="Episode">
+     <season>1</season>
+     <num>01</num>
+     <series_num>1</series_num>
+     <name>Genesis</name>
+     <airs_date>2006-09-25 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/323943</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/323943.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>02</num>
+     <series_num>2</series_num>
+     <name>Don't Look Back</name>
+     <airs_date>2006-10-02 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/414697</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/414697.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>03</num>
+     <series_num>3</series_num>
+     <name>One Giant Leap</name>
+     <airs_date>2006-10-09 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/427737</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/427737.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>04</num>
+     <series_num>4</series_num>
+     <name>Collision</name>
+     <airs_date>2006-10-16 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/427738</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/427738.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>05</num>
+     <series_num>5</series_num>
+     <name>Hiros</name>
+     <airs_date>2006-10-23 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/427739</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/427739.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>06</num>
+     <series_num>6</series_num>
+     <name>Better Halves</name>
+     <airs_date>2006-10-30 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/427826</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/427826.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>07</num>
+     <series_num>7</series_num>
+     <name>Nothing to Hide</name>
+     <airs_date>2006-11-06 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/427827</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/427827.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>08</num>
+     <series_num>8</series_num>
+     <name>Seven Minutes to Midnight</name>
+     <airs_date>2006-11-13 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/427829</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/427829.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>09</num>
+     <series_num>9</series_num>
+     <name>Homecoming</name>
+     <airs_date>2006-11-20 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/427828</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/427828.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>10</num>
+     <series_num>10</series_num>
+     <name>Six Months Ago</name>
+     <airs_date>2006-11-27 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/427830</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/427830.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>11</num>
+     <series_num>11</series_num>
+     <name>Fallout</name>
+     <airs_date>2006-12-04 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/481441</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/481441.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>12</num>
+     <series_num>12</series_num>
+     <name>Godsend</name>
+     <airs_date>2007-01-22 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/427832</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/427832.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>13</num>
+     <series_num>13</series_num>
+     <name>The Fix</name>
+     <airs_date>2007-01-29 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/427833</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/427833.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>14</num>
+     <series_num>14</series_num>
+     <name>Distractions</name>
+     <airs_date>2007-02-05 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/502538</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/502538.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>15</num>
+     <series_num>15</series_num>
+     <name>Run!</name>
+     <airs_date>2007-02-12 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/502539</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/502539.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>16</num>
+     <series_num>16</series_num>
+     <name>Unexpected</name>
+     <airs_date>2007-02-19 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/510771</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/510771.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>17</num>
+     <series_num>17</series_num>
+     <name>Company Man</name>
+     <airs_date>2007-02-26 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/510772</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/510772.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>18</num>
+     <series_num>18</series_num>
+     <name>Parasite</name>
+     <airs_date>2007-03-05 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/518880</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/518880.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>19</num>
+     <series_num>19</series_num>
+     <name>.07%</name>
+     <airs_date>2007-04-23 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/522179</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/522179.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>20</num>
+     <series_num>20</series_num>
+     <name>Five Years Gone</name>
+     <airs_date>2007-04-30 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/529092</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/529092.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>21</num>
+     <series_num>21</series_num>
+     <name>The Hard Part</name>
+     <airs_date>2007-05-07 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/529093</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/529093.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>22</num>
+     <series_num>22</series_num>
+     <name>Landslide</name>
+     <airs_date>2007-05-14 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/529094</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/529094.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>1</season>
+     <num>23</num>
+     <series_num>23</series_num>
+     <name>How to Stop an Exploding Man</name>
+     <airs_date>2007-05-21 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/529095</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/529095.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+   </episodes>
+  </Season>
+  <Season class="Season">
+   <num>2</num>
+   <episodes class="array">
+    <Episode class="Episode">
+     <season>2</season>
+     <num>01</num>
+     <series_num>24</series_num>
+     <name>Four Months Later...</name>
+     <airs_date>2007-09-24 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/573857</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/573857.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>02</num>
+     <series_num>25</series_num>
+     <name>Lizards</name>
+     <airs_date>2007-10-01 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/585218</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/585218.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>03</num>
+     <series_num>26</series_num>
+     <name>Kindred</name>
+     <airs_date>2007-10-08 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/595081</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/595081.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>04</num>
+     <series_num>27</series_num>
+     <name>The Kindness of Strangers</name>
+     <airs_date>2007-10-15 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/595082</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/595082.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>05</num>
+     <series_num>28</series_num>
+     <name>Fight Or Flight</name>
+     <airs_date>2007-10-22 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/595324</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/595324.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>06</num>
+     <series_num>29</series_num>
+     <name>The Line</name>
+     <airs_date>2007-10-29 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/595416</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/595416.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>07</num>
+     <series_num>30</series_num>
+     <name>Out of Time</name>
+     <airs_date>2007-11-05 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/598587</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/598587.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>08</num>
+     <series_num>31</series_num>
+     <name>Four Months Ago...</name>
+     <airs_date>2007-11-12 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/598588</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/598588.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>09</num>
+     <series_num>32</series_num>
+     <name>Cautionary Tales</name>
+     <airs_date>2007-11-19 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/603073</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/603073.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>10</num>
+     <series_num>33</series_num>
+     <name>Truth &amp; Consequences</name>
+     <airs_date>2007-11-26 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/607683</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/607683.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>2</season>
+     <num>11</num>
+     <series_num>34</series_num>
+     <name>Powerless</name>
+     <airs_date>2007-12-03 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/624936</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/624936.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+   </episodes>
+  </Season>
+  <Season class="Season">
+   <num>3</num>
+   <episodes class="array">
+    <Episode class="Episode">
+     <season>3</season>
+     <num>01</num>
+     <series_num>35</series_num>
+     <name>The Second Coming</name>
+     <airs_date>2008-09-22 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/645808</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/645808.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>02</num>
+     <series_num>36</series_num>
+     <name>The Butterfly Effect</name>
+     <airs_date>2008-09-22 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/651854</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/651854.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>03</num>
+     <series_num>37</series_num>
+     <name>One of Us, One of Them</name>
+     <airs_date>2008-09-29 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/651855</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/651855.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>04</num>
+     <series_num>38</series_num>
+     <name>I Am Become Death</name>
+     <airs_date>2008-10-06 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/651856</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/651856.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>05</num>
+     <series_num>39</series_num>
+     <name>Angels and Monsters</name>
+     <airs_date>2008-10-13 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/702319</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/702319.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>06</num>
+     <series_num>40</series_num>
+     <name>Dying of the Light</name>
+     <airs_date>2008-10-20 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/717801</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/717801.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>07</num>
+     <series_num>41</series_num>
+     <name>Eris Quod Sum</name>
+     <airs_date>2008-10-27 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/718638</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/718638.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>08</num>
+     <series_num>42</series_num>
+     <name>Villains</name>
+     <airs_date>2008-11-10 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/718639</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/718639.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>09</num>
+     <series_num>43</series_num>
+     <name>It's Coming</name>
+     <airs_date>2008-11-17 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/718640</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/718640.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>10</num>
+     <series_num>44</series_num>
+     <name>The Eclipse, Part 1</name>
+     <airs_date>2008-11-24 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/718641</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/718641.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>11</num>
+     <series_num>45</series_num>
+     <name>The Eclipse, Part 2</name>
+     <airs_date>2008-12-01 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/718642</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/718642.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>12</num>
+     <series_num>46</series_num>
+     <name>Our Father</name>
+     <airs_date>2008-12-08 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/718643</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>13</num>
+     <series_num>47</series_num>
+     <name>Dual</name>
+     <airs_date>2008-12-15 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/719757</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/719757.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>14</num>
+     <series_num>48</series_num>
+     <name>A Clear and Present Danger</name>
+     <airs_date>2009-02-02 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/740698</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/740698.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>15</num>
+     <series_num>49</series_num>
+     <name>Trust and Blood</name>
+     <airs_date>2009-02-09 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/772192</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>16</num>
+     <series_num>50</series_num>
+     <name>Building 26</name>
+     <airs_date>2009-02-16 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/772193</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>17</num>
+     <series_num>51</series_num>
+     <name>Cold Wars</name>
+     <airs_date>2009-02-23 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/774570</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>18</num>
+     <series_num>52</series_num>
+     <name>Exposed</name>
+     <airs_date>2009-03-02 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/777088</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>19</num>
+     <series_num>53</series_num>
+     <name>Shades of Gray</name>
+     <airs_date>2009-03-09 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/777089</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>20</num>
+     <series_num>54</series_num>
+     <name>Cold Snap</name>
+     <airs_date>2009-03-23 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/777090</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/777090.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>21</num>
+     <series_num>55</series_num>
+     <name>Into Asylum</name>
+     <airs_date>2009-03-30 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/777091</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/777091.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>22</num>
+     <series_num>56</series_num>
+     <name>Turn and Face the Strange</name>
+     <airs_date>2009-04-06 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/777092</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>23</num>
+     <series_num>57</series_num>
+     <name>1961</name>
+     <airs_date>2009-04-13 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/786513</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>24</num>
+     <series_num>58</series_num>
+     <name>I Am Sylar</name>
+     <airs_date>2009-04-20 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/786514</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>3</season>
+     <num>25</num>
+     <series_num>59</series_num>
+     <name>An Invisible Thread</name>
+     <airs_date>2009-04-27 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/786515</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+   </episodes>
+  </Season>
+  <Season class="Season">
+   <num>4</num>
+   <episodes class="array">
+    <Episode class="Episode">
+     <season>4</season>
+     <num>01</num>
+     <series_num>60</series_num>
+     <name>Orientation</name>
+     <airs_date>2009-09-21 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/1064824419</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/1064824419.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>02</num>
+     <series_num>61</series_num>
+     <name>Jump, Push, Fall</name>
+     <airs_date>2009-09-21 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/1064824420</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/1064824420.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>03</num>
+     <series_num>62</series_num>
+     <name>Ink</name>
+     <airs_date>2009-09-28 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/1064841116</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/1064841116.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>04</num>
+     <series_num>63</series_num>
+     <name>Acceptance</name>
+     <airs_date>2009-10-05 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/1064841117</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/1064841117.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>05</num>
+     <series_num>64</series_num>
+     <name>Hysterical Blindness</name>
+     <airs_date>2009-10-12 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/1064841118</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/1064841118.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>06</num>
+     <series_num>65</series_num>
+     <name>Tabula Rasa</name>
+     <airs_date>2009-10-19 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/1064843506</rage_url>
+     <poster_url>http://images.tvrage.com/screencaps/41/8172/1064843506.jpg</poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>07</num>
+     <series_num>66</series_num>
+     <name>Strange Attractors</name>
+     <airs_date>2009-10-26 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/1064843507</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>08</num>
+     <series_num>67</series_num>
+     <name>Once Upon a Time in Texas</name>
+     <airs_date>2009-11-02 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/1064848107</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+    <Episode class="Episode">
+     <season>4</season>
+     <num>09</num>
+     <series_num>68</series_num>
+     <name>Shadowboxing</name>
+     <airs_date>2009-11-09 00:00:00</airs_date>
+     <rage_url>http://www.tvrage.com/Heroes/episodes/1064851131</rage_url>
+     <poster_url></poster_url>
+     <downloaded></downloaded>
+     <ignored></ignored>
+    </Episode>
+   </episodes>
+  </Season>
+ </seasons>
+ <string class="array"></string>
+</data>

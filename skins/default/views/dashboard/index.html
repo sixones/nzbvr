@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xml:lang="en-us" lang="en-us">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta charset="UTF-8" />
+	
+	<title>nzbVR <?= nzbVR::VERSION; ?></title>
+	
+	<?= ViewHelper::stylesheet("layout.css"); ?>
+	
+	<?= ViewHelper::javascript("jquery.js"); ?>
+	<?= ViewHelper::javascript("application.js"); ?>
+</head>
+<body>
+	<header>
+		<nav>
+			<!-- dashboard, shows latest downloads / upcoming -->
+			<a href="#dashboard" class="content">Dashboard</a>
+			<!-- tv series watchers -->
+			<a href="#series" class="content">Series</a>
+			<!-- movie watchers  -->
+			<a href="#movies" class="content">Movies</a>
+			<!-- generic report search via newzbin  -->
+			<a href="#search" class="content">Search</a>
+			<!-- generic report watchers (for apps or games) -->
+			<a href="#watchers" class="content">Watchers</a>
+			<!-- application settings -->
+			<a href="#settings" class="content">Settings</a>
+		</nav>
+		<h1><a href="/">nzbVR <?= nzbVR::VERSION; ?></a></h1>
+	</header>
+	
+	<section id="content">
+		<div class="loader"><?= ViewHelper::image("large_ticker.gif", "Loading .."); ?></div>
+		<div class="container"></div>
+	</section>
+</body>
+</html>

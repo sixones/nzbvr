@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data class="Settings">
+ <base_url>/</base_url>
+ <installed></installed>
+ <main_skin>default</main_skin>
+ <mobile_skin>default</mobile_skin>
+ <newzbin_username>adamm</newzbin_username>
+ <newzbin_password></newzbin_password>
+ <sabnzbd_address>192.168.1.65:8080</sabnzbd_address>
+ <sabnzbd_apikey>b3c88a30e29442d565203f60a718c264</sabnzbd_apikey>
+ <xbmc_address>192.168.1.65:8282</xbmc_address>
+ <xbmc_username></xbmc_username>
+ <xbmc_password></xbmc_password>
+</data>
