@@ -27,7 +27,7 @@ Requirements
 * Git (required for install and auto-update)
 * SABnzbd
 * Newzbin account
-* Apache + PHP5
+* Apache + PHP5 (mod-rewrite + virtual host recommended but not required)
 * XBMC (optional)
 	
 Installing
@@ -35,12 +35,18 @@ Installing
 
 Installing 
 
+	# Get the source via Git
 	git clone git://github.com/sixones/nzbvr.git
 	
 	cd nzbvr
+	
+	# Make the `data` directory writable
 	chmod 766 data/
 	
-	Go to your web browser and open up the virtual host or folder through your web server
+	# Get the latest [picnic][] framework source
+	git clone git://github.com/sixones/picnic.git picnic
+	
+	# Go to your web browser and open up the virtual host or folder through your web server
 	
 Configuration
 -------------
@@ -53,3 +59,5 @@ Checking
 Setup a scheduled cron that will execute the command below;
 
 	php /path/to/nzvbr/check.php >> /path/to/nzvbr/nzbvr.log
+	
+[Picnic]: http://github.com/sixones/picnic "Picnic"
