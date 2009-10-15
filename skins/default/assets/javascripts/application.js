@@ -19,13 +19,15 @@ $(document).ready(function() {
 	
 	if ($nzbVR.utils.current_hash() != null) {
 		$nzbVR.view.content($nzbVR.utils.current_hash());
+	} else {
+		$nzbVR.view.content("dashboard");
 	}
-	//$nzbVR.view.content("/dashboard.html");
 });
 
 function nzbVR() {
 	this.html = new nzbVRHTML();
 	this.series = new nzbVRSeries();
+	this.search = new nzbVRSearch();
 	this.utils = new nzbVRUtils();
 	this.view = new nzbVRView();
 };
@@ -55,6 +57,8 @@ function nzbVRSeries() {
 	this._index = -1,
 	
 	this.applySearch = function() {
+		this._index = -1;
+	
 		$("section input#name").keyup(function(e) {
 			var c = $(this).val().length;
 
@@ -130,6 +134,10 @@ function nzbVRSeries() {
 		$("form fieldset.info").addClass("hide");
 		$("form div.buttons.info").addClass("hide");
 		
+		$("fieldset.search input#name").addClass("searching");
+		$("fieldset.search input#name").css("background", "#FFFFFF url("+SKIN_URL+"images/ticker.gif) no-repeat 99%");
+	
+		
 		$nzbVR.view._allow_submit = false;
 		
 		this._request = $.get("/series/search/"+name+".json", null, function(data) {
@@ -154,9 +162,12 @@ function nzbVRSeries() {
 			}
 			
 			$("ul#results").slideDown(800);
+			
+			$("fieldset.search input#name").removeClass("searching");
+			$("fieldset.search input#name").css("background", "#FFFFFF");
 		}, "json");
 	}
-}
+};
 
 function nzbVRHTML() {
 	this.create = function(type, klass, content) {
@@ -206,9 +217,10 @@ function nzbVRView() {
 				
 				console.log(params);
 				
+				$("section#content div.loader").addClass("slow");
 				$nzbVR.view.content(this.action, params);
 				
-				document.location.hash = null;
+				//document.location.hash = undefined;
 				
 				return false;
 			} else {
@@ -219,7 +231,19 @@ function nzbVRView() {
 	
 	this.allow_submit = function(submit) {
 		this._allow_submit = submit;
-	}
+	},
+	
+	this.set_active_link = function(hash) {
+		var links = $("header nav a");
+		
+		$("header nav a").removeClass("selected");
+		
+		for (var i = 0; i < links.length; i++) {
+			if (links[i].hash == "#"+hash) {
+				$(links[i]).addClass("selected");
+			}
+		}
+	},
 	
 	this.content = function(url, params) {
 		console.log("Loading content from '"+url+".html"+"'");
@@ -233,10 +257,14 @@ function nzbVRView() {
 			$.post($nzbVR.view.content_url+".html", $nzbVR.view.content_params, function(data) {
 				$("section#content div.container").html(data);
 				
+				$nzbVR.view.set_active_link($nzbVR.view.content_url);
+				
 				$nzbVR.view.capture_links();
 
 				$nzbVR.view.hide_loader();
 				$nzbVR.view.show_content();
+				
+				$("section#content div.loader").removeClass("slow");
 			});
 			
 			$(this).dequeue();
@@ -262,3 +290,78 @@ function nzbVRView() {
 	}
 };
 
+function nzbVRSearch() {
+	this.apply = function() {
+		$("form fieldset.search input#query").keyup(function(e) { 
+			if (e.which == 13) {
+				
+				$nzbVR.search.query();
+				
+				return false;
+			}
+		});
+		
+		$("form fieldset.search input#query").focus(function() {
+			if ($(this).val() == "Search ...") {
+				$(this).val("");
+			}
+		});
+		
+		$("form fieldset.search input#query").blur(function() {
+			if ($(this).val() == "") {
+				$(this).val("Search ...");
+			}
+		});
+	},
+
+	this.query = function() {
+		this.hide_content();
+	
+		var params = Object();
+		
+		for (var i = 0; i < $("input, select", $("form fieldset.search")).length; i++) {
+			var el = $("input, select", $("form fieldset.search"))[i];
+			
+			if (el.id != undefined && el.id != null) {
+				console.log(el);
+				var id = el.id;
+				params[id] = el.value;
+			}
+		}
+		
+		$("div#search_results section#results").queue(function() {
+			$.post("/search", params, function(data) {
+				$("div#search_results section#results").html(data);
+			
+				$nzbVR.view.capture_links();
+			
+				$nzbVR.search.hide_loader();
+				$nzbVR.search.show_content();
+			});
+			
+			$(this).dequeue();
+		});
+	
+		this.show_loader();
+	},
+	
+	this.show_loader = function() {
+		//$("div#search_results div.small_loader").slideDown(500);
+		$("fieldset.search input#query").addClass("searching");
+		$("fieldset.search input#query").css("background", "#FFFFFF url("+SKIN_URL+"images/ticker.gif) no-repeat 99%");
+	},
+	
+	this.hide_loader = function() {
+		//$("div#search_results div.small_loader").slideUp(600);
+		$("fieldset.search input#query").removeClass("searching");
+		$("fieldset.search input#query").css("background", "#FFFFFF");
+	}
+	
+	this.show_content = function() {
+		$("div#search_results section#results").slideDown(1000);
+	},
+	
+	this.hide_content = function() {
+		$("div#search_results section#results").slideUp(600);
+	}
+};

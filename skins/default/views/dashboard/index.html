@@ -8,6 +8,11 @@
 	
 	<?= ViewHelper::stylesheet("layout.css"); ?>
 	
+	<script type="text/javascript">
+		var BASE_URL = "<?= ViewHelper::link(""); ?>";
+		var SKIN_URL = "<?= ViewHelper::assetLink(""); ?>";
+	</script>
+	
 	<?= ViewHelper::javascript("jquery.js"); ?>
 	<?= ViewHelper::javascript("application.js"); ?>
 </head>
@@ -31,7 +36,10 @@
 	</header>
 	
 	<section id="content">
-		<div class="loader"><?= ViewHelper::image("large_ticker.gif", "Loading .."); ?></div>
+		<div class="loader">
+			<?= ViewHelper::image("large_ticker.gif", "Loading .."); ?>
+			<p class="thirdparty">This can take a few minutes as nzbVR pulls data from third-party sites, if you dont hang around on the next scheduled check the information will be updated.</p>
+		</div>
 		<div class="container"></div>
 	</section>
 </body>

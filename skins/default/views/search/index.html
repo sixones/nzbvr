@@ -1,5 +1,20 @@
 <section>
 	<h2>Search</h2>
 	
-	
+	<form action="/search" method="post">
+		<fieldset class="search">
+			<dl>
+				<dd>
+					<input id="query" autocomplete="off" type="text" value="Search ..." />
+				</dd>
+			</dl>
+		</fieldset>
+	</form>
+	<div id="search_results">
+		<div class="small_loader">
+			<?= ViewHelper::image("light_ticker.gif", "Loading .."); ?>
+		</div>
+		<section id="results"></section>
+	</div>
+	<script type="text/javascript">$nzbVR.search.apply();</script>
 </section>

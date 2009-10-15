@@ -7,6 +7,7 @@
 		<a href="#movies/update" class="content">Update All</a>
 	</nav>
 	
+	<? if (sizeof($this->picnic()->controller()->movies) > 0): ?>
 	<dl>
 		<? foreach ($this->picnic()->controller()->movies as $movie): ?>
 			<dd class="movie">
@@ -30,4 +31,7 @@
 			</dd>
 		<? endforeach; ?>
 	</dl>
+	<? else: ?>
+		<p class="empty">Your library is empty, you can add a <a href="#movies/new" class="content">new movie</a> to watch for.</p>
+	<? endif; ?>
 </section>

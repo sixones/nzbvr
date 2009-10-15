@@ -50,9 +50,35 @@ header nav a:hover {
 	-webkit-border-radius: 5px;
 }
 
+header nav a.selected {
+	background: #DDD;
+	border: solid 1px #DDD;
+	color: #000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
 section#content div.loader {
-	margin: 5% auto;
+	margin: 50px;
+	text-align: center;
+}
+
+section#content div.loader img {
 	width: 55px;
+}
+
+section#content div.slow.loader p.thirdparty {
+	display: block;
+}
+
+section#content div.loader p.thirdparty {
+	display: none;
+	margin: 30px auto;
+	width: 430px;
+}
+
+section#content div.container {
+	margin-top: 30px;
 }
 
 section#content div.container section {
@@ -65,6 +91,17 @@ section#content div.container section {
 	max-width: 800px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
+}
+
+section#content div.container section p.empty {
+	font-size: 1.4em;
+	margin-top: 40px;
+	text-align: center;
+}
+
+section#content div.container section p.empty a {
+	border-bottom: solid 1px #CCCCCC;
+	padding-bottom: 2px;
 }
 
 section#content div.container section ul.list_box {
@@ -99,9 +136,9 @@ section#content div.container movies dl {
 
 section#content div.container section h2 {
 	background: #EFEFEF;
-	font-size: 2.2em;
+	font-size: 1.8em;
 	float: left;
-	margin-top: -38px;
+	margin-top: -34px;
 	padding: 3px 6px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -215,7 +252,8 @@ form div.buttons button.cancel_btn {
 	
 }
 
-form fieldset.search input#name {
+form fieldset.search input#name,
+form fieldset.search input#query {
 	font-size: 1.4em;
 	width: 98%;
 }
@@ -247,6 +285,21 @@ dl dd.series div.coverart {
 	margin: 0px;
 	padding: 2px 4px 4px 2px;
 	width: 90px;
+}
+
+dl.thumbnails {
+	clear: both;
+	margin: 10px;
+}
+
+dl.thumbnails dd.series {
+	float: left;
+	margin: 10px;
+	padding: 5px;
+}
+
+dl.thumbnails dd.series div.coverart {
+	float: none;
 }
 
 dl dd.series div.coverart img {
@@ -301,12 +354,13 @@ dl dd.series div.information p.overview {
 }
 
 dl dd.series div.information div.episodes {
-	display: inline;
-	margin: 5px 5px;
+	display: block;
+	margin: 0px -5px;
+	line-height: 1.8em;
 }
 
 dl dd.series div.information div.episodes h4 {
-	font-size: 1.4em;
+	font-size: 1.3em;
 	font-weight: bold;
 	margin: 5px 0px;
 }
@@ -315,13 +369,13 @@ dl dd.series div.information div.episodes h5 {
 	font-size: 1.2em;
 }
 
-ul#results {
+form ul#results {
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
 }
 
-ul#results li {
+form ul#results li {
 	background: #CCC;
 	color: #000;
 	margin: 5px;
@@ -330,12 +384,88 @@ ul#results li {
 	-moz-border-radius: 5px;
 }
 
-ul#results li.selected {
+form ul#results li.selected {
 	background: #EEEEEE;
 }
 
-ul#results li span.first_aired {
+form ul#results li span.first_aired {
 	display: inline;
 	color: #666666;
+	float: right;
+}
+
+section#content div.small_loader {
+	display: none;
+	margin: 5% auto;
+	width: 55px;
+}
+
+section div#search_results {
+	margin: 0px auto;
+	padding: 0px;
+}
+
+section div#search_results dl {
+	margin: 0px 20px;
+	padding: 0px;
+}
+
+section div#search_results dl dd.report {
+	background: #EEE;
+	margin: 0px 5px 5px;
+	padding: 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+section div#search_results dl dd ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+section div#search_results a {
+	border-bottom: solid 1px #AAA;
+	padding-bottom: 2px;
+}
+
+section#content div.container section div#search_results section#results {
+	margin: 0px;
+	padding: 0px;
+}
+
+section#content div.container section div#search_results section#results section.search-results {
+	margin: 0px;
+	padding: 0px
+}
+
+section div#search_results dl dd ul li {
+	display: inline;
+}
+
+section div#search_results dl dd.report nav {
+	float: right;
+	margin-top: 5px;
+}
+
+section div#search_results dl dd.report nav.externals {
+	color: #555;
+}
+
+section div#search_results dl dd.report nav a {
+	margin-left: 5px;
+}
+
+section div#search_results dl dd.report span.info {
+	color: #888;
+	display: block;
+	margin-top: 5px;
+}
+
+section div#search_results dl dd.report span.info ul li {
+	margin-right: 10px;
+}
+
+section div#search_results dl dd.report span.formats {
 	float: right;
 }

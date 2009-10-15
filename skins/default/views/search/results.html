@@ -1,0 +1,34 @@
+<section class="search-results">
+	<dl>
+		<? foreach ($this->picnic()->controller()->results as $report): ?>
+			<dd class="report">
+				<span class="formats">
+					<? if (sizeof($report->format) > 0): ?>
+						<?= PicnicUtils::implode($report->format); ?>
+					<? else: ?>
+						Unknown
+					<? endif; ?>
+				</span>
+			
+				<h3><?= $report->name; ?></h3>
+				
+				<nav class="actions">
+					<a href="#api/sabnzbd/<?= $report->newzbin_id; ?>" class="content">Send to SABnzbd</a>
+				</nav>
+				
+				<nav class="externals">
+					<a href="<?= $report->link; ?>">View Report</a>
+					<a href="<?= $report->more_info; ?>">View NFO</a>
+					<a href="<?= $report->nzb; ?>">Download NZB</a>
+				</nav>
+				
+				<span class="info">
+					<ul>
+						<li>Source: <?= PicnicUtils::implode($report->source); ?></li>
+						<li>Language: <?= PicnicUtils::implode($report->language); ?></li>
+					</ul>
+				</span>
+			</dd>
+		<? endforeach; ?>
+	</dl>
+</section>
