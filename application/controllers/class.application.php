@@ -6,11 +6,17 @@ class ApplicationController extends PicnicController {
 	public function __construct() {
 		parent::__construct();
 		
-		Picnic::getInstance()->view()->useTemplateFolder(ROOT_PATH."skins/".nzbVR::instance()->skin()."/views");
+		$this->setSkinMode("main");
 		
 		// load all watchers
 		$this->_watchers = new Watchers();
 		$this->_watchers->load();
+	}
+	
+	public function setSkinMode($mode) {
+		nzbVR::instance()->setSkinMode($mode);
+		
+		Picnic::getInstance()->view()->useTemplateFolder(ROOT_PATH."skins/".nzbVR::instance()->skin()."/views");
 	}
 }
 

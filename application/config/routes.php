@@ -22,6 +22,10 @@ $r->add(new PicnicRoute("/watchers/check", "WatchersController", "check"));
 $r->add(new PicnicRoute("/search", "SearchController", "index"));
 
 $r->add(new PicnicRoute("/dashboard", "DashboardController", "show"));
+
+$r->add(new PicnicRoute("/mobile", "DashboardController", "mobile"));
+$r->add(new PicnicRoute("/m", "DashboardController", "mobile"));
+
 $r->add(new PicnicRoute("/", "DashboardController", "index"));
 
 ?>

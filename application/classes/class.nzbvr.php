@@ -13,6 +13,8 @@ class nzbVR {
 	
 	private static $__instance = null;
 	
+	private $_skinMode = "main";
+	
 	public function __construct() {
 		self::$__instance = $this;
 		
@@ -20,8 +22,18 @@ class nzbVR {
 		$this->settings->load();
 	}
 	
+	public function setSkinMode($mode) {
+		$this->_skinMode = $mode;
+	}
+	
 	public function skin() {
-		return $this->settings->main_skin;
+		if ($this->_skinMode == "main") {
+			$skin = $this->settings->main_skin;
+		} else {
+			$skin = $this->settings->mobile_skin;
+		}
+
+		return $skin;
 	}
 	
 	public static function instance() {

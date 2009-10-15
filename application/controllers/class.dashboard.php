@@ -8,6 +8,13 @@ class DashboardController extends ApplicationController {
 	public function show() {
 		$this->watchers = $this->_watchers;
 	}
+	
+	public function mobile() {
+		// set skin mode
+		$this->setSkinMode("mobile");
+	
+		$this->redirect("index");
+	}
 }
 
 ?>
