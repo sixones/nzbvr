@@ -16,6 +16,16 @@ class MoviesController extends ApplicationController {
 		}
 	}
 	
+	public function check() {
+		foreach ($this->_watchers->watchers as $watcher) {
+			if ($watcher != null && $watcher instanceof MovieWatcher) {
+				$watcher->check();
+			}
+		}
+		
+		$this->redirect("index");
+	}
+	
 	public function create() {	
 		$name = $this->params()->get("name");
 		$language = $this->params()->get("language");

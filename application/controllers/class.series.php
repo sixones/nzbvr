@@ -14,6 +14,32 @@ class SeriesController extends ApplicationController {
 				$this->series[] = $series;
 			}
 		}
+		
+		$mode = $this->params()->get("mode");
+		
+		if ($mode != null) {
+			nzbVR::instance()->settings->set("series_display_mode", $mode);
+			nzbVR::instance()->settings->save();
+		} else {
+			$mode = nzbVR::instance()->settings->series_display_mode;
+		}
+		
+		$this->useTemplate("{$mode}.html");
+		
+		//$this->redirect($mode."Display");
+	}
+	
+	public function listDisplay() { }
+	public function thumbnailsDisplay() { }
+	
+	public function check() {
+		foreach ($this->_watchers->watchers as $watcher) {
+			if ($watcher != null && $watcher instanceof SeriesWatcher) {
+				$watcher->check();
+			}
+		}
+		
+		$this->redirect("index");
 	}
 	
 	public function delete() {
@@ -33,7 +59,7 @@ class SeriesController extends ApplicationController {
 		
 		$this->_watchers->save();
 		
-		$this->index();
+		$this->redirect("index");
 	}
 	
 	public function create() {	
@@ -45,7 +71,7 @@ class SeriesController extends ApplicationController {
 		$source = $this->params()->get("source");
 		
 		if ($tvrageId != null && $name != null) {
-			$watcher = new SeriesWatcher(null, $name, $language, $format, $source);
+			$watcher = new SeriesWatcher(null, $name, array($language), array($format), array($source));
 			$watcher->load();
 			$watcher->series()->tvrage_id = $tvrageId;
 			$watcher->save();

@@ -23,15 +23,21 @@ class SettingsController extends ApplicationController {
 		nzbVR::instance()->settings->set("main_skin", $this->params()->get("main_skin"));
 		nzbVR::instance()->settings->set("mobile_skin", $this->params()->get("mobile_skin"));
 		
-		nzbVR::instance()->settings->set("newzbin_username", $this->params()->get("newzbin_username"));
-		nzbVR::instance()->settings->set("newzbin_password", $this->params()->get("newzbin_password"));
+		nzbVR::instance()->settings->set("newzbin_username", base64_encode($this->params()->get("newzbin_username")));
+		
+		if ($this->params()->get("newzbin_password") != null && $this->params()->get("newzbin_password") != "") {
+			nzbVR::instance()->settings->set("newzbin_password", base64_encode($this->params()->get("newzbin_password")));
+		}
 		
 		nzbVR::instance()->settings->set("sabnzbd_address", $this->params()->get("sabnzbd_address"));
-		nzbVR::instance()->settings->set("sabnzbd_apikey", $this->params()->get("sabnzbd_apikey"));
+		nzbVR::instance()->settings->set("sabnzbd_apikey", base64_encode($this->params()->get("sabnzbd_apikey")));
 		
 		nzbVR::instance()->settings->set("xbmc_address", $this->params()->get("xbmc_address"));
-		nzbVR::instance()->settings->set("xbmc_username", $this->params()->get("xbmc_username"));
-		nzbVR::instance()->settings->set("xbmc_password", $this->params()->get("xbmc_password"));
+		nzbVR::instance()->settings->set("xbmc_username", base64_encode($this->params()->get("xbmc_username")));
+		
+		if ($this->params()->get("xbmc_password") != null && $this->params()->get("xbmc_password") != "") {
+			nzbVR::instance()->settings->set("xbmc_password", base64_encode($this->params()->get("xbmc_password")));
+		}
 		
 		nzbVR::instance()->settings->save();
 		

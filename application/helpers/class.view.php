@@ -13,12 +13,16 @@ class ViewHelper {
 		return "<link rel=\"stylesheet\" href=\"{$src}\" media=\"$media\" type=\"text/css\" />\n";
 	}
 	
-	public static function image($src, $alt = null) {
+	public static function image($src, $alt = null, $class = null) {
 		$src = self::assetLink("images/{$src}");
 		$tag = "<img src=\"{$src}\" ";
 		
 		if ($alt != null) {
 			$tag .= "alt=\"{$alt}\" ";
+		}
+		
+		if ($class != null) {
+			$tag .= "class=\"{$class}\" ";
 		}
 		
 		$tag .= "/>";
