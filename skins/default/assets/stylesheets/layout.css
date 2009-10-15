@@ -29,6 +29,10 @@ header h1 {
 	padding: 2px 0px;
 }
 
+header h1 span.vr {
+	color: #e32d67;
+}
+
 header nav {
 	float: right;
 	margin: 10px 5px;

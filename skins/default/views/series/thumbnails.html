@@ -7,25 +7,25 @@
 		<a href="#series/update" class="content">Update All</a>
 	</nav>
 	
-	<? if (sizeof($this->picnic()->controller()->series) > 0): ?>
+	<?php if (sizeof($this->picnic()->controller()->series) > 0): ?>
 	<dl class="thumbnails">
-		<? foreach ($this->picnic()->controller()->series as $series): ?>
-			<?
+		<?php foreach ($this->picnic()->controller()->series as $series): ?>
+			<?php
 				$last = $series->lastDownload();
 				$next = $series->nextDownload();
 				$then = $series->nextDownload($series->nextDownload(), false);
 			?>
 			<dd class="series">
 				<div class="coverart">
-					<img src="<?= TVDB::imageURL($series->poster); ?>" alt="<?= $series->watcher->name; ?>" />
+					<img src="<?php echo  TVDB::imageURL($series->poster); ?>" alt="<?php echo  $series->watcher->name; ?>" />
 				</div>
 			</dd>
-		<? endforeach; ?>
+		<?php endforeach; ?>
 	</dl>
 	
 	<br clear="both" />
 	
-	<? else: ?>
+	<?php else: ?>
 		<p class="empty">Your library is empty, you should add a <a href="#series/new" class="content">new series</a> to watch.</p>
-	<? endif; ?>
+	<?php endif; ?>
 </section>

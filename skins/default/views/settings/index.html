@@ -9,21 +9,21 @@
 					<label for="base_url">Base URL</label>
 				</dt>
 				<dd>
-					<input id="base_url" type="text" value="<?= $this->picnic()->controller()->settings->base_url; ?>" />
+					<input id="base_url" type="text" value="<?php echo  $this->picnic()->controller()->settings->base_url; ?>" />
 				</dd>
 			
 				<dt>
 					<label for="main_skin">Main Skin</label>
 				</dt>
 				<dd>
-					<? ViewHelper::select("main_skin", $this->picnic()->controller()->skins, $this->picnic()->controller()->settings->main_skin, false); ?>
+					<?php ViewHelper::select("main_skin", $this->picnic()->controller()->skins, $this->picnic()->controller()->settings->main_skin, false); ?>
 				</dd>
 				
 				<dt>
 					<label for="mobile_skin">Mobile Skin</label>
 				</dt>
 				<dd>
-					<? ViewHelper::select("mobile_skin", $this->picnic()->controller()->skins, $this->picnic()->controller()->settings->mobile_skin, false); ?>
+					<?php ViewHelper::select("mobile_skin", $this->picnic()->controller()->skins, $this->picnic()->controller()->settings->mobile_skin, false); ?>
 				</dd>
 			</dl>	
 		</fieldset>
@@ -35,7 +35,7 @@
 					<label for="newzbin_username">Username</label>
 				</dt>
 				<dd>
-					<input id="newzbin_username" type="text" value="<?= base64_decode($this->picnic()->controller()->settings->newzbin_username); ?>" />
+					<input id="newzbin_username" type="text" value="<?php echo  base64_decode($this->picnic()->controller()->settings->newzbin_username); ?>" />
 				</dd>
 			
 				<dt>
@@ -54,14 +54,14 @@
 					<label for="sabnzbd_address">Address</label>
 				</dt>
 				<dd>
-					<input id="sabnzbd_address" type="text" value="<?= $this->picnic()->controller()->settings->sabnzbd_address; ?>" />
+					<input id="sabnzbd_address" type="text" value="<?php echo  $this->picnic()->controller()->settings->sabnzbd_address; ?>" />
 				</dd>
 			
 				<dt>
 					<label for="sabnzbd_apikey">API Key</label>
 				</dt>
 				<dd>
-					<input id="sabnzbd_apikey" type="text" value="<?= base64_decode($this->picnic()->controller()->settings->sabnzbd_apikey); ?>" />
+					<input id="sabnzbd_apikey" type="text" value="<?php echo  base64_decode($this->picnic()->controller()->settings->sabnzbd_apikey); ?>" />
 				</dd>
 			</dl>
 		</fieldset>
@@ -73,14 +73,14 @@
 					<label for="xbmc_address">Address</label>
 				</dt>
 				<dd>
-					<input id="xbmc_address" type="text" value="<?= $this->picnic()->controller()->settings->xbmc_address; ?>" />
+					<input id="xbmc_address" type="text" value="<?php echo  $this->picnic()->controller()->settings->xbmc_address; ?>" />
 				</dd>
 				
 				<dt>
 					<label for="xbmc_username">Username</label>
 				</dt>
 				<dd>
-					<input id="xbmc_username" type="text" value="<?= base64_decode($this->picnic()->controller()->settings->xbmc_username); ?>" />
+					<input id="xbmc_username" type="text" value="<?php echo  base64_decode($this->picnic()->controller()->settings->xbmc_username); ?>" />
 				</dd>
 				
 				<dt>

@@ -1,7 +1,7 @@
 <section>
 	<h2>New Series</h2>
 	
-	<form action="/series/new" method="post">
+	<form class="slow" action="/series/new" method="post">
 		<fieldset class="search">
 			<dl>
 				<dd>
@@ -17,21 +17,21 @@
 					<label for="format">Format</label>
 				</dt>
 				<dd>
-					<? ViewHelper::select("format", nzbVR::$formats, "x264", false); ?>
+					<?php ViewHelper::select("format", nzbVR::$formats, "x264", false); ?>
 				</dd>
 				
 				<dt>
 					<label for="source">Source</label>
 				</dt>
 				<dd>
-					<? ViewHelper::select("source", nzbVR::$sources); ?>
+					<?php ViewHelper::select("source", nzbVR::$sources); ?>
 				</dd>
 			
 				<dt>
 					<label for="language">Language</label>
 				</dt>
 				<dd>
-					<? ViewHelper::select("language", nzbVR::$languages, null, false); ?>
+					<?php ViewHelper::select("language", nzbVR::$languages, null, false); ?>
 				</dd>
 			</dl>
 		</fieldset>

@@ -3,8 +3,8 @@
 	
 	<ul class="list_box">
 		<li class="head"><h3>Currently watching:</h3></li>
-		<li><span class="text"><?= $this->picnic()->controller()->watchers->size("MovieWatcher"); ?> movies</span></li>
-		<li><span class="text"><?= $this->picnic()->controller()->watchers->size("SeriesWatcher"); ?> series</span></li>
-		<li><span class="text"><?= $this->picnic()->controller()->watchers->size(); ?> watchers in total</span></li>
+		<li><span class="text"><?php echo  $this->picnic()->controller()->watchers->size("MovieWatcher"); ?> movies</span></li>
+		<li><span class="text"><?php echo  $this->picnic()->controller()->watchers->size("SeriesWatcher"); ?> series</span></li>
+		<li><span class="text"><?php echo  $this->picnic()->controller()->watchers->size(); ?> watchers in total</span></li>
 	</ul>
 </section>

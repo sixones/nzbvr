@@ -217,7 +217,10 @@ function nzbVRView() {
 				
 				console.log(params);
 				
-				$("section#content div.loader").addClass("slow");
+				if ($(this).hasClass("slow")) {
+					$("section#content div.loader").addClass("slow");
+				}
+				
 				$nzbVR.view.content(this.action, params);
 				
 				//document.location.hash = undefined;

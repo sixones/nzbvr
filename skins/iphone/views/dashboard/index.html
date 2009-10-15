@@ -6,6 +6,14 @@
 	
 	<title>nzbVR <?php echo  nzbVR::VERSION; ?></title>
 	
+	<meta name="viewport" id="viewport" content="width=device-width,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0" />
+	
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	
+	<link rel="apple-touch-icon" href="<?php echo  ViewHelper::assetLink("images/touch-icon.png"); ?>" />
+	<link rel="apple-touch-startup-image" href="<?php echo  ViewHelper::assetLink("images/touch-startup.png"); ?>" />
+	
 	<?php echo  ViewHelper::stylesheet("layout.css"); ?>
 	
 	<script type="text/javascript">
@@ -32,15 +40,7 @@
 			<!-- application settings -->
 			<a href="#settings" class="content">Settings</a>
 		</nav>
-		<h1><a href="/">nzb<span class="vr">VR</span> <span class="version"><?php echo  nzbVR::VERSION; ?></span></a></h1>
+		<h1><a href="/">nzbVR <?php echo  nzbVR::VERSION; ?></a></h1>
 	</header>
-	
-	<section id="content">
-		<div class="loader">
-			<?php echo  ViewHelper::image("large_ticker.gif", "Loading .."); ?>
-			<p class="thirdparty">This can take a few minutes as nzbVR pulls data from third-party sites.</p>
-		</div>
-		<div class="container"></div>
-	</section>
 </body>
 </html>

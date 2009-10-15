@@ -7,31 +7,31 @@
 		<a href="#movies/update" class="content">Update All</a>
 	</nav>
 	
-	<? if (sizeof($this->picnic()->controller()->movies) > 0): ?>
+	<?php if (sizeof($this->picnic()->controller()->movies) > 0): ?>
 	<dl>
-		<? foreach ($this->picnic()->controller()->movies as $movie): ?>
+		<?php foreach ($this->picnic()->controller()->movies as $movie): ?>
 			<dd class="movie">
 				<div class="coverart">
 					<img src="#" alt="Coverart" />
 				</div>
 				<div class="information">
 					<div class="identifier">
-						<h3><?= $movie->watcher->name; ?></h3>
-						<span class="runtime"><?= $movie->runtime; ?> minutes, released <?= $movie->released; ?></span>
+						<h3><?php echo  $movie->watcher->name; ?></h3>
+						<span class="runtime"><?php echo  $movie->runtime; ?> minutes, released <?php echo  $movie->released; ?></span>
 						<nav class="actions">
-							<a href="#movies/check/<?= $series->id; ?>" class="content">Check</a>
-							<a href="#movies/update/<?= $series->id; ?>" class="content">Update Info</a>
-							<a href="#movies/delete/<?= $series->id; ?>" class="content">Delete</a>
+							<a href="#movies/check/<?php echo  $series->id; ?>" class="content">Check</a>
+							<a href="#movies/update/<?php echo  $series->id; ?>" class="content">Update Info</a>
+							<a href="#movies/delete/<?php echo  $series->id; ?>" class="content">Delete</a>
 						</nav>
 						<nav class="externals">
-							<a href="<?= $movie->imdbUrl(); ?>">IMDB</a>
+							<a href="<?php echo  $movie->imdbUrl(); ?>">IMDB</a>
 						</nav>
 					</div>
 				</div>
 			</dd>
-		<? endforeach; ?>
+		<?php endforeach; ?>
 	</dl>
-	<? else: ?>
+	<?php else: ?>
 		<p class="empty">Your library is empty, you can add a <a href="#movies/new" class="content">new movie</a> to watch for.</p>
-	<? endif; ?>
+	<?php endif; ?>
 </section>

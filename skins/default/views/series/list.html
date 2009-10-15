@@ -7,49 +7,49 @@
 		<a href="#series/update" class="content">Update All</a>
 	</nav>
 	
-	<? if (sizeof($this->picnic()->controller()->series) > 0): ?>
+	<?php if (sizeof($this->picnic()->controller()->series) > 0): ?>
 	<dl>
-		<? foreach ($this->picnic()->controller()->series as $series): ?>
-			<?
+		<?php foreach ($this->picnic()->controller()->series as $series): ?>
+			<?php
 				$last = $series->lastDownload();
 				$next = $series->nextDownload();
 				$then = $series->nextDownload($next, false);
 			?>
 			<dd class="series">
 				<div class="coverart">
-					<img src="<?= TVDB::imageURL($series->poster); ?>" alt="Coverart" />
+					<img src="<?php echo  TVDB::imageURL($series->poster); ?>" alt="Coverart" />
 				</div>
 				<div class="information">
 					<div class="identifier">
-						<h3><?= $series->watcher->name; ?></h3>
-						<span class="runtime"><?= $series->runtime; ?> minutes, <?= $series->airs_day; ?> at <?= $series->airs_time; ?></span>
+						<h3><?php echo  $series->watcher->name; ?></h3>
+						<span class="runtime"><?php echo  $series->runtime; ?> minutes, <?php echo  $series->airs_day; ?> at <?php echo  $series->airs_time; ?></span>
 						<nav class="actions">
-							<a href="#series/check/<?= $series->id; ?>" class="content">Check</a>
-							<a href="#series/update/<?= $series->id; ?>" class="content">Update Info</a>
-							<a href="#series/delete/<?= $series->id; ?>" class="content">Delete</a>
+							<a href="#series/check/<?php echo  $series->id; ?>" class="content">Check</a>
+							<a href="#series/update/<?php echo  $series->id; ?>" class="content">Update Info</a>
+							<a href="#series/delete/<?php echo  $series->id; ?>" class="content">Delete</a>
 						</nav>
 						<nav class="externals">
-							<a href="<?= $series->rage_url; ?>">TVRage</a>
-							<a href="<?= $series->tvdbUrl(); ?>">TVDB</a>
-							<a href="<?= $series->imdbUrl(); ?>">IMDB</a>
+							<a href="<?php echo  $series->rage_url; ?>">TVRage</a>
+							<a href="<?php echo  $series->tvdbUrl(); ?>">TVDB</a>
+							<a href="<?php echo  $series->imdbUrl(); ?>">IMDB</a>
 						</nav>
 					</div>
 					<div class="episodes">
-						<? if ($last != null): ?>
-						<h5>Last: <?= $last->identifier(); ?> - <?= $last->name; ?> (<?= $last->airs_date(); ?>)</h5>
-						<? endif ?>
-						<? if ($next != null): ?>
-						<h4>Next: <?= $next->identifier(); ?> - <?= $next->name; ?> (<?= $next->airs_date(); ?>)</h4>
-						<? endif ?>
-						<? if ($then != null): ?>
-						<h5>Then: <?= $then->identifier(); ?> - <?= $then->name; ?> (<?= $then->airs_date(); ?>)</h5>
-						<? endif ?>
+						<?php if ($last != null): ?>
+						<h5>Last: <?php echo  $last->identifier(); ?> - <?php echo  $last->name; ?> (<?php echo  $last->airs_date(); ?>)</h5>
+						<?php endif ?>
+						<?php if ($next != null): ?>
+						<h4>Next: <?php echo  $next->identifier(); ?> - <?php echo  $next->name; ?> (<?php echo  $next->airs_date(); ?>)</h4>
+						<?php endif ?>
+						<?php if ($then != null): ?>
+						<h5>Then: <?php echo  $then->identifier(); ?> - <?php echo  $then->name; ?> (<?php echo  $then->airs_date(); ?>)</h5>
+						<?php endif ?>
 					</div>
 				</div>
 			</dd>
-		<? endforeach; ?>
+		<?php endforeach; ?>
 	</dl>
-	<? else: ?>
+	<?php else: ?>
 		<p class="empty">Your library is empty, you should add a <a href="#series/new" class="content">new series</a> to watch.</p>
-	<? endif; ?>
+	<?php endif; ?>
 </section>
