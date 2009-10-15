@@ -8,6 +8,8 @@ class Settings extends XMLModel {
 	public $main_skin = "default";
 	public $mobile_skin = "iphone";
 	
+	public $series_display_mode = "list";
+	
 	// newzbin
 	public $newzbin_username = "";
 	public $newzbin_password = "";

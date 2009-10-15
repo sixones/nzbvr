@@ -21,6 +21,12 @@ class Episode {
 		$num = sprintf("%02d", $this->num);
 		return "{$this->season}x{$num}";
 	}
+	
+	public function airs_date() {
+		$t = strtotime($this->airs_date);
+		
+		return date("jS M y", $t);
+	}
 }
 
 ?>

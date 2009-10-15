@@ -4,7 +4,7 @@ class MovieWatcher extends Watcher {
 	protected $_movie = null;
 	
 	public function __construct($id = null, $name = null, $language = "English", $format = "x264", $source = null) {
-		parent::__construct($id, $name, $language, $format, $source);
+		parent::__construct($id, $name, $language, $format, $source, 6);
 	}
 	
 	public function movie() {

@@ -3,8 +3,10 @@
 class SeriesWatcher extends Watcher {	
 	protected $_series = null;
 	
-	public function __construct($id = null, $name = null, $language = "English", $format = "x264", $source = null) {
-		parent::__construct($id, $name, $language, $format, $source);
+	public $category = 8;
+	
+	public function __construct($id = null, $name = null, array $language = array("English"), array $format = array("x264"), array $source = null) {
+		parent::__construct($id, $name, $language, $format, $source, 8);
 	}
 	
 	public function series() {
@@ -13,12 +15,36 @@ class SeriesWatcher extends Watcher {
 	
 	public function load() {
 		// load $this->_series
-		$this->_series = new Series($this->id);
+		$this->_series = new Series($this->id, $this);
 		$this->_series->load();
+	}
+	
+	public function mark($report) {
+		$report->marker->downloaded = true;
 	}
 	
 	public function save() {
 		$this->_series->save();
+	}
+	
+	public function getMarker() {
+		if ($this->_series != null) {
+			return $this->_series->nextDownload();
+		}
+		
+		return null;
+	}
+	
+	public function toSearchTerm() {
+		if ($this->_series != null) {
+			$next = $this->_series->nextDownload();
+			
+			if ($next != null) {
+				return "^\"{$this->name}\" {$next->identifier()}";
+			}
+		}
+		
+		return null;
 	}
 }
 
@@ -52,12 +78,14 @@ class Series extends XMLModel {
 	
 	private $_parent = null;
 	
-	public function __construct($id = null) {
+	public function __construct($id = null, $parent = null) {
 		if ($id != null) {
 			$this->id = $id;
 		}
 		
 		parent::__construct("{$this->id}.xml", "series");
+		
+		$this->_parent = $parent;
 	}
 	
 	public function storagePath() {
@@ -67,8 +95,29 @@ class Series extends XMLModel {
 	protected function findTVDB() {
 		$tvdb = new TVDB();
 		$results = $tvdb->search($this->name);
+		$result = null;
 		
-		$this->tvdb_id = (string)$results[0]->id;
+		foreach ($results as $series) {
+			if ($series->name == "") continue;
+		
+			if ($series->name == $this->name) {
+				$result = $series;
+				break;
+			}
+			
+			$i = strpos($series->name, $this->name);
+
+			if ($i !== false && $i == 0) {
+				$result = $series;
+				break;
+			}
+		}
+		
+		if ($result == null) {
+			$result = $results[0];
+		}
+			
+		$this->tvdb_id = (string)$result->id;
 	}
 	
 	public function update() {		
@@ -102,9 +151,6 @@ class Series extends XMLModel {
 			$season = $this->seasons[$i];
 			
 			foreach ($season->episodes as $episode) {
-				$today = strtotime(date("Y-m-d"));
-				$airdate = strtotime($episode->airs_date);
-
 				if ($episode->airs_date != null && strtotime($episode->airs_date) > strtotime($last->airs_date)) {
 					$nextEpisode = $episode;
 					return $nextEpisode;
@@ -119,18 +165,16 @@ class Series extends XMLModel {
 		$nextEpisode = null;
 		$between = 0;
 		$last = ($afterEpisode == null ? $this->lastDownload() : $afterEpisode);
-		
-		//PicnicUtils::dump($last);
-		
-		for ($i = (sizeof($this->seasons) - 1); $i > 0; $i--) {
+
+		// $i = (sizeof($this->seasons) - 1); $i >= 0; $i--
+		for ($i = 0; $i < sizeof($this->seasons); $i++) {
 			$season = $this->seasons[$i];
 			
 			foreach ($season->episodes as $episode) {
-				$today = strtotime(date("Y-m-d"));
 				$airdate = strtotime($episode->airs_date);
 
 				if ($episode->airs_date != null && $airdate > strtotime($last->airs_date)) {
-					if ($afterEpisode == null || $afterEpisode != null && (($beforeToday && $airdate <= $today) || !$beforeToday)) {
+					if ($afterEpisode == null || $afterEpisode != null && (($beforeToday && $airdate <= $this->_parent->created) || !$beforeToday)) {
 						$nextEpisode = $episode;
 						return $nextEpisode;
 					}
@@ -143,17 +187,16 @@ class Series extends XMLModel {
 	
 	public function lastDownload() {
 		$lastEpisode = null;
-		$diff = 10000000000;
+		$diff = 10000000000000000000;
 		
-		for ($i = (sizeof($this->seasons) - 1); $i > 0; $i--) {
+		for ($i = (sizeof($this->seasons) - 1); $i >= 0; $i--) {
 			$season = $this->seasons[$i];
 			
 			foreach ($season->episodes as $episode) {
-				$today = strtotime(date("Y-m-d"));
 				$airdate = strtotime($episode->airs_date);
-
-				if ($episode->downloaded && $episode->airs_date != null && strtotime($episode->airs_date) < strtotime(date("Y-m-d"))) {
-					$currentDiff = $today - $airdate;
+				
+				if ($episode->airs_date != null && $episode->downloaded && $airdate < $this->_parent->created) {
+					$currentDiff = $this->_parent->created - $airdate;
 					
 					if ($currentDiff < $diff) {
 						$diff = $currentDiff;
@@ -173,17 +216,16 @@ class Series extends XMLModel {
 	
 	public function last() {
 		$lastEpisode = null;
-		$diff = 10000000000;
+		$diff = 10000000000000000000;
 		
-		for ($i = (sizeof($this->seasons) - 1); $i > 0; $i--) {
+		for ($i = (sizeof($this->seasons) - 1); $i >= 0; $i--) {
 			$season = $this->seasons[$i];
 			
 			foreach ($season->episodes as $episode) {
-				$today = strtotime(date("Y-m-d"));
 				$airdate = strtotime($episode->airs_date);
 
-				if ($episode->airs_date != null && strtotime($episode->airs_date) < strtotime(date("Y-m-d"))) {
-					$currentDiff = $today - $airdate;
+				if ($episode->airs_date != null && $airdate < $this->_parent->created) {
+					$currentDiff = $this->_parent->created - $airdate;
 					
 					if ($currentDiff < $diff) {
 						$diff = $currentDiff;
@@ -193,7 +235,7 @@ class Series extends XMLModel {
 				}
 			}
 		}
-		
+
 		return $lastEpisode;
 	}
 }
