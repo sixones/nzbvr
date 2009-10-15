@@ -94,7 +94,7 @@ class TVDB extends TVScraper {
 			$series->language = (string)$show->language;
 			$series->banner = (string)$show->banner;
 
-			$results[] = $show;
+			$results[] = $series;
 		}
 		
 		return $results;
