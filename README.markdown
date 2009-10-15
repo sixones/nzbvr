@@ -41,9 +41,9 @@ Installing
 	cd nzbvr
 	
 	# Make the `data` directory writable
-	chmod 766 data/
+	chmod 777 data/
 	
-	# Get the latest [picnic][] framework source
+	# Get the latest picnic framework source (see http://github.com/sixones/picnic)
 	git clone git://github.com/sixones/picnic.git picnic
 	
 	# Go to your web browser and open up the virtual host or folder through your web server
