@@ -5,8 +5,8 @@ error_reporting(E_ALL);
 if (!defined("DS")) define("DS", DIRECTORY_SEPARATOR);
 if (!defined("ROOT_PATH")) define("ROOT_PATH", dirname(__FILE__).DS);
 
-if (!defined("PICNIC_HOME")) define("PICNIC_HOME", "..".DS."picnic".DS."picnic".DS);
-if (!defined("APPLICATION_DIR")) define("APPLICATION_DIR", ROOT_PATH."application/");
+if (!defined("PICNIC_HOME")) define("PICNIC_HOME", ROOT_PATH."picnic".DS."picnic".DS);
+if (!defined("APPLICATION_DIR")) define("APPLICATION_DIR", ROOT_PATH."application".DS);
 
 require_once(PICNIC_HOME."class.picnic.php");
 
