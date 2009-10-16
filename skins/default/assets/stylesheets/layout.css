@@ -114,6 +114,29 @@ section#content div.container section ul.list_box {
 	padding: 5px;
 }
 
+div.notification {
+	background: #333;
+	border: solid 2px #333;
+	color: #EEE;
+	margin: 15px auto;
+	padding: 0px;
+	text-align: center;
+	width: 500px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+div.notification.success {
+	background: #EEE;
+	border-color: #EEE;
+	color: #333333;
+}
+
+div.notification a {
+	border-bottom: solid 1px #777;
+	padding-bottom: 3px;
+}
+
 section#content div.container section ul.list_box li.head  h3 {
 	display: inline;
 	margin: 0px 0px 0px -5px;

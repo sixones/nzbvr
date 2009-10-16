@@ -35,6 +35,14 @@
 		<h1><a href="/">nzb<span class="vr">VR</span> <span class="version"><?php echo  nzbVR::VERSION; ?></span></a></h1>
 	</header>
 	
+	<div class="notifications">
+		<?php foreach ($this->picnic()->controller()->notifications as $notification): ?>
+			<div class="notification <?php echo $notification->className; ?>">
+				<p><?php echo $notification->message; ?></p>
+			</div>
+		<?php endforeach; ?>
+	</div>
+	
 	<section id="content">
 		<div class="loader">
 			<?php echo  ViewHelper::image("large_ticker.gif", "Loading .."); ?>
