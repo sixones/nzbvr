@@ -78,7 +78,7 @@ If you plan on installing nzbVR in a sub-directory rather than through a virtual
 Watchers
 --------
 
-nzbVR uses a collection of generic watchers to define a Newzbin search, a watcher can set a name, format, language, source and category this is then used to automatically create Newzbin search queries using the v3 API. <del>You can use the web interface to create `watchers` to monitor for anything on Newzbin <del>or NZBMatrix</del>.</del> 
+nzbVR uses a collection of generic watchers to define a Newzbin search, a watcher can set a name, format, language, source and category this is then used to automatically create Newzbin search queries using the v3 API. You can use the web interface to create `watchers` to monitor for anything on Newzbin <del>or NZBMatrix</del>.
 
 By default nzbVR defines 2 special types of watchers;
 
