@@ -23,8 +23,8 @@ Todo
 ----
 
 * Automatic execution of `git pull` from web ui
-* Movie support with integration for meta data from third-parties
-* Scheduling generic searches
+* Movie support with integration for meta data from third-parties (need an external db service)
+* <del>Scheduling generic searches</del>
 * Sending search result to SABnzbd+
 * Support for downloading nzb to a watched folder
 * NZBMatrix search support
