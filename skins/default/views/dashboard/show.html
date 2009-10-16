@@ -1,5 +1,11 @@
+<?php $benchmark = $this->picnic()->controller()->watchers->last_benchmark; ?>
+<?php $start = $benchmark->getMark("start"); ?>
 <section>
 	<h2>Dashboard</h2>
+	
+	<p class="last_benchmark">
+		Last check took place at <?php echo $start->getDateTime()->format('H:i'); ?> on <?php echo $start->getDateTime()->format('jS, F Y'); ?> and took <?php echo $benchmark->between("start", "end"); ?> seconds.
+	</p>
 	
 	<ul class="list_box">
 		<li class="head"><h3>Currently watching:</h3></li>

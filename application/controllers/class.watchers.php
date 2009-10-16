@@ -29,6 +29,7 @@ class WatchersController extends ApplicationController {
 		}
 		
 		$this->_watchers->last_benchmark->mark("end");
+		$this->_watchers->save();
 		
 		$this->redirect("index");
 	}

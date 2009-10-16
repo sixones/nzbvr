@@ -124,6 +124,12 @@ section#content div.container section ul.list_box li {
 	padding: 5px;
 }
 
+section#content div.container section p.last_benchmark {
+	color: #666;
+	float: right;
+	margin: -5px 0px; 
+}
+
 section#content div.container section ul.list_box li span.text {
 	border-bottom: solid 1px #CCC;
 	padding: 4px 1px 4px 0px;
