@@ -1,0 +1,50 @@
+/* @override http://vr.six.binaryporn.com/skins/iphone/assets/stylesheets/layout.css */
+
+body {
+	background: #CCC;
+	color: #000;
+	font-family: "Lucida Grande",Verdana,"Bitstream Vera Sans",Arial,sans-serif;
+	font-size: 11px;
+	margin: 0px;
+	padding: 5px 10px 5px 10px;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+header h1 {
+	color: #222;
+	font-weight: bold;
+	margin: 0px 5px 5px;
+	padding: 2px 0px;
+	text-align: center;
+}
+
+header h1 span.vr {
+	color: #e32d67;
+}
+
+body section div.container {
+	background: #FFFFFF;
+	border: solid 1px #FFFFFF;
+	padding: 0px;
+	-webkit-border-radius: 5px;
+}
+
+body section div.container nav {
+	margin: 0px;
+	padding: 0px;
+}
+
+body section div.container nav a {
+	border-bottom: solid 1px #DDD;
+	display: block;
+	margin: 0px;
+	padding: 10px;
+}
+
+body section div.container nav a:last-child {
+	border-bottom: none;
+}

@@ -2,6 +2,8 @@
 
 error_reporting(E_ALL);
 
+session_start();
+
 if (!defined("DS")) define("DS", DIRECTORY_SEPARATOR);
 if (!defined("ROOT_PATH")) define("ROOT_PATH", dirname(__FILE__).DS);
 

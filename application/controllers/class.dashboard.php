@@ -1,7 +1,9 @@
 <?php if (!defined("PICNIC")) { header("Location: /"); exit(1); }
 
 class DashboardController extends ApplicationController {
-	public function index() {	
+	public function index() {
+		$this->setSkinMode("main");
+	
 		// check for new version?
 		if (false) {
 			$this->notification("An update to nzbVR is available, you should <a href=\"/upgrade.html\">upgrade now</a>.", "warning");
@@ -20,7 +22,7 @@ class DashboardController extends ApplicationController {
 		// set skin mode
 		$this->setSkinMode("mobile");
 	
-		$this->redirect("index");
+		$this->useTemplate("index");
 	}
 	
 	public function upgrade() {
