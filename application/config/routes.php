@@ -1,5 +1,7 @@
 <?php if (!defined("PICNIC")) { header("Location: /"); exit(1); }
 
+$r->add(new PicnicRoute("/api/sabnzbd/send/(\d.+)", "APIController", "sendID"));
+
 $r->add(new PicnicRoute("/movies/new", "MoviesController", "create"));
 $r->add(new PicnicRoute("/movies/update", "MoviesController", "update"));
 $r->add(new PicnicRoute("/movies/search/(\w.+)", "MoviesController", "search"));

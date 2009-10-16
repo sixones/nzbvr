@@ -201,6 +201,12 @@ function nzbVRView() {
 			$nzbVR.view.content($nzbVR.utils.parse_hash(this.href));
 		});
 		
+		$("section#content div.container a.notify").click(function(e) {
+			$nzbVR.view.notify($nzbVR.utils.parse_hash(this.href));
+			
+			return false;
+		});
+		
 		$("section#content div.container form").submit(function(e) {
 			if ($nzbVR.view._allow_submit) {
 				var params = new Object();
@@ -248,6 +254,16 @@ function nzbVRView() {
 		}
 	},
 	
+	this.notify = function(url, params) {
+		$.get(url, params, function(data) {
+			if (data.state == "OK") {
+				alert("Report sent to SABnzbd!");
+			} else {
+				alert("FAIL: "+data.message);
+			}
+		}, "json");
+	},
+	
 	this.content = function(url, params) {
 		console.log("Loading content from '"+url+".html"+"'");
 
@@ -292,6 +308,8 @@ function nzbVRView() {
 		$("section#content div.container").slideUp(600);
 	}
 };
+
+var d2 = null;
 
 function nzbVRSearch() {
 	this.apply = function() {

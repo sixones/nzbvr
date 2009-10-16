@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xml:lang="en-us" lang="en-us">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta charset="UTF-8" />
+	
+	<title>nzbVR <?php echo nzbVR::VERSION; ?> upgrade</title>
+	
+	<?php echo  ViewHelper::stylesheet("layout.css"); ?>
+	
+	<script type="text/javascript">
+		var BASE_URL = "<?php echo  ViewHelper::link(""); ?>";
+		var SKIN_URL = "<?php echo  ViewHelper::assetLink(""); ?>";
+	</script>
+	
+	<?php echo  ViewHelper::javascript("jquery.js"); ?>
+</head>
+<body>
+	<header>
+		<h1><a href="/">nzb<span class="vr">VR</span> <span class="version"><?php echo  nzbVR::VERSION; ?></span></a></h1>
+	</header>
+	
+	<section id="content">
+		<div class="container">
+			<section>
+				<h2>Upgrade</h2>
+				
+				<p>Executing git commands, output is available below;</p>
+				
+				<div class="commands">
+					<?php foreach ($this->picnic()->controller()->commands as $cmd): ?>
+						<div>
+							<p><?php echo $cmd; ?></p>
+						</div>
+					<?php endforeach; ?>
+				</div>
+			</section>
+		</div>
+	</section>
+</body>
+</html>
