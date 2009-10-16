@@ -7,6 +7,9 @@ class WatchersController extends ApplicationController {
 	
 	public function check() {
 		$this->results = array();
+		
+		$this->_watchers->last_benchmark = new PicnicBenchmark();
+		$this->_watchers->last_benchmark->mark("start");
 	
 		foreach ($this->_watchers->watchers as $watcher) {
 			$watcher->load();
@@ -24,6 +27,8 @@ class WatchersController extends ApplicationController {
 			$sabnzbd = new SABnzbd(nzbVR::instance()->settings->sabnzbd_address, nzbVR::instance()->settings->sabnzbd_apikey);
 			$sabnzbd->send($this->results);
 		}
+		
+		$this->_watchers->last_benchmark->mark("end");
 		
 		$this->redirect("index");
 	}

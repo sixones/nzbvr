@@ -2,6 +2,7 @@
 
 class Watchers extends XMLModel {
 	public $watchers = array();
+	public $last_benchmark = null;
 	
 	public function __construct() {
 		parent::__construct("watchers.xml");
