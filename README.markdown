@@ -19,7 +19,13 @@ Features
 Todo
 ----
 
-* Automatic update through git
+* Automatic execution of `git pull` from web ui
+* Movie support with integration for meta data from third-parties
+* Scheduling generic searches
+* Sending search result to SABnzbd+
+* Support for downloading nzb to a watched folder
+* NZBMatrix search support
+* iPhone web interface
 
 Requirements
 ------------
@@ -33,20 +39,31 @@ Requirements
 Installing
 ----------
 
-Installing 
-
 	# Get the source via Git
 	git clone git://github.com/sixones/nzbvr.git
 	
 	cd nzbvr
 	
 	# Make the `data` directory writable
-	chmod 777 data/
+	chmod 777 data/ data/series data/movies
 	
 	# Get the latest picnic framework source (see http://github.com/sixones/picnic)
 	git clone git://github.com/sixones/picnic.git picnic
 	
 	# Go to your web browser and open up the virtual host or folder through your web server
+	
+Upgrading
+---------
+
+	cd nzbvr
+	
+	# Update via Git
+	git pull origin master
+	
+	cd picnic
+	
+	# Update picnic via Git
+	git pull origin master
 	
 Configuration
 -------------
@@ -59,6 +76,21 @@ Checking
 Setup a scheduled cron that will execute the command below;
 
 	php /path/to/nzvbr/check.php >> /path/to/nzvbr/nzbvr.log
+	
+Under OS X the recommended method for running the scheduler is through launchd, there is a default plist in the `extras` directory that can be easily modified and enabled;
+
+	cd nzbvr
+	
+	# Edit `extras/org.sixones.nzbvr.plist` (you need to set the abolsolute path to `nzbvr/check.php` and the username)
+	mate extras/org.sixones.nzbvr.plist
+	
+	# Copy to `/Library/LaunchDaemons/org.sixones.nzbvr.plist`
+	sudo cp extras/org.sixones.nzbvr.plist /Library/LaunchDaemons/org.sixones.nzbvr.plist
+	
+	# Enable
+	sudo launchctl load /Library/LaunchDaemons/org.sixones.nzbvr.plist
+	
+The default plist sets the task to schedule every 15 minutes (900 seconds), its not recommended to set below 15 minutes as nzbVR doesnt include any validation or security for the data being written (it will in the future).
 	
 [Picnic]: http://github.com/sixones/picnic "Picnic"
 
