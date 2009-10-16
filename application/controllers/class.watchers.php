@@ -8,7 +8,7 @@ class WatchersController extends ApplicationController {
 	public function check() {
 		$this->results = array();
 		
-		$this->_watchers->last_benchmark = new PicnicBenchmark();
+		$this->_watchers->last_benchmark = new WatcherBenchmark();
 		$this->_watchers->last_benchmark->mark("start");
 	
 		foreach ($this->_watchers->watchers as $watcher) {
@@ -28,10 +28,14 @@ class WatchersController extends ApplicationController {
 			$sabnzbd->send($this->results);
 		}
 		
+		$this->_watchers->last_benchmark->downloads = sizeof($this->results);
+		
 		$this->_watchers->last_benchmark->mark("end");
 		$this->_watchers->save();
 		
-		$this->redirect("index");
+		if ($this->picnic()->router()->outputType() == "html") {
+			$this->redirect("index");
+		}
 	}
 }
 

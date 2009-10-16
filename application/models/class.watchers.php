@@ -39,4 +39,8 @@ class Watchers extends XMLModel {
 	}
 }
 
+class WatcherBenchmark extends PicnicBenchmark {
+	public $downloads = 0;
+}
+
 ?>

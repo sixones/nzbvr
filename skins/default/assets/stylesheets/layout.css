@@ -124,10 +124,13 @@ section#content div.container section ul.list_box li {
 	padding: 5px;
 }
 
+section#content div.container section p.watching {
+	font-size: 1.4em;
+	padding: 0px 0px 25px 0px;
+}
+
 section#content div.container section p.last_benchmark {
 	color: #666;
-	float: right;
-	margin: -5px 0px; 
 }
 
 section#content div.container section ul.list_box li span.text {

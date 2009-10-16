@@ -1,16 +1,14 @@
 <?php $benchmark = $this->picnic()->controller()->watchers->last_benchmark; ?>
 <?php $start = $benchmark->getMark("start"); ?>
+<?php $watchers = $this->picnic()->controller()->watchers; ?>
 <section>
 	<h2>Dashboard</h2>
 	
-	<p class="last_benchmark">
-		Last check took place at <?php echo $start->getDateTime()->format('H:i'); ?> on <?php echo $start->getDateTime()->format('jS, F Y'); ?> and took <?php echo $benchmark->between("start", "end"); ?> seconds.
+	<p class="watching">
+		<?php echo $watchers->size(""); ?> watchers are currently configured, watching <?php echo $watchers->size("SeriesWatcher"); ?> series, <?php echo $watchers->size("MovieWatcher"); ?> movies and 0 others.
 	</p>
 	
-	<ul class="list_box">
-		<li class="head"><h3>Currently watching:</h3></li>
-		<li><span class="text"><?php echo  $this->picnic()->controller()->watchers->size("MovieWatcher"); ?> movies</span></li>
-		<li><span class="text"><?php echo  $this->picnic()->controller()->watchers->size("SeriesWatcher"); ?> series</span></li>
-		<li><span class="text"><?php echo  $this->picnic()->controller()->watchers->size(); ?> watchers in total</span></li>
-	</ul>
+	<p class="last_benchmark">
+		Last check downloaded <?php echo $benchmark->downloads; ?> reports, took place at <?php echo $start->getDateTime()->format('H:i'); ?> on <?php echo $start->getDateTime()->format('jS, F Y'); ?> and took <?php echo $benchmark->between("start", "end"); ?> seconds.
+	</p>
 </section>
