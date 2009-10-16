@@ -11,6 +11,23 @@ class nzbVR {
 	
 	public static $sources = array("CAM", "Screener", "TeleCine", "R5Retail", "TeleSync", "Workprint", "VHS", "DVD", "HD-DVD", "Blu-Ray", "TVCap", "HDTV", "Unknown");
 	
+	public static $categories = array(
+										"-1" => "Everything",
+										"11" => "Anime",
+										"1" => "Apps",
+										"13" => "Books",
+										"2" => "Consoles",
+										"15" => "Discussions",
+										"10" => "Emulation",
+										"4" => "Games",
+										"5" => "Misc",
+										"6" => "Movies",
+										"7" => "Music",
+										"12" => "PDA",
+										"14" => "Resources",
+										"8" => "TV"
+									 );
+	
 	private static $__instance = null;
 	
 	private $_skinMode = "main";

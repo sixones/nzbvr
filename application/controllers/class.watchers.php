@@ -1,8 +1,35 @@
 <?php if (!defined("PICNIC")) { header("Location: /"); exit(1); }
 
 class WatchersController extends ApplicationController {
-	public function index() {	
+	public $watchers = null;
+
+	public function index() {
 		$this->watchers = array();
+		
+		foreach ($this->_watchers->watchers as $watcher) {
+			if ($watcher != null && $watcher instanceof SearchWatcher) {
+				$this->watchers[] = $watcher;
+			}
+		}
+	}
+	
+	public function create() {	
+		$name = $this->params()->get("name");
+		$language = $this->params()->get("language");
+		$format = $this->params()->get("format");
+		$source = $this->params()->get("source");
+		
+		if ($name != null) {
+			$watcher = new SearchWatcher(null, $name, array($language), array($format), array($source));
+
+			$this->_watchers->add($watcher);
+		
+			$this->_watchers->save();
+			
+			$this->watcher = $watcher;
+			
+			return $this->redirect("index");
+		}
 	}
 	
 	public function check() {
@@ -36,6 +63,26 @@ class WatchersController extends ApplicationController {
 		if ($this->picnic()->router()->outputType() == "html") {
 			$this->redirect("index");
 		}
+	}
+	
+	public function delete() {
+		$id = $this->picnic()->currentRoute()->getSegment(0);
+		
+		$copy = $this->_watchers->watchers;
+		
+		$this->_watchers->watchers = array();
+		
+		foreach ($copy as $watcher) {
+			if ($watcher->id != $id) {
+				$this->_watchers->add($watcher);
+			} else {
+				$watcher->delete();
+			}
+		}
+		
+		$this->_watchers->save();
+		
+		$this->redirect("index");
 	}
 }
 

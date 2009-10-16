@@ -14,11 +14,13 @@ $r->add(new PicnicRoute("/series/search/(\w.+)", "SeriesController", "search"));
 $r->add(new PicnicRoute("/series/delete/(\d.+)", "SeriesController", "delete"));
 $r->add(new PicnicRoute("/series", "SeriesController", "index"));
 
-$r->add(new PicnicRoute("/settings", "SettingsController", "index"));
 $r->add(new PicnicRoute("/settings/save", "SettingsController", "save"));
+$r->add(new PicnicRoute("/settings", "SettingsController", "index"));
 
-$r->add(new PicnicRoute("/watchers", "WatchersController", "index"));
+$r->add(new PicnicRoute("/watchers/new", "WatchersController", "create"));
 $r->add(new PicnicRoute("/watchers/check", "WatchersController", "check"));
+$r->add(new PicnicRoute("/watchers/delete/(\d.+)", "WatchersController", "delete"));
+$r->add(new PicnicRoute("/watchers", "WatchersController", "index"));
 
 //$r->add(new PicnicRoute("/search/(\w.+)", "SearchController", "index"));
 $r->add(new PicnicRoute("/search", "SearchController", "index"));

@@ -1,18 +1,24 @@
 <section>
-	<h2>New Series</h2>
+	<h2>New Watcher</h2>
 	
-	<form class="slow" action="/series/new" method="post">
-		<fieldset class="series search">
+	<form class="slow" action="/watchers/new" method="post">
+		<fieldset class="info">
 			<dl>
+				<dt>
+					<label for="name">Name</label>
+				</dt>
 				<dd>
-					<input id="name" autocomplete="off" type="text" value="Search ..." />
+					<input id="name" type="text" value="" />
 				</dd>
-			</dl>
-			<ul id="results"></ul>
-		</fieldset>
-		
-		<fieldset class="info hide">
-			<dl>
+				
+				<dt>
+					<label for="category">Category</label>
+				</dt>
+				<dd>
+					<?php ViewHelper::select("category", nzbVR::$categories, "-1", false); ?>
+				</dd>
+
+			
 				<dt>
 					<label for="format">Format</label>
 				</dt>
@@ -38,11 +44,10 @@
 		
 		<input id="tvrage_id" type="hidden" value="0" />
 		
-		<div class="buttons hide">
+		<div class="buttons">
 			<button type="submit" class="save_btn">Save</button>
 			<button class="cancel_btn">Cancel</button>
 		</div>
 	</form>
-	
-	<script type="text/javascript">$nzbVR.series.applySearch();</script>
+	<script type="text/javascript">$nzbVR.view.allowSubmit(true);</script>
 </section>

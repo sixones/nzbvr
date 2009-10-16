@@ -5,7 +5,7 @@
 	<h2>Dashboard</h2>
 	
 	<p class="watching">
-		<?php echo $watchers->size(""); ?> watchers are currently configured, watching <?php echo $watchers->size("SeriesWatcher"); ?> series, <?php echo $watchers->size("MovieWatcher"); ?> movies and 0 others.
+		<?php echo $watchers->size(""); ?> watchers are currently configured, watching <?php echo $watchers->size("SeriesWatcher"); ?> series, <?php echo $watchers->size("MovieWatcher"); ?> movies and <?php echo $watchers->size("SearchWatcher"); ?> others.
 	</p>
 	
 	<?php if ($benchmark != null): ?>

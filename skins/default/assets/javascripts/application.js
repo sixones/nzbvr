@@ -58,8 +58,10 @@ function nzbVRSeries() {
 	
 	this.applySearch = function() {
 		this._index = -1;
+		
+		//$nzbVR.view.allow_submit(false);
 	
-		$("section input#name").keyup(function(e) {
+		$("section fieldset.search.series input#name").keyup(function(e) {
 			var c = $(this).val().length;
 
 			if (c > 3 && (e.which != 38 && e.which != 40 && e.which != 13)) {
@@ -75,13 +77,13 @@ function nzbVRSeries() {
 			}
 		});
 		
-		$("section input#name").focus(function() {
+		$("section fieldset.search.series input#name").focus(function() {
 			if ($(this).val() == "Search ...") {
 				$(this).val("");
 			}
 		});
 		
-		$("section input#name").blur(function() {
+		$("section fieldset.search.series input#name").blur(function() {
 			if ($(this).val() == "") {
 				$(this).val("Search ...");
 			}

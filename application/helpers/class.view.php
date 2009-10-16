@@ -37,8 +37,14 @@ class ViewHelper {
 			echo "<option".($selected == null ? " selected=\"selected\"" : "").">".(is_string($head) ? $head : "")."</option>\n";
 		}
 		
-		foreach ($array as $val) {
-			echo "<option".($val == $selected ? " selected=\"selected\"" : "").">{$val}</option>\n";
+		if (!PicnicUtils::isAssociativeArray($array)) {
+			foreach ($array as $val) {
+				echo "<option".($val == $selected ? " selected=\"selected\"" : "").">{$val}</option>\n";
+			}
+		} else {
+			foreach ($array as $key => $val) {
+				echo "<option".($key == $selected ? " selected=\"selected\"" : "")." value=\"{$key}\">{$val}</option>\n";
+			}
 		}
 		
 		echo "</select>\n";

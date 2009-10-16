@@ -1,4 +1,4 @@
-<section class="watchers">
+<section class="search-results">
 	<h2>Watchers</h2>
 	
 	<nav class="content_nav">
@@ -8,19 +8,32 @@
 	</nav>
 	
 	<?php if (sizeof($this->picnic()->controller()->watchers) > 0): ?>
-	<dl>
+	<dl class="watchers">
 		<?php foreach ($this->picnic()->controller()->watchers as $watcher): ?>
-			<dd class="watcher">
-				<div class="information">
-					<div class="identifier">
-						<h3><?php echo  $watcher->name; ?></h3>
-						<nav class="actions">
-							<a href="#watchers/check/<?php echo  $watcher->id; ?>" class="content">Check</a>
-							<a href="#watchers/update/<?php echo  $watcher->id; ?>" class="content">Update Info</a>
-							<a href="#watchers/delete/<?php echo  $watcher->id; ?>" class="content">Delete</a>
-						</nav>
-					</div>
-				</div>
+			<dd class="watcher report">
+				<span class="formats">
+					<?php if (sizeof($watcher->format) > 0): ?>
+						<?php echo PicnicUtils::implode($watcher->format); ?>
+					<?php else: ?>
+						Unknown
+					<?php endif; ?>
+				</span>
+			
+				<h3><?php echo $watcher->name; ?></h3>
+				
+				<nav class="actions">
+					<a href="#watchers/check/<?php echo $watcher->id; ?>" class="content">Check</a>
+					<a href="#watchers/delete/<?php echo $watcher->id; ?>" class="content">Delete</a>
+				</nav>
+				
+				<span class="info">
+					<ul>
+						<?php if (sizeof($watcher->source) > 0): ?>
+							<li>Source: <?php echo PicnicUtils::implode($watcher->source); ?></li>
+						<?php endif; ?>
+						<li>Language: <?php echo PicnicUtils::implode($watcher->language); ?></li>
+					</ul>
+				</span>
 			</dd>
 		<?php endforeach; ?>
 	</dl>
