@@ -7,7 +7,7 @@ Like other episode downloaders like hellaVCR or EpisodeButler, nzbVR allows you 
 
 nzbVR uses web API services from Newzbin, TVRage and TVDB, as well as consuming API's through your local network from applications like SABnzbd and XBMC.
 
-![nzbVR 0.2 - Dashboard](http://s3.amazonaws.com/ember/WX2OejQp8tcyTiynJZ4gSGu6pPhqdjS5_m.jpg)
+![nzbVR 0.2 - Dashboard](http://s3.amazonaws.com/ember/WX2OejQp8tcyTiynJZ4gSGu6pPhqdjS5_o.png)
 ![nzbVR 0.2 - Series](http://s3.amazonaws.com/ember/3v1p97ctQLvtTWIjxh4ZwEhA5rjdF7Kh_o.png)
 
 Features
