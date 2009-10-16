@@ -28,7 +28,7 @@ class Newzbin {
 		$this->_authentication = "{$username}:{$password}";
 	}
 	
-	public function search($watcher, $marker ) {
+	public function search($watcher, $marker = null) {
 		$url = $this->createSearchURL($watcher);
 
 		$results = $this->searchRequest($url, $marker);
