@@ -1,31 +1,52 @@
 function slide_panel(url, page){
-	console.log(url);
+	if (url == "back") {
+		url = $back_url;
+	}
 
-	//Using an AJAX call, retrieve the new content to be placed in the DIV
-	$('#content').load(url, { Page:page }, function(){
-		//On successful loading of the content
-		//Set the DIV's position to relative (to allow for moving it)
-		$(this).css('position', 'relative');
+	$back_button = "";
+	
+	console.log("url -> "+ url);
+	
+	$.post(url, function(data) {
+		$('section#content div.container').html(data);
 		
-		//Move the DIV to the right 400px
-		$(this).css('left', 400);
+		$('section#content div.container').css('position', 'relative');
+		$('section#content div.container').css('left', 400);
 		
-		//Now animate the DIV to move back to the Left 400px
-		//Back to its original position
-		$(this).animate({ left:0 }, 'fast', 'linear', function(){
-			//On completion of the animation set the DIV back to static
+		$('section#content div.container').animate({ left:0 }, 'fast', 'linear', function(){
 			$(this).css('position', 'static');
 		});
-	});
+		
+		if ($back_button != "") {
+			$back_url = $back_button;
+			$("span.back-btn").fadeIn(400);
+		} else {
+			$back_url = "";
+			$("span.back-btn").fadeOut(400);
+		}
+		
+		capture_links($('section#content div.container'));
+	}, "html");
+
 }
 
-$(document).ready(function() {
-	$("a.content").click(function(e) {
+function capture_links(doc) {
+	if (doc == undefined || doc == null) {
+		doc = document;
+	}
+
+	$("a.content", doc).click(function(e) {
 		var url = $utils.parse_hash($(this)[0].href);
 		slide_panel(url, 0);
 		
 		return false;
 	});
+}
+
+$(document).ready(function() {
+	capture_links();
+	
+	slide_panel("dashboard", 0);
 });
 
 function nzbVRUtils() {
@@ -47,3 +68,5 @@ function nzbVRUtils() {
 };
 
 var $utils = new nzbVRUtils();
+var $back_button = "";
+var $back_url = "";

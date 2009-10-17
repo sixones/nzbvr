@@ -12,6 +12,7 @@ $r->add(new PicnicRoute("/series/check", "SeriesController", "check"));
 $r->add(new PicnicRoute("/series/update", "SeriesController", "update"));
 $r->add(new PicnicRoute("/series/search/(\w.+)", "SeriesController", "search"));
 $r->add(new PicnicRoute("/series/delete/(\d.+)", "SeriesController", "delete"));
+$r->add(new PicnicRoute("/series/show/(\d.+)", "SeriesController", "show"));
 $r->add(new PicnicRoute("/series", "SeriesController", "index"));
 
 $r->add(new PicnicRoute("/settings/save", "SettingsController", "save"));

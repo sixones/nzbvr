@@ -4,7 +4,7 @@ body {
 	background: #CCC;
 	color: #000;
 	font-family: "Lucida Grande",Verdana,"Bitstream Vera Sans",Arial,sans-serif;
-	font-size: 11px;
+	font-size: 14px;
 	margin: 0px;
 	padding: 5px 10px 5px 10px;
 }
@@ -14,10 +14,19 @@ a {
 	text-decoration: none;
 }
 
+header span.back-btn {
+	display: none;
+	background: #EEE;
+	float: left;
+	margin: -40px 0px;
+	padding: 4px 5px;
+	-webkit-border-radius: 5px;
+}
+
 header h1 {
 	color: #222;
 	font-weight: bold;
-	margin: 0px 5px 5px;
+	margin: 2px 5px 10px;
 	padding: 2px 0px;
 	text-align: center;
 }
@@ -30,6 +39,7 @@ body section div.container {
 	background: #FFFFFF;
 	border: solid 1px #FFFFFF;
 	padding: 0px;
+	margin-bottom: 5px;
 	-webkit-border-radius: 5px;
 }
 

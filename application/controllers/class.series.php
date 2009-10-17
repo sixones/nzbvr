@@ -29,6 +29,23 @@ class SeriesController extends ApplicationController {
 		//$this->redirect($mode."Display");
 	}
 	
+	public function show() {
+		$id = $this->picnic()->currentRoute()->getSegment(0);
+		
+		if ($id != null && $id != 0) {
+			foreach ($this->_watchers->watchers as $watcher) {
+				if ($watcher != null && $watcher instanceof SeriesWatcher && $watcher->id == $id) {
+					$watcher->load();
+					
+					$this->watcher = $watcher;
+					$this->series = $watcher->series();
+					
+					return;
+				}
+			}
+		}
+	}
+	
 	public function listDisplay() { }
 	public function thumbnailsDisplay() { }
 	
