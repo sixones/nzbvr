@@ -7,8 +7,22 @@ Like other episode downloaders like hellaVCR or EpisodeButler, nzbVR allows you 
 
 nzbVR uses web API services from Newzbin, TVRage and TVDB, as well as consuming API's through your local network from applications like SABnzbd and XBMC.
 
-![nzbVR 0.2 - Dashboard](http://s3.amazonaws.com/ember/WX2OejQp8tcyTiynJZ4gSGu6pPhqdjS5_o.png)
-![nzbVR 0.2 - Series](http://s3.amazonaws.com/ember/3v1p97ctQLvtTWIjxh4ZwEhA5rjdF7Kh_o.png)
+Screenies
+---------
+
+### Default main skin
+
+![nzbVR 0.2 - Dashboard](http://farm3.static.flickr.com/2713/4018393612_07def6d08e.jpg)
+![nzbVR 0.2 - Series](http://farm3.static.flickr.com/2702/4017631907_b54ed0a1ae.jpg)
+![nzbVR 0.2 - Searches](http://farm3.static.flickr.com/2695/4018393476_191289bc87.jpg)
+![nzbVR 0.2 - New Watcher](http://farm3.static.flickr.com/2644/4018393372_95cc5ba3ae.jpg)
+![nzbVR 0.2 - Watchers](http://farm3.static.flickr.com/2449/4017631463_933c4fea81.jpg)
+
+### iPhone Skin
+
+![nzbVR 0.2 - iPhone Skin - Dashboard](http://farm3.static.flickr.com/2640/4017595775_36f10725b8.jpg)
+![nzbVR 0.2 - iPhone Skin - Series](http://farm3.static.flickr.com/2783/4018359670_de443b20f6.jpg)
+![nzbVR 0.2 - iPhone Skin - Series Info](http://farm3.static.flickr.com/2482/4018362390_6885365558.jpg)
 
 Features
 --------
