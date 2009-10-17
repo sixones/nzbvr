@@ -8,9 +8,9 @@ class SearchWatcher extends Watcher {
 		return $this->name;
 	}
 	
-	public function mark($report) {
+	public function mark(array $reports) {
 		$this->downloaded = true;
-		$this->report = $report;
+		$this->reports = $reports;
 	}
 	
 	public function check() {

@@ -19,8 +19,10 @@ class SeriesWatcher extends Watcher implements ILoadableWatcher, ISavableWatcher
 		$this->_series->load();
 	}
 	
-	public function mark($report) {
-		$report->marker->downloaded = true;
+	public function mark(array $reports) {
+		foreach ($reports as $report) {
+			$report->marker->downloaded = true;
+		}
 	}
 	
 	public function save() {

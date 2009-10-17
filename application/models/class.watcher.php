@@ -163,7 +163,7 @@ abstract class Watcher {
 		}
 	}
 	
-	public function mark($report) {
+	public function mark(array $reports) {
 		// mark as downloaded
 	}
 	

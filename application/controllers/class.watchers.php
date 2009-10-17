@@ -46,6 +46,8 @@ class WatchersController extends ApplicationController {
 			$results = $watcher->check();
 			
 			if ($results != null && is_array($results)) {
+				$watcher->mark($results);
+			
 				$this->results = array_merge($this->results, $results);
 				
 				if ($watcher instanceof ISaveableWatcher) {
