@@ -1,13 +1,13 @@
 nzbVR
 =====
 
+*nzbVR is currently in alpha, some functionality does not exist (movies + full iphone ui)*
+
 A fast automatic downloader for usenet reports, handles scheduled tv series downloads, movies and generic searches through Newzbin. nzbVR also provides a simple interface for searching Newzbin and sending reports straight to SABnzbd.
 
 Like other episode downloaders like hellaVCR or EpisodeButler, nzbVR allows you to easily schedule watchers for new episodes (it can even help downloading the missing ones in your collection). 
 
 nzbVR uses web API services from Newzbin, TVRage and TVDB, as well as consuming API's through your local network from applications like SABnzbd and XBMC.
-
-*nzbVR is currently still work in progress, some functionality does not exist (movies + full iphone ui)*
 
 Screenies
 ---------
