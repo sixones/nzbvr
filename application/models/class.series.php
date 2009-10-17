@@ -1,6 +1,6 @@
 <?php if (!defined("PICNIC")) { header("Location: /"); exit(1); }
 
-class SeriesWatcher extends Watcher {	
+class SeriesWatcher extends Watcher implements ILoadableWatcher, ISavableWatcher {	
 	protected $_series = null;
 	
 	public $category = 8;

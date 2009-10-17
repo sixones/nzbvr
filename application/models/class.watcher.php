@@ -75,6 +75,14 @@ abstract class XMLModel {
 	}
 }
 
+interface ILoadableWatcher {
+	function load();
+}
+
+interface ISavableWatcher {
+	function save();
+}
+
 abstract class Watcher {
 	public $id;
 	public $name;
