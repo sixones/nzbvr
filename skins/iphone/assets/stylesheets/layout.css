@@ -23,6 +23,15 @@ header span.back-btn {
 	-webkit-border-radius: 5px;
 }
 
+header span.new-btn {
+	display: none;
+	background: #EEE;
+	float: right;
+	margin: -40px 0px;
+	padding: 3px 6px 5px;
+	-webkit-border-radius: 5px;
+}
+
 header h1 {
 	color: #222;
 	font-weight: bold;
@@ -38,6 +47,7 @@ header h1 span.vr {
 body section div.container {
 	background: #FFFFFF;
 	border: solid 1px #FFFFFF;
+	display: none;
 	padding: 0px;
 	margin-bottom: 5px;
 	-webkit-border-radius: 5px;
@@ -57,4 +67,61 @@ body section div.container nav a {
 
 body section div.container nav a:last-child {
 	border-bottom: none;
+}
+
+body section div.container nav a span.action {
+	float: right;
+	font-weight: bold;
+}
+
+section.series-details {
+	
+}
+
+section.series-details h2 {
+	margin: 0px;
+	padding: 10px 10px 0px 10px;
+}
+
+section.series-details div.coverart {
+	border: solid 1px #333;
+	float: right;
+	height: 132px;
+	margin: 10px;
+	padding: 2px;
+	width: 90px;
+}
+
+section.series-details div.coverart img {
+	width: 90px;
+}
+
+section.series-details div.info {
+	padding: 0px 10px;
+}
+
+section.series-details div.info span.runtime {
+	color: #888;
+	font-size: 0.8em;
+}
+
+section.series-details div.info p.overview {
+	color: #444;
+	font-size: 0.9em;
+	margin: 15px 0px;
+	padding: 0px;
+}
+
+section.series-details div.info div.episodes {
+	margin-top: 20px;
+}
+
+section.series-details div.info div.episodes h4 {
+	margin: 0px;
+	padding: 0px;
+}
+
+section.series-details div.info div.episodes h5 {
+	margin: 10px 0px;
+	padding: 0px;
 }

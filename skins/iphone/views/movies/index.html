@@ -1,7 +1,7 @@
 <section>
 	<nav>
 		<?php foreach ($this->picnic()->controller()->movies as $movie): ?>
-			<a href="#watchers/show/<?php echo $movie->watcher->id; ?>" class="content"><?php echo $movie->watcher->name; ?></a>
+			<a href="#watchers/show/<?php echo $movie->watcher->id; ?>" class="content"><?php echo $movie->watcher->name; ?><span class="action">&gt;</span></a>
 		<?php endforeach; ?>
 	</nav>
 </section>

@@ -2,12 +2,18 @@ function slide_panel(url, page){
 	if (url == "back") {
 		url = $back_url;
 	}
+	
+	if (url == "new") {
+		url = $new_url;
+	}
 
 	$back_button = "";
+	$new_button = "";
 	
 	console.log("url -> "+ url);
 	
 	$.post(url, function(data) {
+		$('section#content div.container').show(0);
 		$('section#content div.container').html(data);
 		
 		$('section#content div.container').css('position', 'relative');
@@ -23,6 +29,14 @@ function slide_panel(url, page){
 		} else {
 			$back_url = "";
 			$("span.back-btn").fadeOut(400);
+		}
+		
+		if ($new_button != "") {
+			$new_url = $new_button;
+			$("span.new-btn").fadeIn(400);
+		} else {
+			$new_url = "";
+			$("span.new-btn").fadeOut(400);
 		}
 		
 		capture_links($('section#content div.container'));
@@ -70,3 +84,6 @@ function nzbVRUtils() {
 var $utils = new nzbVRUtils();
 var $back_button = "";
 var $back_url = "";
+
+var $new_button = "";
+var $new_url = "";
