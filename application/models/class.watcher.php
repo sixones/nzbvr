@@ -83,7 +83,7 @@ abstract class Watcher {
 	public $format = null;
 	public $source = null;
 	public $created;
-
+	
 	/*
 		should we;
 			- save watchers to xml, "link" to type xml for extra info (tv shows etc...)
