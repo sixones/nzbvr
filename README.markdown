@@ -38,13 +38,14 @@ Features
 Todo
 ----
 
-* Automatic execution of `git pull` from web ui
-* Movie support with integration for meta data from third-parties (need an external db service)
+* Automatic execution of `git pull` from web ui *in progress*
+* Movie support with integration for meta data from third-parties (need an external db service) *in progress*
 * <del>Scheduling generic searches</del>
 * <del>Sending search result to SABnzbd+</del>
 * Support for downloading nzb to a watched folder
 * NZBMatrix search support
-* iPhone web interface
+* iPhone web interface *in progress*
+* XBMC notification *in progress*
 
 Requirements
 ------------
