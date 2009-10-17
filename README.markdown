@@ -7,6 +7,8 @@ Like other episode downloaders like hellaVCR or EpisodeButler, nzbVR allows you 
 
 nzbVR uses web API services from Newzbin, TVRage and TVDB, as well as consuming API's through your local network from applications like SABnzbd and XBMC.
 
+*nzbVR is currently still work in progress, some functionality does not exist (movies + full iphone ui)*
+
 Screenies
 ---------
 
