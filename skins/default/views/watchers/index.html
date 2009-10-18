@@ -10,19 +10,25 @@
 	<?php if (sizeof($this->picnic()->controller()->watchers) > 0): ?>
 	<dl class="watchers">
 		<?php foreach ($this->picnic()->controller()->watchers as $watcher): ?>
-			<dd class="watcher report">
-				<span class="formats">
+			<dd class="watcher report <?php if ($watcher->downloaded): ?>downloaded<?php endif; ?>">			
+				<span class="formats">	
 					<?php if (sizeof($watcher->format) > 0): ?>
 						<?php echo PicnicUtils::implode($watcher->format); ?>
 					<?php else: ?>
 						Unknown
 					<?php endif; ?>
 				</span>
+
+				<?php if ($watcher->downloaded): ?>
+					<span class="downloaded">Downloaded at <?php echo $watcher->getDownloadedDateTime()->format('H:i'); ?> on <?php echo $watcher->getDownloadedDateTime()->format('jS, F Y'); ?></span>
+				<?php endif; ?>
 			
 				<h3><?php echo $watcher->name; ?></h3>
 				
 				<nav class="actions">
+					<?php if (!$watcher->downloaded): ?>
 					<a href="#watchers/check/<?php echo $watcher->id; ?>" class="content">Check</a>
+					<?php endif; ?>
 					<a href="#watchers/delete/<?php echo $watcher->id; ?>" class="content">Delete</a>
 				</nav>
 				

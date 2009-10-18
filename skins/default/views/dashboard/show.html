@@ -10,7 +10,7 @@
 	
 	<?php if ($benchmark != null): ?>
 	<p class="last_benchmark">
-		Last check downloaded <?php echo $benchmark->downloads; ?> reports, took place at <?php echo $start->getDateTime()->format('H:i'); ?> on <?php echo $start->getDateTime()->format('jS, F Y I'); ?> and took <?php echo $benchmark->between("start", "end"); ?> seconds.
+		Last check downloaded <?php echo $benchmark->downloads; ?> reports, took place at <?php echo $start->getDateTime()->format('H:i'); ?> on <?php echo $start->getDateTime()->format('jS, F Y'); ?> and took <?php echo $benchmark->between("start", "end"); ?> seconds.
 	</p>
 	<?php endif; ?>
 </section>

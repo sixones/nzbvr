@@ -2,7 +2,12 @@
 
 class SearchWatcher extends Watcher {
 	public $downloaded = false;
-	public $report = null;
+	public $reports = null;
+	public $downloaded_at = null;
+	
+	public function getDownloadedDateTime() {
+		return DateTime::createFromFormat("U", $this->downloaded_at);
+	}
 
 	public function toSearchTerm() {
 		return $this->name;
@@ -11,11 +16,12 @@ class SearchWatcher extends Watcher {
 	public function mark(array $reports) {
 		$this->downloaded = true;
 		$this->reports = $reports;
+		$this->downloaded_at = time();
 	}
 	
 	public function check() {
 		if (!$this->downloaded) {
-			parent::check();
+			return parent::check();
 		}
 	}
 }

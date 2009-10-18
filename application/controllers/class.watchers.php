@@ -39,17 +39,16 @@ class WatchersController extends ApplicationController {
 		$this->_watchers->last_benchmark->mark("start");
 	
 		foreach ($this->_watchers->watchers as $watcher) {
-			if ($watcher instanceof ILoadableWatcher) {
-				//$watcher->load();
-			}
-			
 			$watcher->load();
 			
-			$results = $watcher->check();
+			$reports = $watcher->check();
 			
-			if ($results != null && is_array($results)) {
+			if ($reports != null && is_array($reports) && sizeof($reports) > 0) {
+				$results = array();
+				$results[] = $reports[0];
+				
 				$watcher->mark($results);
-			
+				
 				$this->results = array_merge($this->results, $results);
 				
 				$watcher->save();

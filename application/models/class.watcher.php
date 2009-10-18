@@ -139,26 +139,21 @@ abstract class Watcher {
 			
 			foreach ($results as $report) {
 				if ($report->state == "Report is complete") {
-					$result = $report;
-					break;
+					$r[] = $report;
 				}
-			}
-			
-			
-			
-			if ($result != null) {
-				$r[] = $result;
-				
-				// need to mark the episode as downloaded
-				$this->mark($r);
 			}
 			
 			if ($this->toSearchTerm() != $term) {
 				$r2 = $this->check();
 			
 				if ($r2 != null) {
-					return array_merge($r, $r2);
+					$r = array_merge($r, $r2);
 				}	
+			}
+			
+			if ($r != null && sizeof($r) > 0) {
+				//echo "HERE";
+				//var_dump($r);
 			}
 			
 			return $r;

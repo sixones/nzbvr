@@ -462,6 +462,10 @@ section section.search-results dl dd.report {
 	-moz-border-radius: 5px;
 }
 
+section section.search-results dl dd.report.downloaded {
+	background: #CCC;
+}
+
 section section.search-results dl dd ul {
 	list-style: none;
 	margin: 0px;
@@ -512,4 +516,12 @@ section section.search-results dl dd.report span.info ul li {
 
 section section.search-results dl dd.report span.formats {
 	float: right;
+}
+
+section section.search-results dl dd.report span.downloaded {
+	color: #000;
+	font-weight: bold;
+	float: right;
+	margin: 0px 10px 0px 0px;
+	padding: 0px 5px;
 }
