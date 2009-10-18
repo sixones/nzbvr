@@ -40,8 +40,10 @@ class WatchersController extends ApplicationController {
 	
 		foreach ($this->_watchers->watchers as $watcher) {
 			if ($watcher instanceof ILoadableWatcher) {
-				$watcher->load();
+				//$watcher->load();
 			}
+			
+			$watcher->load();
 			
 			$results = $watcher->check();
 			
@@ -50,9 +52,7 @@ class WatchersController extends ApplicationController {
 			
 				$this->results = array_merge($this->results, $results);
 				
-				if ($watcher instanceof ISaveableWatcher) {
-					$watcher->save();
-				}
+				$watcher->save();
 			}
 		}
 		

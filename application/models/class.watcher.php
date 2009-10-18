@@ -154,7 +154,9 @@ abstract class Watcher {
 			}
 			
 			if ($this->toSearchTerm() != $term) {
-				return array_merge($r, $this->check());
+				$r2 = $this->check();
+			
+				return array_merge($r, $r2);
 			}
 			
 			return $r;
@@ -169,6 +171,14 @@ abstract class Watcher {
 	
 	public function delete() {
 		
+	}
+	
+	public function load() {
+	
+	}
+	
+	public function save() {
+	
 	}
 	
 	public function updateInformation() {

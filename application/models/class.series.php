@@ -194,10 +194,12 @@ class Series extends XMLModel {
 		for ($i = (sizeof($this->seasons) - 1); $i >= 0; $i--) {
 			$season = $this->seasons[$i];
 			
-			foreach ($season->episodes as $episode) {
+			for ($j = (sizeof($season->episodes) - 1); $j >= 0; $j--) {
+				$episode = $season->episodes[$j];
+			
 				$airdate = strtotime($episode->airs_date);
 				
-				if ($episode->airs_date != null && ($episode->downloaded == true || $airdate < $this->_parent->created)) {
+				if ($episode->airs_date != null && ($episode->downloaded == true)) {
 					$currentDiff = $this->_parent->created - $airdate;
 					
 					if ($currentDiff < $diff) {
