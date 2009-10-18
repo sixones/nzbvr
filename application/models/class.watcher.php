@@ -150,7 +150,7 @@ abstract class Watcher {
 				$r[] = $result;
 				
 				// need to mark the episode as downloaded
-				$this->mark($result);
+				$this->mark($r);
 			}
 			
 			if ($this->toSearchTerm() != $term) {
