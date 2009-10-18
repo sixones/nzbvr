@@ -156,7 +156,9 @@ abstract class Watcher {
 			if ($this->toSearchTerm() != $term) {
 				$r2 = $this->check();
 			
-				return array_merge($r, $r2);
+				if ($r2 != null) {
+					return array_merge($r, $r2);
+				}	
 			}
 			
 			return $r;
