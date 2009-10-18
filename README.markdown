@@ -25,7 +25,7 @@ Screenies
 
 For more screenshots see the project page on [sixones][].
 
-[sixones]: http://sixones.com/ "sixones.com"
+[sixones]: http://sixones.com/projects/nzbvr "sixones.com"
 
 Features
 --------
