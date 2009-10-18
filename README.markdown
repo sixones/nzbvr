@@ -3,7 +3,7 @@ nzbVR
 
 *nzbVR is currently in alpha, some functionality does not exist (movies + full iphone ui)*
 
-A fast automatic downloader for usenet reports, handles scheduled tv series downloads, movies and generic searches through Newzbin. nzbVR also provides a simple interface for searching Newzbin and sending reports straight to SABnzbd.
+A fast automatic downloader for usenet reports, handles scheduled tv series downloads, movies and generic searches through Newzbin. nzbVR also provides a simple interface for searching Newzbin and sending reports straight to SABnzbd. nzbVR is written with PHP5 and requires a web server (like Apache) with PHP5 installed and configured.
 
 Like other episode downloaders like hellaVCR or EpisodeButler, nzbVR allows you to easily schedule watchers for new episodes (it can even help downloading the missing ones in your collection). 
 
@@ -14,17 +14,18 @@ Screenies
 
 ### Default main skin
 
-![nzbVR 0.2 - Dashboard](http://farm3.static.flickr.com/2713/4018393612_07def6d08e.jpg)
 ![nzbVR 0.2 - Series](http://farm3.static.flickr.com/2702/4017631907_b54ed0a1ae.jpg)
 ![nzbVR 0.2 - Searches](http://farm3.static.flickr.com/2695/4018393476_191289bc87.jpg)
-![nzbVR 0.2 - New Watcher](http://farm3.static.flickr.com/2644/4018393372_95cc5ba3ae.jpg)
 ![nzbVR 0.2 - Watchers](http://farm3.static.flickr.com/2449/4017631463_933c4fea81.jpg)
 
 ### iPhone Skin
 
 ![nzbVR 0.2 - iPhone Skin - Dashboard](http://farm3.static.flickr.com/2640/4017595775_36f10725b8.jpg)
-![nzbVR 0.2 - iPhone Skin - Series](http://farm3.static.flickr.com/2783/4018359670_de443b20f6.jpg)
 ![nzbVR 0.2 - iPhone Skin - Series Info](http://farm3.static.flickr.com/2482/4018362390_6885365558.jpg)
+
+For more screenshots see the project page on [sixones][].
+
+[sixones]: http://sixones.com/ "sixones.com"
 
 Features
 --------
