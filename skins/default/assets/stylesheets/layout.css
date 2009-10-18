@@ -367,7 +367,7 @@ dl dd.series div.information div.identifier h3 {
 
 dl dd.series div.information div.identifier nav.actions {
 	display: block;
-	padding: 58px 0px 0px;
+	padding: 32px 0px 0px;
 }
 
 dl dd.series div.information div.identifier nav.externals {
@@ -393,7 +393,8 @@ dl dd.series div.information p.overview {
 	overflow: hidden;
 }
 
-dl dd.series div.information div.episodes {
+section#content dl dd.series div.information div.episodes {
+	font-size: 1em;
 	display: block;
 	margin: 0px -5px;
 	line-height: 1.8em;
@@ -524,4 +525,134 @@ section section.search-results dl dd.report span.downloaded {
 	float: right;
 	margin: 0px 10px 0px 0px;
 	padding: 0px 5px;
+}
+
+section.series span.runtime {
+	color: #777;
+	display: inline;
+	padding: 12px 0px;
+	
+}
+
+section#content section.series section.series-info {
+	margin: 20px 0px;
+	padding: 0px;
+}
+
+section#content section.series section.series-info nav.externals {
+	float: right;
+	margin: 10px;
+}
+
+section#content section.series div.episodes {
+	font-size: 1.6em;
+}
+
+section#content section.series div.episodes h5 {
+	font-weight: normal;
+}
+
+section#content section.series div.episodes h4 {
+	margin: 10px 0px;
+}
+
+section.series section.series-info p {
+	padding: 0px;
+}
+
+section.series div.coverart {
+	border: solid 1px #999;
+	float: right;
+	clear: both;
+	margin: 15px 0px 0px 10px;
+	padding: 3px 3px 1px 3px;
+	width: 160px;
+}
+
+section.series div.coverart img {
+	width: 160px;
+}
+
+section#content section.series section.episode-list {
+	margin: 85px 0px;
+	padding: 0px;
+}
+
+section#content section.series section.episode-list dl {
+	margin: 0px;
+	padding: 0px;
+}
+
+section#content section.series section.episode-list dl dd.season dl.episodes {
+	display: none;
+}
+
+section#content section.series section.episode-list dl dd.season span.head {
+	cursor: pointer;
+	display: block;
+}
+
+/*section#content section.series section.episode-list dl dd.season:hover dl.episodes {
+	display: block;
+}*/
+
+section#content section.series section.episode-list dl dd {
+	margin: 0px;
+	padding: 0px;
+}
+
+section#content section.series section.episode-list dl dd span.state {
+	color: #222;
+	font-weight: bold;
+	float: right;
+}
+
+section#content section.series section.episode-list dl dd.season h4 {
+	background: #353535;
+	color: #EEE;
+	margin: 5px;
+	padding: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+section#content section.series section.episode-list dl dd.season nav {
+	color: #AAA;
+	float: right;
+	margin-right: 5px;
+}
+
+span.season-count {
+	color: #FFF;
+	float: right;
+}
+
+dl.episodes span.chrono {
+	color: #888;
+	padding: 5px;
+}
+
+section#content section.series section.episode-list dl dd dl.episodes dd {
+	background: #CCC;
+	color: #222;
+	padding: 5px;
+	margin: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+section#content section.series section.episode-list dl dd dl.episodes dd.downloaded {
+	background: #AAA;
+}
+
+section#content section.series section.episode-list dl dd dl.episodes dd nav {
+	float: right;
+	margin: 0px 5px 0px;
+	padding: 0px;
+}
+
+section#content section.series section.episode-list dl dd dl.episodes dd nav a {
+	color: #666;
+	margin-left: 0px;
+	padding: 5px 0px 5px 5px;
 }

@@ -22,6 +22,7 @@ class SeriesWatcher extends Watcher implements ILoadableWatcher, ISavableWatcher
 	public function mark(array $reports) {
 		foreach ($reports as $report) {
 			$report->marker->downloaded = true;
+			$report->marker->downloaded_at = time();
 		}
 	}
 	

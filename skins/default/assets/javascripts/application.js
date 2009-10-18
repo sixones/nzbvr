@@ -56,6 +56,30 @@ function nzbVRSeries() {
 	this._request = null,
 	this._index = -1,
 	
+	this.applyEpisodeList = function() {
+		$("section.episode-list dl dd.season span.head").click(function(e) {
+			$("dl.episodes", this.parentNode.parentNode).slideToggle(); //.css("display", "block");
+		});
+	},
+	
+	this.downloadEpisode = function(watcher, season, episode, parent) {
+		$("nav", parent).fadeOut(200);
+		$("span.state", parent).text("Checking ...");
+		$("span.state", parent).fadeIn(400);
+		
+		$.post("/series/download/"+watcher+"/"+season+"/"+episode+".json", null, function(data) {
+			if (data.result == null) {
+				$("span.state", parent).text("Could not find a report to download :(");
+			} else {
+				$("span.state", parent).text("Sent report to SABnzbd");
+				
+				$(parent).addClass("downloaded");
+			}
+		}, "json");
+		
+		return false;
+	},
+	
 	this.applySearch = function() {
 		this._index = -1;
 		

@@ -21,12 +21,12 @@
 				</div>
 				<div class="information">
 					<div class="identifier">
-						<h3><?php echo  $series->watcher->name; ?></h3>
+						<h3><a href="#series/show/<?php echo $series->id; ?>" class="content"><?php echo  $series->watcher->name; ?></a></h3>
 						<span class="runtime"><?php echo  $series->runtime; ?> minutes, <?php echo  $series->airs_day; ?> at <?php echo  $series->airs_time; ?></span>
 						<nav class="actions">
-							<a href="#series/check/<?php echo  $series->id; ?>" class="content">Check</a>
-							<a href="#series/update/<?php echo  $series->id; ?>" class="content">Update Info</a>
-							<a href="#series/delete/<?php echo  $series->id; ?>" class="content">Delete</a>
+							<a href="#series/check/<?php echo $series->id; ?>" class="content">Check</a>
+							<a href="#series/update/<?php echo $series->id; ?>" class="content">Update Info</a>
+							<a href="#series/delete/<?php echo $series->id; ?>" class="content">Delete</a>
 						</nav>
 						<nav class="externals">
 							<a href="<?php echo  $series->rage_url; ?>">TVRage</a>

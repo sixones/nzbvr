@@ -28,8 +28,16 @@ class Newzbin {
 		$this->_authentication = "{$username}:{$password}";
 	}
 	
+	public function rawSearch($query, $watcher) {
+		$url = $this->createSearchURL($query, $watcher->category);
+
+		$results = $this->searchRequest($url);
+
+		return $results;
+	}
+	
 	public function search($watcher, $marker = null) {
-		$url = $this->createSearchURL($watcher);
+		$url = $this->createSearchURL($watcher->toNewzbinQuery(), $watcher->category);
 
 		$results = $this->searchRequest($url, $marker);
 
@@ -87,12 +95,12 @@ class Newzbin {
 		return $results;
 	}
 	
-	public function createSearchURL($watcher) {
+	public function createSearchURL($query, $category) {
 		// "u_post_results_amt=1",
 		$params = array(
-				"q=".urlencode($watcher->toNewzbinQuery()),
+				"q=".urlencode($query),
 				"searchaction=Search",
-				"category=".$watcher->category,
+				"category=".$category,
 				'fpn=p',
 				"area=-1",
 				'u_nfo_posts_only=0',
