@@ -1,3 +1,7 @@
+if (!console.log) {
+	function console() { this.log = function() { } };
+}
+
 var $nzbVR = new nzbVR();
 
 function max(a, b) {
