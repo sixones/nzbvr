@@ -1,4 +1,7 @@
-/* @override http://vr.six.binaryporn.com/skins/iphone/assets/stylesheets/layout.css */
+/* @override 
+	http://vr.six.binaryporn.com/skins/iphone/assets/stylesheets/layout.css
+	http://nzbvr.dev/skins/iphone/assets/stylesheets/layout.css
+*/
 
 body {
 	background: #CCC;
@@ -65,6 +68,46 @@ body section div.container nav a {
 	padding: 10px;
 }
 
+section.episode-list dl {
+	margin: 0px;
+	padding: 0px;
+}
+
+section.episode-list dl dd.season {
+	margin: 0px;
+	padding: 0px;
+}
+
+section.episode-list dl dd.season h4 {
+	border-bottom: solid 1px #DDD;
+	cursor: pointer;
+	margin: 0px;
+	padding: 10px;
+}
+
+section.episode-list dl dd.season dl.episodes {
+	display: none;
+}
+
+section.episode-list dl dd.season dl.episodes dd {
+	border-bottom: solid 1px #DDD;
+	margin: 0px;
+	padding: 10px;
+}
+
+section.episode-list dl dd.season dl.episodes dd nav {
+	display: none;
+}
+
+section.episode-list dl dd.season dl.episodes dd span.chrono {
+	color: #999;
+	font-size: 0.7em;
+}
+
+section.episode-list dl dd.season dl.episodes dd.downloaded {
+	background: #EEE;
+}
+
 body section div.container nav a:last-child {
 	border-bottom: none;
 }
@@ -114,6 +157,14 @@ section.series-details div.info p.overview {
 
 section.series-details div.info div.episodes {
 	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+section.series-details dl.episodes span.state {
+	color: #888;
+	float: right;
+	font-size: 0.9em;
+	margin: 2px;
 }
 
 section.series-details div.info div.episodes h4 {

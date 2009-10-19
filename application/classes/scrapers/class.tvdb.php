@@ -54,6 +54,10 @@ class TVDB extends TVScraper {
 		if (!is_array(self::$__mirrors["xml"])) {
 			$xml = new SimpleXMLElement("http://thetvdb.com/api/1DBF0A2C61EDB18C/mirrors.xml", null, true);
 		
+			if (!$xml) {
+				return null;
+			}
+		
 			foreach ($xml->Mirror as $mirror) {
 				if ($mirror->typemask > 0) {
 					self::$__mirrors["xml"][] = (string)$mirror->mirrorpath;
@@ -67,14 +71,15 @@ class TVDB extends TVScraper {
 					self::$__mirrors["zip"][] = (string)$mirror->mirrorpath;
 				}
 			}
-		
+			
 			$xml = null;
 		}
 	}
 
 	public static function imageURL($imageUrl) {
-		self::getMirrors();
-		return self::$__mirrors["banner"][0]."/banners/".$imageUrl;
+		//self::getMirrors();
+		
+		//return self::$__mirrors["banner"][0]."/banners/".$imageUrl;
 	}
 
 	public function search($name) {

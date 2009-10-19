@@ -34,6 +34,8 @@ class SeriesController extends ApplicationController {
 		
 		$watcher = $this->_watchers->get($id);
 		
+		$this->result = null;
+		
 		if ($watcher != null) {
 			$season_id = $this->picnic()->currentRoute()->getSegment(1);
 			$episode_id = $this->picnic()->currentRoute()->getSegment(2);
@@ -62,17 +64,20 @@ class SeriesController extends ApplicationController {
 			$newzbin = new Newzbin();
 			$results = $newzbin->rawSearch("{$watcher->name} {$ep->identifier()} ".$watcher->toNewzbinParams(), $watcher);
 			
-			$this->result = $results[0];
 			
-			if ($this->result != null) {
+			if ($results != null && is_array($results) && sizeof($results) > 0) {
+			
+				$this->result = $results[0];
+				
+			
 				$sabnzbd = new SABnzbd(nzbVR::instance()->settings->sabnzbd_address, nzbVR::instance()->settings->sabnzbd_apikey);
 				$sabnzbd->send(array($this->result));
-			}
-			
-			$this->episode->downloaded = true;
-			$this->episode->downloaded_at = time();
-			
-			$watcher->save();
+				
+				$this->episode->downloaded = true;
+				$this->episode->downloaded_at = time();
+				
+				$watcher->save();
+			}			
 		}
 	}
 	

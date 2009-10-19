@@ -57,6 +57,38 @@ function capture_links(doc) {
 	});
 }
 
+function apply_season_list() {
+	$("section.episode-list dl dd.season h4").click(function(e) {
+			$("dl.episodes", this.parentNode).slideToggle(); //.css("display", "block");
+	});
+}
+
+function download_episode(watcher, season, episode, parent) {
+	var result = confirm("Do you want to download this episode?");
+	
+	if (result) {
+		//$("nav", parent).fadeOut(200);
+		//$("span.state", parent).text("Checking ...");
+		//$("span.state", parent).fadeIn(400);
+		
+		$.post("/series/download/"+watcher+"/"+season+"/"+episode+".json", null, function(data) {
+			if (data.result == null) {
+				//$("span.state", parent).text("Could not find a report to download");
+				
+				alert("Unable to find report for episode");
+			} else {
+				//$("span.state", parent).text("Sent report to SABnzbd");
+				
+				$(parent).addClass("downloaded");
+				
+				alert("Report sent to SABnzbd successfully");
+			}
+		}, "json");
+		
+		return false;
+	}
+}
+
 $(document).ready(function() {
 	capture_links();
 	

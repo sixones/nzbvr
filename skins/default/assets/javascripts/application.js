@@ -69,7 +69,7 @@ function nzbVRSeries() {
 		
 		$.post("/series/download/"+watcher+"/"+season+"/"+episode+".json", null, function(data) {
 			if (data.result == null) {
-				$("span.state", parent).text("Could not find a report to download :(");
+				$("span.state", parent).text("Could not find a report to download");
 			} else {
 				$("span.state", parent).text("Sent report to SABnzbd");
 				
