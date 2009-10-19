@@ -1,7 +1,3 @@
-if (!console.log) {
-	function console() { this.log = function() { } };
-}
-
 var $nzbVR = new nzbVR();
 
 function max(a, b) {
@@ -171,7 +167,7 @@ function nzbVRSeries() {
 		$nzbVR.view._allow_submit = false;
 		
 		this._request = $.get("/series/search/"+name+".json", null, function(data) {
-			console.log(data);
+			//console.log(data);
 			
 			$data = data;
 			
@@ -180,7 +176,7 @@ function nzbVRSeries() {
 			for (var i = 0; i < min(10, data.series.length); i++) {
 				var s = data.series[i];
 				
-				console.log('-> '+ s.name);
+				//console.log('-> '+ s.name);
 				
 				
 				var li = document.createElement("li");
@@ -245,13 +241,13 @@ function nzbVRView() {
 					var el = $("input, select", this)[i];
 					
 					if (el.id != undefined && el.id != null) {
-						console.log(el);
+						//console.log(el);
 						var id = el.id;
 						params[id] = el.value;
 					}
 				}
 				
-				console.log(params);
+				//console.log(params);
 				
 				if ($(this).hasClass("slow")) {
 					$("section#content div.loader").addClass("slow");
@@ -295,7 +291,7 @@ function nzbVRView() {
 	},
 	
 	this.content = function(url, params) {
-		console.log("Loading content from '"+url+".html"+"'");
+		//console.log("Loading content from '"+url+".html"+"'");
 
 		this.hide_content();
 		
@@ -374,7 +370,7 @@ function nzbVRSearch() {
 			var el = $("input, select", $("form fieldset.search"))[i];
 			
 			if (el.id != undefined && el.id != null) {
-				console.log(el);
+				//console.log(el);
 				var id = el.id;
 				params[id] = el.value;
 			}
