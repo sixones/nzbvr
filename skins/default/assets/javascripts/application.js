@@ -94,7 +94,7 @@ function nzbVRSeries() {
 		$("section fieldset.search.series input#name").keyup(function(e) {
 			var c = $(this).val().length;
 
-			if (c > 3 && (e.which != 38 && e.which != 40 && e.which != 13)) {
+			if (c >= 2 && (e.which != 38 && e.which != 40 && e.which != 13)) {
 				$nzbVR.series.search($(this).val());
 			}
 			
