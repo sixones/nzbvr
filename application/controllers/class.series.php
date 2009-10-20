@@ -67,9 +67,8 @@ class SeriesController extends ApplicationController {
 			
 			if ($results != null && is_array($results) && sizeof($results) > 0) {
 			
-				$this->result = $results[0];
+				$this->result = $watcher->findSuitableReport($results);
 				
-			
 				$sabnzbd = new SABnzbd(nzbVR::instance()->settings->sabnzbd_address, nzbVR::instance()->settings->sabnzbd_apikey);
 				$sabnzbd->send(array($this->result));
 				
