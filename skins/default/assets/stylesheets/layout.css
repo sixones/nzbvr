@@ -441,7 +441,7 @@ div#content div.small_loader {
 	width: 55px;
 }
 
-section section.search-results {
+div#content section.search-results {
 	margin: 0px auto;
 	padding: 0px;
 }
@@ -450,12 +450,12 @@ div#content section.search-results dl.watchers {
 	margin-top: 35px;
 }
 
-section section.search-results dl {
+div#content section.search-results dl {
 	margin: 0px 20px;
 	padding: 0px;
 }
 
-section section.search-results dl dd.report {
+div#content section.search-results dl dd.report {
 	background: #EEE;
 	margin: 0px 5px 5px;
 	padding: 10px;
@@ -463,17 +463,17 @@ section section.search-results dl dd.report {
 	-moz-border-radius: 5px;
 }
 
-section section.search-results dl dd.report.downloaded {
+div#content section.search-results dl dd.report.downloaded {
 	background: #CCC;
 }
 
-section section.search-results dl dd ul {
+div#content section.search-results dl dd ul {
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
 }
 
-section div#search_results a {
+div#content div#search_results a {
 	border-bottom: solid 1px #AAA;
 	padding-bottom: 2px;
 }
@@ -488,38 +488,38 @@ div#content div.container section div#search_results section#results section.sea
 	padding: 0px
 }
 
-section section.search-results dl dd ul li {
+div#content section.search-results dl dd ul li {
 	display: inline;
 }
 
-section section.search-results dl dd.report nav {
-	float: right;
+body div#content div.container section.search-results dl dd.report nav {
+	float: right !important;
 	margin-top: 5px;
 }
 
-section section.search-results dl dd.report nav.externals {
+div#content section.search-results dl dd.watcher nav.externals {
 	color: #555;
 }
 
-section section.search-results dl dd.report nav a {
+div#content section.search-results dl dd.report nav a {
 	margin-left: 5px;
 }
 
-section section.search-results dl dd.report span.info {
+div#content section.search-results dl dd.report span.info {
 	color: #888;
 	display: block;
 	margin-top: 5px;
 }
 
-section section.search-results dl dd.report span.info ul li {
+div#content section.search-results dl dd.report span.info ul li {
 	margin-right: 10px;
 }
 
-section section.search-results dl dd.report span.formats {
+div#content section.search-results dl dd.report span.formats {
 	float: right;
 }
 
-section section.search-results dl dd.report span.downloaded {
+div#content section.search-results dl dd.report span.downloaded {
 	color: #000;
 	font-weight: bold;
 	float: right;
@@ -527,7 +527,7 @@ section section.search-results dl dd.report span.downloaded {
 	padding: 0px 5px;
 }
 
-section.series span.runtime {
+div#content.series span.runtime {
 	color: #777;
 	display: inline;
 	padding: 12px 0px;

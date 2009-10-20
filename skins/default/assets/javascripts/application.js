@@ -257,7 +257,7 @@ function nzbVRView() {
 					$("div#content div.loader").addClass("slow");
 				}
 				
-				$nzbVR.view.content(this.action, params);
+				$nzbVR.view.content($nzbVR.utils.parse_hash(this.action), params);
 				
 				return false;
 			} else {
