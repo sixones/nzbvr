@@ -98,7 +98,11 @@ function nzbVRSeries() {
 				$nzbVR.series.search($(this).val());
 			}
 			
-			if (e.which == 38 || e.which == 40 || e.which == 13) {
+			if (e.which == 38 || e.which == 40) {
+				$nzbVR.series.change_result(e);
+			}
+			
+			if (e.which == 13 && $nzbVR.series._index >= 0) {
 				$nzbVR.series.change_result(e);
 			}
 			
@@ -256,6 +260,8 @@ function nzbVRView() {
 				if ($(this).hasClass("slow")) {
 					$("div#content div.loader").addClass("slow");
 				}
+				
+				//alert("url -> " + $nzbVR.utils.parse_hash(this.action));
 				
 				$nzbVR.view.content($nzbVR.utils.parse_hash(this.action), params);
 				
