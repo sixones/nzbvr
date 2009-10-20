@@ -10,7 +10,7 @@ function min(a, b) {
 	return b;
 }
 
-var verbose_output = (document.location.toString().indexOf(".dev") > 0);
+var verbose_output = true;
 
 function trace(text) {
 	if (verbose_output && window.console != null) console.log(text);
@@ -188,11 +188,17 @@ function nzbVRSeries() {
 				
 				//trace('-> '+ s.name);
 				
-				
 				var li = document.createElement("li");
+				
 				li.appendChild($nzbVR.html.create("span", "name", s.name));
 				li.appendChild($nzbVR.html.create("span", "first_aired", s.first_aired));
 				li.appendChild($nzbVR.html.create_input("hidden", "tvrage_id", s.id));
+				
+				li.onclick = function(e) {
+					$(this).addClass("selected");
+					
+					$nzbVR.series.use_result(e, this);
+				};
 				
 				$("div#content div.container section form fieldset ul#results").append(li);
 			}
@@ -281,8 +287,15 @@ function nzbVRView() {
 		
 		$("header nav a").removeClass("selected");
 		
+		var hash2 = hash;
+		var split = hash.indexOf("/");
+		
+		if (split != -1) {
+			hash2 = hash.substring(split, 0);
+		}
+		
 		for (var i = 0; i < links.length; i++) {
-			if (links[i].hash == "#"+hash) {
+			if (links[i].hash.substring(hash.length+1, 0) == "#"+hash2) {
 				$(links[i]).addClass("selected");
 			}
 		}
@@ -301,6 +314,7 @@ function nzbVRView() {
 	this.content = function(url, params) {
 		this.hide_content();
 		
+		this.content_hash = url;
 		this.content_url = BASE_URL+url+".html";
 		this.content_params = params;
 		
@@ -310,7 +324,7 @@ function nzbVRView() {
 			$.post($nzbVR.view.content_url, $nzbVR.view.content_params, function(data) {
 				$("div#content div.container").html(data);
 				
-				$nzbVR.view.set_active_link($nzbVR.view.content_url);
+				$nzbVR.view.set_active_link($nzbVR.view.content_hash);
 				
 				$nzbVR.view.capture_links();
 

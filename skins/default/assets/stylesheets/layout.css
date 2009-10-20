@@ -419,12 +419,14 @@ form ul#results {
 form ul#results li {
 	background: #CCC;
 	color: #000;
+	cursor: pointer;
 	margin: 5px;
 	padding: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 }
 
+form ul#results li:hover,
 form ul#results li.selected {
 	background: #EEEEEE;
 }
