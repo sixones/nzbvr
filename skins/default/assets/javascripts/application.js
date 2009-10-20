@@ -321,6 +321,8 @@ function nzbVRView() {
 		trace("Loading content from '"+url+"'");
 		
 		$("div#content div.container").queue(function() {
+			$nzbVR.view.show_loader();
+			
 			$.post($nzbVR.view.content_url, $nzbVR.view.content_params, function(data) {
 				$("div#content div.container").html(data);
 				
@@ -329,31 +331,34 @@ function nzbVRView() {
 				$nzbVR.view.capture_links();
 
 				$nzbVR.view.hide_loader();
-				$nzbVR.view.show_content();
+				
+				$("div#content div.loader").queue(function() {
+					$nzbVR.view.show_content();
 
-				$("div#content div.loader").removeClass("slow");
+					$("div#content div.loader").removeClass("slow");
+					
+					$(this).dequeue();
+				});
 			});
 			
 			$(this).dequeue();
 		});
-
-		this.show_loader();
 	},
 	
 	this.show_loader = function() {
-		$("div#content div.loader").slideDown(500);
+		$("div#content div.loader").fadeIn(500);
 	},
 	
 	this.hide_loader = function() {
-		$("div#content div.loader").slideUp(600);
+		$("div#content div.loader").fadeOut(600);
 	}
 	
 	this.show_content = function() {
-		$("div#content div.container").slideDown(1000);
+		$("div#content div.container").fadeIn(1000);
 	},
 	
 	this.hide_content = function() {
-		$("div#content div.container").slideUp(600);
+		$("div#content div.container").fadeOut(600);
 	}
 };
 

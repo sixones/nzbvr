@@ -41,6 +41,8 @@ class SettingsController extends ApplicationController {
 		
 		nzbVR::instance()->settings->save();
 		
+		//$this->notification("Settings saved successfully", "success");
+		
 		$this->redirect("index");
 	}
 }

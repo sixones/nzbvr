@@ -480,6 +480,10 @@ div#content div#search_results a {
 	padding-bottom: 2px;
 }
 
+div#content div.container {
+	display: none;
+}
+
 div#content div.container section div#search_results section#results {
 	margin: 0px;
 	padding: 0px;
