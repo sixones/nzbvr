@@ -10,6 +10,12 @@ function min(a, b) {
 	return b;
 }
 
+var verbose_output = (document.location.toString().indexOf(".dev") > 0);
+
+function trace(text) {
+	if (verbose_output && window.console != null) console.log(text);
+}
+
 $(document).ready(function() {
 	$("a.content").click(function(e) {
 		$nzbVR.view.content($nzbVR.utils.parse_hash(this.href));
@@ -167,16 +173,16 @@ function nzbVRSeries() {
 		$nzbVR.view._allow_submit = false;
 		
 		this._request = $.get("/series/search/"+name+".json", null, function(data) {
-			//console.log(data);
+			//trace(data);
 			
 			$data = data;
 			
-			$("section#content div.container section form fieldset ul#results").empty();
+			$("div#content div.container section form fieldset ul#results").empty();
 			
 			for (var i = 0; i < min(10, data.series.length); i++) {
 				var s = data.series[i];
 				
-				//console.log('-> '+ s.name);
+				//trace('-> '+ s.name);
 				
 				
 				var li = document.createElement("li");
@@ -184,7 +190,7 @@ function nzbVRSeries() {
 				li.appendChild($nzbVR.html.create("span", "first_aired", s.first_aired));
 				li.appendChild($nzbVR.html.create_input("hidden", "tvrage_id", s.id));
 				
-				$("section#content div.container section form fieldset ul#results").append(li);
+				$("div#content div.container section form fieldset ul#results").append(li);
 			}
 			
 			$("ul#results").slideDown(800);
@@ -223,17 +229,17 @@ function nzbVRView() {
 	this._allow_submit = false,
 	
 	this.capture_links = function() {
-		$("section#content div.container a.content").click(function(e) {
+		$("div#content div.container a.content").click(function(e) {
 			$nzbVR.view.content($nzbVR.utils.parse_hash(this.href));
 		});
 		
-		$("section#content div.container a.notify").click(function(e) {
+		$("div#content div.container a.notify").click(function(e) {
 			$nzbVR.view.notify($nzbVR.utils.parse_hash(this.href));
 			
 			return false;
 		});
 		
-		$("section#content div.container form").submit(function(e) {
+		$("div#content div.container form").submit(function(e) {
 			if ($nzbVR.view._allow_submit) {
 				var params = new Object();
 
@@ -241,21 +247,17 @@ function nzbVRView() {
 					var el = $("input, select", this)[i];
 					
 					if (el.id != undefined && el.id != null) {
-						//console.log(el);
+						//trace(el);
 						var id = el.id;
 						params[id] = el.value;
 					}
 				}
-				
-				//console.log(params);
-				
+
 				if ($(this).hasClass("slow")) {
-					$("section#content div.loader").addClass("slow");
+					$("div#content div.loader").addClass("slow");
 				}
 				
 				$nzbVR.view.content(this.action, params);
-				
-				//document.location.hash = undefined;
 				
 				return false;
 			} else {
@@ -291,16 +293,16 @@ function nzbVRView() {
 	},
 	
 	this.content = function(url, params) {
-		//console.log("Loading content from '"+url+".html"+"'");
-
 		this.hide_content();
 		
-		this.content_url = url;
+		this.content_url = BASE_URL+url+".html";
 		this.content_params = params;
 		
-		$("section#content div.container").queue(function() {
-			$.post($nzbVR.view.content_url+".html", $nzbVR.view.content_params, function(data) {
-				$("section#content div.container").html(data);
+		trace("Loading content from '"+url+"'");
+		
+		$("div#content div.container").queue(function() {
+			$.post($nzbVR.view.content_url, $nzbVR.view.content_params, function(data) {
+				$("div#content div.container").html(data);
 				
 				$nzbVR.view.set_active_link($nzbVR.view.content_url);
 				
@@ -308,30 +310,30 @@ function nzbVRView() {
 
 				$nzbVR.view.hide_loader();
 				$nzbVR.view.show_content();
-				
-				$("section#content div.loader").removeClass("slow");
+
+				$("div#content div.loader").removeClass("slow");
 			});
 			
 			$(this).dequeue();
 		});
-		
+
 		this.show_loader();
 	},
 	
 	this.show_loader = function() {
-		$("section#content div.loader").slideDown(500);
+		$("div#content div.loader").slideDown(500);
 	},
 	
 	this.hide_loader = function() {
-		$("section#content div.loader").slideUp(600);
+		$("div#content div.loader").slideUp(600);
 	}
 	
 	this.show_content = function() {
-		$("section#content div.container").slideDown(1000);
+		$("div#content div.container").slideDown(1000);
 	},
 	
 	this.hide_content = function() {
-		$("section#content div.container").slideUp(600);
+		$("div#content div.container").slideUp(600);
 	}
 };
 
@@ -370,7 +372,7 @@ function nzbVRSearch() {
 			var el = $("input, select", $("form fieldset.search"))[i];
 			
 			if (el.id != undefined && el.id != null) {
-				//console.log(el);
+				//trace(el);
 				var id = el.id;
 				params[id] = el.value;
 			}

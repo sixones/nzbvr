@@ -3,6 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
 	
 	<title>nzbVR <?php echo  nzbVR::VERSION; ?></title>
 	
@@ -12,11 +13,18 @@
 		var BASE_URL = "<?php echo  ViewHelper::link(""); ?>";
 		var SKIN_URL = "<?php echo  ViewHelper::assetLink(""); ?>";
 	</script>
-	
+
 	<?php echo  ViewHelper::javascript("jquery.js"); ?>
 	<?php echo  ViewHelper::javascript("application.js"); ?>
 </head>
 <body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+	<script type="text/javascript">
+		CFInstall.check({
+			destination: document.location
+		});
+	</script>
+	
 	<header>
 		<nav>
 			<!-- dashboard, shows latest downloads / upcoming -->
@@ -43,12 +51,12 @@
 		<?php endforeach; ?>
 	</div>
 	
-	<section id="content">
+	<div id="content">
 		<div class="loader">
 			<?php echo  ViewHelper::image("large_ticker.gif", "Loading .."); ?>
 			<p class="thirdparty">This can take a few minutes as nzbVR pulls data from third-party sites.</p>
 		</div>
 		<div class="container"></div>
-	</section>
+	</div>
 </body>
 </html>

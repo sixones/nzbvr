@@ -62,30 +62,30 @@ header nav a.selected {
 	-webkit-border-radius: 5px;
 }
 
-section#content div.loader {
+div#content div.loader {
 	margin: 50px;
 	text-align: center;
 }
 
-section#content div.loader img {
+div#content div.loader img {
 	width: 55px;
 }
 
-section#content div.slow.loader p.thirdparty {
+div#content div.slow.loader p.thirdparty {
 	display: block;
 }
 
-section#content div.loader p.thirdparty {
+div#content div.loader p.thirdparty {
 	display: none;
 	margin: 30px auto;
 	width: 430px;
 }
 
-section#content div.container {
+div#content div.container {
 	margin-top: 30px;
 }
 
-section#content div.container section {
+div#content div.container section {
 	background: #FFFFFF;
 	border: solid 1px #FFFFFF;
 	display: block;
@@ -97,18 +97,18 @@ section#content div.container section {
 	-webkit-border-radius: 5px;
 }
 
-section#content div.container section p.empty {
+div#content div.container section p.empty {
 	font-size: 1.4em;
 	margin-top: 40px;
 	text-align: center;
 }
 
-section#content div.container section p.empty a {
+div#content div.container section p.empty a {
 	border-bottom: solid 1px #CCCCCC;
 	padding-bottom: 2px;
 }
 
-section#content div.container section ul.list_box {
+div#content div.container section ul.list_box {
 	list-style: none;
 	margin: 0px;
 	padding: 5px;
@@ -137,40 +137,40 @@ div.notification a {
 	padding-bottom: 3px;
 }
 
-section#content div.container section ul.list_box li.head  h3 {
+div#content div.container section ul.list_box li.head  h3 {
 	display: inline;
 	margin: 0px 0px 0px -5px;
 }
 
-section#content div.container section ul.list_box li {
+div#content div.container section ul.list_box li {
 	
 	padding: 5px;
 }
 
-section#content div.container section p.watching {
+div#content div.container section p.watching {
 	font-size: 1.4em;
 	padding: 0px 0px 25px 0px;
 }
 
-section#content div.container section p.last_benchmark {
+div#content div.container section p.last_benchmark {
 	color: #666;
 }
 
-section#content div.container section ul.list_box li span.text {
+div#content div.container section ul.list_box li span.text {
 	border-bottom: solid 1px #CCC;
 	padding: 4px 1px 4px 0px;
 }
 
-section#content div.container section dl {
+div#content div.container section dl {
 	margin-top: -5px;
 }
 
-section#content div.container section.series dl,
-section#content div.container movies dl {
+div#content div.container section.series dl,
+div#content div.container movies dl {
 	margin-top: 40px;
 }
 
-section#content div.container section h2 {
+div#content div.container section h2 {
 	background: #EFEFEF;
 	font-size: 1.8em;
 	float: left;
@@ -180,12 +180,12 @@ section#content div.container section h2 {
 	-webkit-border-radius: 5px;
 }
 
-section#content div.container section nav.content_nav {
+div#content div.container section nav.content_nav {
 	font-size: 1em;
 	float: right;
 }
 
-section#content div.container section nav.content_nav a {
+div#content div.container section nav.content_nav a {
 	background: #EEE;
 	margin: 0px;
 	padding: 3px 6px;
@@ -193,7 +193,7 @@ section#content div.container section nav.content_nav a {
 	-webkit-border-radius: 5px;
 }
 
-section#content div.container section nav.content_nav a:hover {
+div#content div.container section nav.content_nav a:hover {
 	background: #DDD;
 }
 
@@ -393,7 +393,7 @@ dl dd.series div.information p.overview {
 	overflow: hidden;
 }
 
-section#content dl dd.series div.information div.episodes {
+div#content dl dd.series div.information div.episodes {
 	font-size: 1em;
 	display: block;
 	margin: 0px -5px;
@@ -435,7 +435,7 @@ form ul#results li span.first_aired {
 	float: right;
 }
 
-section#content div.small_loader {
+div#content div.small_loader {
 	display: none;
 	margin: 5% auto;
 	width: 55px;
@@ -446,7 +446,7 @@ section section.search-results {
 	padding: 0px;
 }
 
-section#content section.search-results dl.watchers {
+div#content section.search-results dl.watchers {
 	margin-top: 35px;
 }
 
@@ -478,12 +478,12 @@ section div#search_results a {
 	padding-bottom: 2px;
 }
 
-section#content div.container section div#search_results section#results {
+div#content div.container section div#search_results section#results {
 	margin: 0px;
 	padding: 0px;
 }
 
-section#content div.container section div#search_results section#results section.search-results {
+div#content div.container section div#search_results section#results section.search-results {
 	margin: 0px;
 	padding: 0px
 }
@@ -534,25 +534,25 @@ section.series span.runtime {
 	
 }
 
-section#content section.series section.series-info {
+div#content section.series section.series-info {
 	margin: 20px 0px;
 	padding: 0px;
 }
 
-section#content section.series section.series-info nav.externals {
+div#content section.series section.series-info nav.externals {
 	float: right;
 	margin: 10px;
 }
 
-section#content section.series div.episodes {
+div#content section.series div.episodes {
 	font-size: 1.6em;
 }
 
-section#content section.series div.episodes h5 {
+div#content section.series div.episodes h5 {
 	font-weight: normal;
 }
 
-section#content section.series div.episodes h4 {
+div#content section.series div.episodes h4 {
 	margin: 10px 0px;
 }
 
@@ -573,41 +573,41 @@ section.series div.coverart img {
 	width: 160px;
 }
 
-section#content section.series section.episode-list {
+div#content section.series section.episode-list {
 	margin: 85px 0px;
 	padding: 0px;
 }
 
-section#content section.series section.episode-list dl {
+div#content section.series section.episode-list dl {
 	margin: 0px;
 	padding: 0px;
 }
 
-section#content section.series section.episode-list dl dd.season dl.episodes {
+div#content section.series section.episode-list dl dd.season dl.episodes {
 	display: none;
 }
 
-section#content section.series section.episode-list dl dd.season span.head {
+div#content section.series section.episode-list dl dd.season span.head {
 	cursor: pointer;
 	display: block;
 }
 
-/*section#content section.series section.episode-list dl dd.season:hover dl.episodes {
+/*div#content section.series section.episode-list dl dd.season:hover dl.episodes {
 	display: block;
 }*/
 
-section#content section.series section.episode-list dl dd {
+div#content section.series section.episode-list dl dd {
 	margin: 0px;
 	padding: 0px;
 }
 
-section#content section.series section.episode-list dl dd span.state {
+div#content section.series section.episode-list dl dd span.state {
 	color: #222;
 	font-weight: bold;
 	float: right;
 }
 
-section#content section.series section.episode-list dl dd.season h4 {
+div#content section.series section.episode-list dl dd.season h4 {
 	background: #353535;
 	color: #EEE;
 	margin: 5px;
@@ -616,7 +616,7 @@ section#content section.series section.episode-list dl dd.season h4 {
 	-moz-border-radius: 5px;
 }
 
-section#content section.series section.episode-list dl dd.season nav {
+div#content section.series section.episode-list dl dd.season nav {
 	color: #AAA;
 	float: right;
 	margin-right: 5px;
@@ -632,7 +632,7 @@ dl.episodes span.chrono {
 	padding: 5px;
 }
 
-section#content section.series section.episode-list dl dd dl.episodes dd {
+div#content section.series section.episode-list dl dd dl.episodes dd {
 	background: #CCC;
 	color: #222;
 	padding: 5px;
@@ -641,17 +641,17 @@ section#content section.series section.episode-list dl dd dl.episodes dd {
 	-moz-border-radius: 5px;
 }
 
-section#content section.series section.episode-list dl dd dl.episodes dd.downloaded {
+div#content section.series section.episode-list dl dd dl.episodes dd.downloaded {
 	background: #AAA;
 }
 
-section#content section.series section.episode-list dl dd dl.episodes dd nav {
+div#content section.series section.episode-list dl dd dl.episodes dd nav {
 	float: right;
 	margin: 0px 5px 0px;
 	padding: 0px;
 }
 
-section#content section.series section.episode-list dl dd dl.episodes dd nav a {
+div#content section.series section.episode-list dl dd dl.episodes dd nav a {
 	color: #666;
 	margin-left: 0px;
 	padding: 5px 0px 5px 5px;
