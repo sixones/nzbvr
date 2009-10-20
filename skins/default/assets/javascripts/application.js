@@ -176,7 +176,7 @@ function nzbVRSeries() {
 		
 		$nzbVR.view._allow_submit = false;
 		
-		this._request = $.get("/series/search/"+name+".json", null, function(data) {
+		this._request = $.get(BASE_URL+"series/search/"+name+".json", null, function(data) {
 			//trace(data);
 			
 			$data = data;
