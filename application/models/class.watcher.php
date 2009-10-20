@@ -44,7 +44,7 @@ abstract class XMLModel {
 				$this->$key = $val;
 			}
 		} else {
-			$h = fopen($this->fullStoragePath(), "x");
+			$h = fopen($this->fullStoragePath(), "ab");
 			fclose($h);
 			
 			$this->save();

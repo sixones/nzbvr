@@ -1,5 +1,6 @@
 <?php
 
+require_once(APPLICATION_DIR . "classes/class.localstore.php");
 require_once(APPLICATION_DIR . "classes/class.nzbvr.php");
 require_once(APPLICATION_DIR . "classes/class.newzbin.php");
 require_once(APPLICATION_DIR . "classes/class.sabnzbd.php");
@@ -25,6 +26,7 @@ require_once(APPLICATION_DIR . "models/class.movie.php");
 require_once(APPLICATION_DIR . "models/class.searchwatcher.php");
 require_once(APPLICATION_DIR . "models/class.series.php");
 require_once(APPLICATION_DIR . "models/class.settings.php");
+require_once(APPLICATION_DIR . "models/class.store.php");
 require_once(APPLICATION_DIR . "models/class.watchers.php");
 
 date_default_timezone_set("Europe/London"); // Europe/London

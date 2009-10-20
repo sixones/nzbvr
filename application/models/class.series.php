@@ -145,6 +145,11 @@ class Series extends XMLModel {
 		// get info from tvdb
 		$tvdb = new TVDB();
 		$tvdb->update($this);
+		
+		// cache images
+		//$store = nzbVR::instance()->store;
+		
+		//$store->
 	}
 	
 	public function tvdbURL() {
@@ -153,6 +158,18 @@ class Series extends XMLModel {
 	
 	public function imdbURL() {
 		return "http://www.imdb.com/title/{$this->imdb_id}/";
+	}
+	
+	public function posterUrl() {
+		return nzbVR::instance()->localStore->getImageURL("http://thetvdb.com/banners/{$this->poster}");
+	}
+	
+	public function bannerUrl() {
+		return nzbVR::instance()->localStore->getImageURL("http://thetvdb.com/banners/{$this->banner}");
+	}
+	
+	public function fanartUrl() {
+		return nzbVR::instance()->localStore->getImageURL("http://thetvdb.com/banners/{$this->fanart}");
 	}
 	
 	public function next() {

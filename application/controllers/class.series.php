@@ -143,15 +143,16 @@ class SeriesController extends ApplicationController {
 			$watcher = new SeriesWatcher(null, $name, array($language), array($format), array($source));
 			$watcher->load();
 			$watcher->series()->tvrage_id = $tvrageId;
+
+			$this->updateWatcher($watcher);
+			
 			$watcher->save();
-		
+			
 			$this->_watchers->add($watcher);
 		
 			$this->_watchers->save();
 			
 			$this->watcher = $watcher;
-			
-			$this->updateWatcher($this->watcher);
 			
 			return $this->redirect("index");
 		}
@@ -167,10 +168,19 @@ class SeriesController extends ApplicationController {
 	}
 	
 	protected function updateWatcher($watcher) {
-		$watcher->load();
+		//$watcher->load();
 		
 		$watcher->series()->update();
 		$watcher->series()->save();
+		
+		// get images
+		$localStore = nzbVR::instance()->localStore;
+		
+		$localStore->storeImage("series/banners", TVDB::imageURL($watcher->series()->banner));
+		$localStore->storeImage("series/poster", TVDB::imageURL($watcher->series()->poster));
+		$localStore->storeImage("series/fanart", TVDB::imageURL($watcher->series()->fanart));
+		
+		$localStore->save();
 	}
 	
 	public function update() {
@@ -179,6 +189,7 @@ class SeriesController extends ApplicationController {
 		foreach ($this->_watchers->watchers as $watcher) {
 			if ($watcher != null) {
 				if ($watcher instanceof SeriesWatcher) {
+					$watcher->load();
 					$this->updateWatcher($watcher);
 
 					$this->series[] = $watcher->series();

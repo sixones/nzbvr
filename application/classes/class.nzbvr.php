@@ -1,9 +1,10 @@
 <?php if (!defined("PICNIC")) { header("Location: /"); exit(1); }
 
 class nzbVR {
-	const VERSION = "0.2";
+	const VERSION = "0.3";
 	
 	public $settings = null;
+	public $localStore = null;
 	
 	public static $languages = array("English", "French", "Spanish", "German", "Italian", "Danish", "Dutch", "Japanese", "Cantonese", "Mandarin", "Korean", "Russian", "Polish", "Vietnamese", "Swedish", "Norwegian", "Finnish", "Turkish", "Unknown");
 	
@@ -37,8 +38,10 @@ class nzbVR {
 		
 		$this->settings = new Settings();
 		$this->settings->load();
+		
+		$this->localStore = new LocalStore();
 	}
-	
+
 	public function setSkinMode($mode) {
 		$this->_skinMode = $mode;
 	}

@@ -35,6 +35,7 @@ Features
 * Generic automatic searches
 * Newzbin search interface
 * XBMC notification
+* TV Series information and locally cached posters
 
 Todo
 ----

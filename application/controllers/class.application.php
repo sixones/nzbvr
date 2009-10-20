@@ -2,11 +2,15 @@
 
 class ApplicationController extends PicnicController {
 	protected $_watchers = array();
-	
+
 	public $notifications = array();
 	
 	public function __construct() {
 		parent::__construct();
+		
+		if (!class_exists("PicnicUpdateRequiredException", false)) {
+			throw new PicnicMissingRequirementException("You need to update the picnic framework to continue;\n<pre><code>cd nzbvr/picnic\n\ngit pull origin master</code></pre>", 0, "ApplicationController", "__construct");
+		}
 		
 		if (isset($_SESSION["nzbvr-skin-mode"])) {
 			$mode = $_SESSION["nzbvr-skin-mode"];
@@ -19,6 +23,10 @@ class ApplicationController extends PicnicController {
 		// load all watchers
 		$this->_watchers = new Watchers();
 		$this->_watchers->load();
+		
+		if (nzbVR::instance()->localStore->size() < $this->_watchers->size()) {
+			$this->notification("You need to <a href=\"#series/update\" class=\"content\">update</a> your series data!<br /><br /><em>This can take awhile as nzbVR will download images for each series.</em>");
+		}
 	}
 	
 	public function setSkinMode($mode, $setSession = true) {
