@@ -3,12 +3,14 @@
 class ViewHelper {
 	public static function javascript($src) {
 		$src = self::assetLink("javascripts/{$src}");
+		$src .= "?v=".PicnicUtils::random();
 		
 		return "<script type=\"text/javascript\" src=\"{$src}\"></script>\n";
 	}
 	
 	public static function stylesheet($src, $media = "all") {
 		$src = self::assetLink("stylesheets/{$src}");
+		$src .= "?v=".PicnicUtils::random();
 		
 		return "<link rel=\"stylesheet\" href=\"{$src}\" media=\"$media\" type=\"text/css\" />\n";
 	}
