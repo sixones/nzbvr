@@ -77,9 +77,9 @@ class TVDB extends TVScraper {
 	}
 
 	public static function imageURL($imageUrl) {
-		//self::getMirrors();
+		self::getMirrors();
 		
-		//return self::$__mirrors["banner"][0]."/banners/".$imageUrl;
+		return self::$__mirrors["banner"][0]."/banners/".$imageUrl;
 	}
 
 	public function search($name) {
