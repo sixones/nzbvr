@@ -120,6 +120,20 @@ abstract class Watcher {
 		$this->created = strtotime(date("Y-m-d"));
 	}
 	
+	public function findSuitableReport($results) {
+		foreach ($results as $report) {
+			if ($this->isReportSuitable($report)) {
+				return $report;
+			}
+		}
+		
+		return null;
+	}
+	
+	public function isReportSuitable($report) {
+		return true;
+	}
+	
 	public function getMarker() {
 		return null;
 	}

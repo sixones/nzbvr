@@ -45,7 +45,7 @@ class WatchersController extends ApplicationController {
 			
 			if ($reports != null && is_array($reports) && sizeof($reports) > 0) {
 				$results = array();
-				$results[] = $reports[0];
+				$results[] = $watcher->findSuitableReport($reports);
 				
 				$watcher->mark($results);
 				

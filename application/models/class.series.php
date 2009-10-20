@@ -38,12 +38,22 @@ class SeriesWatcher extends Watcher implements ILoadableWatcher, ISavableWatcher
 		return null;
 	}
 	
+	public function isReportSuitable($report) {
+		if (stripos($report->name, "(Deleted") === false) {
+			if (stripos($report->name, "(Password") === false) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
 	public function toSearchTerm() {
 		if ($this->_series != null) {
 			$next = $this->_series->nextDownload();
 			
 			if ($next != null) {
-				return "^\"{$this->name}\" {$next->identifier()}";
+				return "^\"{$this->name}\" - {$next->identifier()}";
 			}
 		}
 		
