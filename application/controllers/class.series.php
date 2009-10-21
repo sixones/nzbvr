@@ -143,7 +143,7 @@ class SeriesController extends ApplicationController {
 			$watcher->load();
 			$watcher->series()->tvrage_id = $tvrageId;
 
-			$this->updateWatcher($watcher);
+			$watcher->update();
 			
 			$watcher->save();
 			

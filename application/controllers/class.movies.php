@@ -36,7 +36,7 @@ class MoviesController extends ApplicationController {
 			$watcher->load();
 			$watcher->movie()->moviedb_id = $moviedbId;
 
-			$this->updateWatcher($watcher);
+			$watcher->update();
 			
 			$watcher->save();
 			
