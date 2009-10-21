@@ -25,7 +25,7 @@ class ApplicationController extends PicnicController {
 		$this->_watchers->load();
 		
 		if (nzbVR::instance()->localStore->size() < $this->_watchers->size()) {
-			$this->notification("You need to <a href=\"#series/update\" class=\"content\">update</a> your series data to get cached artwork.<br /><br /><em>This can take awhile as nzbVR will download artwork for each series.</em>");
+			$this->notification("You need to <a href=\"#watchers/update.html?type=series\" class=\"content slow\">update</a> your series data to get cached artwork.<br /><br /><em>This can take awhile as nzbVR will download artwork for each series.</em>");
 		}
 	}
 	

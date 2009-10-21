@@ -4,13 +4,35 @@
 <section>
 	<h2>Dashboard</h2>
 	
+	<nav class="content_nav">
+		<a href="#watchers/check.html" class="content slow">Check All</a>
+		<a href="#watchers/update.html" class="content slow">Update All</a>
+	</nav>
+	
 	<p class="watching">
 		<?php echo $watchers->size(""); ?> watchers are currently configured, watching <?php echo $watchers->size("SeriesWatcher"); ?> series, <?php echo $watchers->size("MovieWatcher"); ?> movies and <?php echo $watchers->size("SearchWatcher"); ?> others.
 	</p>
 	
 	<?php if ($benchmark != null): ?>
 	<p class="last_benchmark">
-		Last check downloaded <?php echo $benchmark->downloads; ?> reports, took place at <?php echo $start->getDateTime()->format('H:i'); ?> on <?php echo $start->getDateTime()->format('jS, F Y'); ?> and took <?php echo $benchmark->between("end", "start"); ?> seconds.
+		Last check downloaded <?php echo $benchmark->downloads; ?> reports, took place at <?php echo $start->getDateTime()->format('H:i'); ?> on <?php echo $start->getDateTime()->format('jS, F Y'); ?> and took <?php echo $benchmark->between("start", "end"); ?> seconds.
 	</p>
 	<?php endif; ?>
+	
+	<div class="changelog">
+		<h3>nzbVR <?php echo nzbVR::VERSION; ?> Changelog</h3>
+		<ul>
+			<li>changed TheTVDB search to use the series name entered by the user rather than the tv rage name</li>
+			<li>completed movie's section with search + info support via TheMovieDB</li>
+			<li>fixed links for checking an individual watcher (in series + movies + watchers)</li>
+			<li>improved the watchers check method and moved all types (series + movies) to use the generic controller</li>
+			<li>added results page for seeing the reports downloaded after a manual check via the web ui</li>
+			<li>added changelog information to dashboard</li>
+			<li>added a default cover for when series / movies dont have a poster available to download</li>
+			<li>improved user interface for lists with information (series + movies)</li>
+			<li>created a generic watcher update method (requires an extra cron to auto update - only needs to run every 12 hours)</li>
+			<li>improved send to sabnzbd+ function on the search page</li>
+			<li>fixed issues causing ajax requests to 404 when installing nzbVR to a sub-directory</li>
+		</ul>
+	</div>
 </section>

@@ -6,6 +6,7 @@ require_once(APPLICATION_DIR . "classes/class.newzbin.php");
 require_once(APPLICATION_DIR . "classes/class.sabnzbd.php");
 
 require_once(APPLICATION_DIR . "classes/scrapers/class.scraper.php");
+require_once(APPLICATION_DIR . "classes/scrapers/class.moviedb.php");
 require_once(APPLICATION_DIR . "classes/scrapers/class.tvdb.php");
 require_once(APPLICATION_DIR . "classes/scrapers/class.tvrage.php");
 

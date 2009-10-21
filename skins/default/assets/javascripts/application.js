@@ -32,6 +32,7 @@ $(document).ready(function() {
 
 function nzbVR() {
 	this.html = new nzbVRHTML();
+	this.movies = new nzbVRMovies();
 	this.series = new nzbVRSeries();
 	this.search = new nzbVRSearch();
 	this.utils = new nzbVRUtils();
@@ -73,7 +74,7 @@ function nzbVRSeries() {
 		$("span.state", parent).text("Checking ...");
 		$("span.state", parent).fadeIn(400);
 		
-		$.post("/series/download/"+watcher+"/"+season+"/"+episode+".json", null, function(data) {
+		$.post(BASE_URL+"series/download/"+watcher+"/"+season+"/"+episode+".json", null, function(data) {
 			if (data.result == null) {
 				$("span.state", parent).text("Could not find a report to download");
 			} else {
@@ -240,11 +241,15 @@ function nzbVRView() {
 	
 	this.capture_links = function() {
 		$("div#content div.container a.content").click(function(e) {
+			if ($(this).hasClass("slow")) {
+				$("div#content div.loader").addClass("slow");
+			}
+			
 			$nzbVR.view.content($nzbVR.utils.parse_hash(this.href));
 		});
 		
 		$("div#content div.container a.notify").click(function(e) {
-			$nzbVR.view.notify($nzbVR.utils.parse_hash(this.href));
+			$nzbVR.view.notify(this, $nzbVR.utils.parse_hash(this.href));
 			
 			return false;
 		});
@@ -301,21 +306,36 @@ function nzbVRView() {
 		}
 	},
 	
-	this.notify = function(url, params) {
-		$.get(url, params, function(data) {
+	this.notify = function(el, url) {
+		var parent = el.parentNode.parentNode;
+		
+		$("nav.actions,nav.externals", parent).fadeOut(200);
+		$("span.state", parent).text("Checking ...");
+		$("span.state", parent).fadeIn(400);
+		
+		$.get(url, null, function(data) {
 			if (data.state == "OK") {
-				alert("Report sent to SABnzbd!");
+				$(parent).addClass("downloaded");
+				$("span.state", parent).text("Sent report to SABnzbd");
 			} else {
-				alert("FAIL: "+data.message);
+				$("span.state", parent).text(data.message);
 			}
 		}, "json");
+		
+		return false;
 	},
 	
 	this.content = function(url, params) {
 		this.hide_content();
 		
 		this.content_hash = url;
-		this.content_url = BASE_URL+url+".html";
+		
+		if (url.indexOf(".html") == -1 && url.indexOf(".xml") == -1 && url.indexOf(".json") == -1) {
+			this.content_url = BASE_URL+url+".html";
+		} else {
+			this.content_url = BASE_URL+url;
+		}
+		
 		this.content_params = params;
 		
 		trace("Loading content from '"+url+"'");
@@ -404,7 +424,7 @@ function nzbVRSearch() {
 		}
 		
 		$("div#search_results section#results").queue(function() {
-			$.post("/search", params, function(data) {
+			$.post(BASE_URL+"search", params, function(data) {
 				$("div#search_results section#results").html(data);
 			
 				$nzbVR.view.capture_links();
@@ -437,5 +457,170 @@ function nzbVRSearch() {
 	
 	this.hide_content = function() {
 		$("div#search_results section#results").slideUp(600);
+	}
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function nzbVRMovies() {
+	this._request = null,
+	this._index = -1,
+	
+	this.downloadMovie = function(watcher, parent) {
+		$("nav", parent).fadeOut(200);
+		$("span.state", parent).text("Checking ...");
+		$("span.state", parent).fadeIn(400);
+		
+		$.post(BASE_URL+"movies/download/"+watcher+"/"+season+"/"+episode+".json", null, function(data) {
+			if (data.result == null) {
+				$("span.state", parent).text("Could not find a report to download");
+			} else {
+				$("span.state", parent).text("Sent report to SABnzbd");
+				
+				$(parent).addClass("downloaded");
+			}
+		}, "json");
+		
+		return false;
+	},
+	
+	this.applySearch = function() {
+		this._index = -1;
+		
+		//$nzbVR.view.allow_submit(false);
+	
+		$("section fieldset.search.movies input#name").keyup(function(e) {
+			var c = $(this).val().length;
+
+			if (c >= 2 && (e.which != 38 && e.which != 40 && e.which != 13)) {
+				$nzbVR.movies.search($(this).val());
+			}
+			
+			if (e.which == 38 || e.which == 40) {
+				$nzbVR.movies.change_result(e);
+			}
+			
+			if (e.which == 13 && $nzbVR.series._index >= 0) {
+				$nzbVR.movies.change_result(e);
+			}
+			
+			if (e.which == 13) {
+				return false;
+			}
+		});
+		
+		$("section fieldset.search.movies input#name").focus(function() {
+			if ($(this).val() == "Search ...") {
+				$(this).val("");
+			}
+		});
+		
+		$("section fieldset.search.movies input#name").blur(function() {
+			if ($(this).val() == "") {
+				$(this).val("Search ...");
+			}
+		});
+	},
+	
+	this.change_result = function(e) {
+		var children = $("ul#results").children();
+		
+		if (e.which == 40 && (this._index < children.length - 1)) {
+			this._index++;
+		} else if (e.which == 38 && this._index != -1) {
+			this._index--;
+		}
+		
+		$("ul#results li").removeClass("selected");
+		
+		for (var i = 0; i < children.length; i++) {
+			if (i == this._index) {
+				$(children[i]).addClass("selected");
+				
+				if (e.which == 13) {
+					this.use_result(e, children[i]);
+				}
+			}
+		}
+	},
+	
+	this.use_result = function(e, row) {
+		$("ul#results").slideUp(800);
+		
+		$("input#name").blur();
+		
+		var id = $("input.moviedb_id", row).val();
+		var name = $("span.name", row).text();
+		
+		$("form input#moviedb_id").val(id);
+		
+		$("input#name").val(name);
+
+		$nzbVR.view._allow_submit = true;
+	},
+
+	this.search = function (name) {
+		if (this._request != null) {
+			this._request.abort();
+		}
+		
+		$("fieldset.search input#name").addClass("searching");
+		$("fieldset.search input#name").css("background", "#FFFFFF url("+SKIN_URL+"images/ticker.gif) no-repeat 99%");
+	
+		
+		$nzbVR.view._allow_submit = false;
+		
+		this._request = $.get(BASE_URL+"movies/search/"+name+".json", null, function(data) {
+			//trace(data);
+			
+			$data = data;
+			
+			$("div#content div.container section form fieldset ul#results").empty();
+			
+			for (var i = 0; i < min(10, data.movies.length); i++) {
+				var s = data.movies[i];
+				
+				//trace('-> '+ s.name);
+				
+				var li = document.createElement("li");
+				
+				li.appendChild($nzbVR.html.create("span", "name", s.name));
+				li.appendChild($nzbVR.html.create("span", "released", s.released));
+				li.appendChild($nzbVR.html.create_input("hidden", "moviedb_id", s.id));
+				
+				li.onclick = function(e) {
+					$(this).addClass("selected");
+					
+					$nzbVR.movies.use_result(e, this);
+				};
+				
+				$("div#content div.container section form fieldset ul#results").append(li);
+			}
+			
+			$("ul#results").slideDown(800);
+			
+			$("fieldset.search input#name").removeClass("searching");
+			$("fieldset.search input#name").css("background", "#FFFFFF");
+		}, "json");
 	}
 };

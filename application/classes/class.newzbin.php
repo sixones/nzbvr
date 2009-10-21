@@ -111,7 +111,7 @@ class Newzbin {
 				"feed=atom",
 				"areadone=-1"
 			);
-		
+
 		return "http://".$this->_authentication."@www.newzbin.com/search?".implode("&", $params);
 	}
 }

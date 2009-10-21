@@ -1,0 +1,33 @@
+<section class="search-results">
+	<h2>Results</h2>
+	
+	<?php if (sizeof($this->picnic()->controller()->results) > 0): ?>
+	
+	<dl class="watchers">
+		<?php foreach ($this->picnic()->controller()->results as $watcher): ?>
+			<dd class="report downloaded">			
+				<span class="formats">	
+					<?php if (sizeof($watcher->format) > 0): ?>
+						<?php echo PicnicUtils::implode($watcher->format); ?>
+					<?php else: ?>
+						Unknown
+					<?php endif; ?>
+				</span>
+
+				<h3><?php echo $watcher->name; ?></h3>
+				
+				<span class="info">
+					<ul>
+						<?php if (sizeof($watcher->source) > 0): ?>
+							<li>Source: <?php echo PicnicUtils::implode($watcher->source); ?></li>
+						<?php endif; ?>
+						<li>Language: <?php echo PicnicUtils::implode($watcher->language); ?></li>
+					</ul>
+				</span>
+			</dd>
+		<?php endforeach; ?>
+	</dl>
+	<?php else: ?>
+		<p class="empty">No watchers were found to update.</p>
+	<?php endif; ?>
+</section>

@@ -167,17 +167,8 @@ class SeriesController extends ApplicationController {
 	}
 	
 	protected function updateWatcher($watcher) {
-		//$watcher->load();
-		
 		$watcher->series()->update();
 		$watcher->series()->save();
-		
-		// get images
-		$localStore = nzbVR::instance()->localStore;
-		
-		$localStore->storeImage("series/banners", TVDB::imageURL($watcher->series()->banner));
-		$localStore->storeImage("series/poster", TVDB::imageURL($watcher->series()->poster));
-		$localStore->storeImage("series/fanart", TVDB::imageURL($watcher->series()->fanart));
 		
 		$localStore->save();
 	}

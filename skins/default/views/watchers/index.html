@@ -3,8 +3,7 @@
 	
 	<nav class="content_nav">
 		<a href="#watchers/new" class="content">New Watcher</a>
-		<a href="#watchers/check" class="content">Check All</a>
-		<a href="#watchers/update" class="content">Update All</a>
+		<a href="#watchers/check.html?type=search" class="content slow">Check All</a>
 	</nav>
 	
 	<?php if (sizeof($this->picnic()->controller()->watchers) > 0): ?>
@@ -27,7 +26,7 @@
 				
 				<nav class="actions">
 					<?php if (!$watcher->downloaded): ?>
-					<a href="#watchers/check/<?php echo $watcher->id; ?>" class="content">Check</a>
+					<a href="#watchers/check/<?php echo $watcher->id; ?> slow" class="content">Check</a>
 					<?php endif; ?>
 					<a href="#watchers/delete/<?php echo $watcher->id; ?>" class="content">Delete</a>
 				</nav>

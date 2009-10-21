@@ -130,6 +130,10 @@ abstract class Watcher {
 		return null;
 	}
 	
+	public function update() {
+		
+	}
+	
 	public function isReportSuitable($report) {
 		return true;
 	}
@@ -167,7 +171,7 @@ abstract class Watcher {
 			
 			if ($r != null && sizeof($r) > 0) {
 				//echo "HERE";
-				//var_dump($r);
+				//PicnicUtils::dump($r);
 			}
 			
 			return $r;

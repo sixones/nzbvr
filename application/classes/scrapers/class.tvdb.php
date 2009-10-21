@@ -128,25 +128,4 @@ class TVDB extends TVScraper {
 	}
 }
 
-/*
-include("../models/class.episode.php");
-include("../models/class.watcher.php");
-include("../models/class.tvshow.php");
-
-$tvdb = new TVDB();
-
-$search_results = $tvdb->search("The Office");
-
-$show = $search_results[0];
-
-echo "<pre>";
-var_dump($show);
-echo "</pre>";
-
-$tvdb->update($show);
-
-echo "<pre>";
-var_dump($show);
-echo "</pre>";
-*/
 ?>

@@ -5,7 +5,7 @@ class SeriesWatcher extends Watcher implements ILoadableWatcher, ISavableWatcher
 	
 	public $category = 8;
 	
-	public function __construct($id = null, $name = null, array $language = array("English"), array $format = array("x264"), array $source = null) {
+	public function __construct($id = null, $name = null, array $language = array("English"), array $format = array("x264"), array $source = array()) {
 		parent::__construct($id, $name, $language, $format, $source, 8);
 	}
 	
@@ -17,6 +17,10 @@ class SeriesWatcher extends Watcher implements ILoadableWatcher, ISavableWatcher
 		// load $this->_series
 		$this->_series = new Series($this->id, $this);
 		$this->_series->load();
+	}
+	
+	public function update() {
+		$this->series()->update();
 	}
 	
 	public function mark(array $reports) {
@@ -107,18 +111,18 @@ class Series extends XMLModel {
 	
 	protected function findTVDB() {
 		$tvdb = new TVDB();
-		$results = $tvdb->search($this->name);
+		$results = $tvdb->search($this->_parent->name);
 		$result = null;
 		
 		foreach ($results as $series) {
 			if ($series->name == "") continue;
 		
-			if ($series->name == $this->name) {
+			if ($series->name == $this->_parent->name) {
 				$result = $series;
 				break;
 			}
 			
-			$i = strpos($series->name, $this->name);
+			$i = strpos($series->name, $this->_parent->name);
 
 			if ($i !== false && $i == 0) {
 				$result = $series;
@@ -126,11 +130,13 @@ class Series extends XMLModel {
 			}
 		}
 		
-		if ($result == null) {
+		if ($result == null && sizeof($results) > 0) {
 			$result = $results[0];
 		}
 			
-		$this->tvdb_id = (string)$result->id;
+		if ($result != null) {
+			$this->tvdb_id = (string)$result->id;
+		}
 	}
 	
 	public function update() {		
@@ -142,14 +148,34 @@ class Series extends XMLModel {
 			$this->findTVDB();
 		}
 		
-		// get info from tvdb
-		$tvdb = new TVDB();
-		$tvdb->update($this);
+		if ($this->tvdb_id != 0) {
+			// get info from tvdb
+			$tvdb = new TVDB();
+			$tvdb->update($this);
+		}
 		
 		// cache images
-		//$store = nzbVR::instance()->store;
+		$localStore = nzbVR::instance()->localStore;
+		$shouldSave = false;
 		
-		//$store->
+		if ($this->banner != null) {
+			$localStore->storeImage("series/banners", TVDB::imageURL($this->banner));
+			$shouldSave = true;
+		}
+		
+		if ($this->poster != null) {
+			$localStore->storeImage("series/poster", TVDB::imageURL($this->poster));
+			$shouldSave = true;
+		}
+		
+		if ($this->fanart != null) {
+			$localStore->storeImage("series/fanart", TVDB::imageURL($this->fanart));
+			$shouldSave = true;
+		}
+		
+		if ($shouldSave) {
+			$localStore->save();
+		}
 	}
 	
 	public function tvdbURL() {

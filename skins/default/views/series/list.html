@@ -3,8 +3,8 @@
 	
 	<nav class="content_nav">
 		<a href="#series/new" class="content">New Series</a>
-		<a href="#series/check" class="content">Check All</a>
-		<a href="#series/update" class="content">Update All</a>
+		<a href="#watchers/check.html?type=series" class="content slow">Check All</a>
+		<a href="#watchers/update.html?type=series" class="content slow">Update All</a>
 	</nav>
 	
 	<?php if (sizeof($this->picnic()->controller()->series) > 0): ?>
@@ -24,8 +24,8 @@
 						<h3><a href="#series/show/<?php echo $series->id; ?>" class="content"><?php echo  $series->watcher->name; ?></a></h3>
 						<span class="runtime"><?php echo  $series->runtime; ?> minutes, <?php echo  $series->airs_day; ?> at <?php echo  $series->airs_time; ?></span>
 						<nav class="actions">
-							<a href="#series/check/<?php echo $series->id; ?>" class="content">Check</a>
-							<a href="#series/update/<?php echo $series->id; ?>" class="content">Update Info</a>
+							<a href="#watchers/check/<?php echo $series->watcher->id; ?>" class="content slow">Check</a>
+							<a href="#watchers/update/<?php echo $series->watcher->id; ?>" class="content slow">Update Info</a>
 							<a href="#series/delete/<?php echo $series->id; ?>" class="content">Delete</a>
 						</nav>
 						<nav class="externals">

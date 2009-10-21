@@ -18,59 +18,65 @@ class MoviesController extends ApplicationController {
 	
 	public function check() {
 		foreach ($this->_watchers->watchers as $watcher) {
-			if ($watcher != null && $watcher instanceof MovieWatcher) {
-				$watcher->check();
-			}
+			$watcher->check();
 		}
 		
 		$this->redirect("index");
 	}
 	
 	public function create() {	
+		$moviedbId = $this->params()->get("moviedb_id");
 		$name = $this->params()->get("name");
 		$language = $this->params()->get("language");
 		$format = $this->params()->get("format");
 		$source = $this->params()->get("source");
 		
-		if ($name != null) {
-			$watcher = new MovieWatcher(null, $name, $language, $format, $source);
+		if ($moviedbId != null && $name != null) {
+			$watcher = new MovieWatcher(null, $name, array($language), array($format), array($source));
 			$watcher->load();
+			$watcher->movie()->moviedb_id = $moviedbId;
+
+			$this->updateWatcher($watcher);
+			
 			$watcher->save();
-		
+			
 			$this->_watchers->add($watcher);
 		
 			$this->_watchers->save();
 			
 			$this->watcher = $watcher;
+			
+			return $this->redirect("index");
 		}
 	}
 	
 	public function search() {
 		$name = urldecode($this->picnic()->currentRoute()->getSegment(0));
 		
-		$tvrage = new TVRage();
-		$results = $tvrage->search($name);
+		$moviedb = new MovieDB();
+		$results = $moviedb->search($name);
 		
-		$this->series = $results;
+		$this->movies = $results;
 	}
 	
-	public function update() {
-		$this->movies = array();
-
-		foreach ($this->_watchers->watchers as $watcher) {
-			if ($watcher != null) {
-				if ($watcher instanceof MovieWatcher) {
-					$watcher->load();
-					
-					$watcher->movie()->update();
-					$watcher->movie()->save();
-
-					$this->movies[] = $watcher->movie();
-				}
+	public function delete() {
+		$id = $this->picnic()->currentRoute()->getSegment(0);
+		
+		$copy = $this->_watchers->watchers;
+		
+		$this->_watchers->watchers = array();
+		
+		foreach ($copy as $watcher) {
+			if ($watcher->id != $id) {
+				$this->_watchers->add($watcher);
+			} else {
+				$watcher->delete();
 			}
 		}
 		
 		$this->_watchers->save();
+		
+		$this->redirect("index");
 	}
 }
 

@@ -1,7 +1,7 @@
 <?php if (!defined("PICNIC")) { header("Location: /"); exit(1); }
 
 class nzbVR {
-	const VERSION = "0.3";
+	const VERSION = "0.31";
 	
 	public $settings = null;
 	public $localStore = null;

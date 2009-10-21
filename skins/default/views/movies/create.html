@@ -1,3 +1,48 @@
 <section>
 	<h2>New Movie</h2>
+	
+	<form class="slow" action="#movies/new" method="post">
+		<fieldset class="movies search">
+			<dl>
+				<dd>
+					<input id="name" autocomplete="off" type="text" value="Search ..." />
+				</dd>
+			</dl>
+			<ul id="results"></ul>
+		</fieldset>
+		
+		<fieldset class="info">
+			<dl>
+				<dt>
+					<label for="format">Format</label>
+				</dt>
+				<dd>
+					<?php ViewHelper::select("format", nzbVR::$formats, "x264", false); ?>
+				</dd>
+				
+				<dt>
+					<label for="source">Source</label>
+				</dt>
+				<dd>
+					<?php ViewHelper::select("source", nzbVR::$sources); ?>
+				</dd>
+			
+				<dt>
+					<label for="language">Language</label>
+				</dt>
+				<dd>
+					<?php ViewHelper::select("language", nzbVR::$languages, null, false); ?>
+				</dd>
+			</dl>
+		</fieldset>
+		
+		<input id="moviedb_id" type="hidden" value="0" />
+		
+		<div class="buttons">
+			<button type="submit" class="save_btn">Save</button>
+			<button class="cancel_btn">Cancel</button>
+		</div>
+	</form>
+	
+	<script type="text/javascript">$nzbVR.movies.applySearch();</script>
 </section>

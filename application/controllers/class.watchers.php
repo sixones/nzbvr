@@ -32,26 +32,70 @@ class WatchersController extends ApplicationController {
 		}
 	}
 	
+	public function update() {
+		$this->results = array();
+		
+		$type = $this->params()->get("type");
+		$id = null;
+		
+		if (sizeof($this->picnic()->currentRoute()->segments()) == 1) {
+			$id = $this->picnic()->currentRoute()->getSegment(0);
+		}
+
+		foreach ($this->_watchers->watchers as $watcher) {
+			if ($watcher != null && ($type == null
+				|| ($type == "movies" && $watcher instanceof MovieWatcher)
+				|| ($type == "series" && $watcher instanceof SeriesWatcher)
+				|| ($type == "search" && $watcher instanceof SearchWatcher))
+				&& ($id == null || $watcher->id == $id)) {
+
+				$watcher->load();
+				$watcher->update();
+				$watcher->save();
+				
+				$this->results[] = $watcher;
+			}
+		}
+		
+		if ($this->picnic()->router()->outputType() == "html") {
+			//$this->redirect("index");
+		}
+	}
+	
 	public function check() {
 		$this->results = array();
 		
+		$type = $this->params()->get("type");
+		$id = null;
+		
+		if (sizeof($this->picnic()->currentRoute()->segments()) == 1) {
+			$id = $this->picnic()->currentRoute()->getSegment(0);
+		}
+
 		$this->_watchers->last_benchmark = new WatcherBenchmark();
 		$this->_watchers->last_benchmark->mark("start");
 	
 		foreach ($this->_watchers->watchers as $watcher) {
-			$watcher->load();
+			if ($watcher != null && ($type == null
+				|| ($type == "movies" && $watcher instanceof MovieWatcher)
+				|| ($type == "series" && $watcher instanceof SeriesWatcher)
+				|| ($type == "search" && $watcher instanceof SearchWatcher))
+				&& ($id == null || $watcher->id == $id)) {
+
+				$watcher->load();
 			
-			$reports = $watcher->check();
+				$reports = $watcher->check();
 			
-			if ($reports != null && is_array($reports) && sizeof($reports) > 0) {
-				$results = array();
-				$results[] = $watcher->findSuitableReport($reports);
+				if ($reports != null && is_array($reports) && sizeof($reports) > 0) {
+					$results = array();
+					$results[] = $watcher->findSuitableReport($reports);
 				
-				$watcher->mark($results);
+					$watcher->mark($results);
 				
-				$this->results = array_merge($this->results, $results);
+					$this->results = array_merge($this->results, $results);
 				
-				$watcher->save();
+					$watcher->save();
+				}
 			}
 		}
 		
@@ -66,7 +110,7 @@ class WatchersController extends ApplicationController {
 		$this->_watchers->save();
 		
 		if ($this->picnic()->router()->outputType() == "html") {
-			$this->redirect("index");
+			//$this->redirect("index");
 		}
 	}
 	
