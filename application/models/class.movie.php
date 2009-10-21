@@ -25,9 +25,9 @@ class MovieWatcher extends Watcher implements ILoadableWatcher, ISavableWatcher 
 	}
 	
 	public function check() {
-		//if (!$this->downloaded) {
+		if (!$this->downloaded) {
 			return parent::check();
-		//}
+		}
 	}
 	
 	public function load() {
