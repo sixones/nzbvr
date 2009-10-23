@@ -6,7 +6,7 @@ class SearchWatcher extends Watcher {
 	public $downloaded_at = null;
 	
 	public function getDownloadedDateTime() {
-		return DateTime::createFromFormat("U", $this->downloaded_at);
+		return PicnicDateTime::createFromTimestamp("U", $this->downloaded_at);
 	}
 
 	public function toSearchTerm() {

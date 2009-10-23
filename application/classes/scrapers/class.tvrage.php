@@ -21,6 +21,8 @@ class TVRage extends TVScraper {
 	}
 	
 	protected function parseDate($originalDate) {
+		return PicnicDateTime::createFromString($originalDate);
+		
 		$pieces = explode("/", $originalDate);
 		$c = sizeof($pieces);
 		
@@ -146,7 +148,7 @@ class TVRage extends TVScraper {
 				$episode->num = (string)$item->seasonnum;
 				$episode->series_num = (string)$item->epnum;
 				$episode->name = (string)$item->title;
-				$episode->airs_date = date('Y-m-d H:i:s', strtotime((string)$item->airdate));
+				$episode->airs_date = PicnicDateTime::createFromString((string)$item->airdate)->format('Y-m-d H:i:s');//date('Y-m-d H:i:s', strtotime((string)$item->airdate));
 				$episode->rage_url = (string)$item->link;
 				$episode->poster_url = (string)$item->screencap;
 				

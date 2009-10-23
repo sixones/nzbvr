@@ -13,7 +13,7 @@ class MovieWatcher extends Watcher implements ILoadableWatcher, ISavableWatcher 
 	}
 	
 	public function getDownloadedDateTime() {
-		return DateTime::createFromFormat("U", $this->downloaded_at);
+		return PicnicDateTime::createFromTimestamp($this->downloaded_at);
 	}
 	
 	public function movie() {
