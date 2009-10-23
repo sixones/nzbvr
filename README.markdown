@@ -1,9 +1,9 @@
 nzbVR
 =====
 
-*nzbVR is currently in alpha, some functionality does not exist (movies + full iphone ui)*
+*nzbVR is currently in alpha, some functionality does not exist (full iphone ui) and there are a few bugs*
 
-A fast automatic downloader for usenet reports, handles scheduled tv series downloads, movies and generic searches through Newzbin. nzbVR also provides a simple interface for searching Newzbin and sending reports straight to SABnzbd. nzbVR is written with PHP5 and requires a web server (like Apache) with PHP5 installed and configured.
+A fast automatic downloader for usenet reports, handles scheduled tv series downloads, movies and generic searches through Newzbin. nzbVR also provides a simple interface for searching Newzbin and sending reports straight to SABnzbd. nzbVR is written with PHP5 and requires a web server (like Apache2 or Nginx) with PHP5.2+ installed and configured.
 
 Like other episode downloaders like hellaVCR or EpisodeButler, nzbVR allows you to easily schedule watchers for new episodes (it can even help downloading the missing ones in your collection). 
 
@@ -41,7 +41,7 @@ Todo
 ----
 
 * Automatic execution of `git pull` from web ui *in progress*
-* Movie support with integration for meta data from third-parties (need an external db service) *in progress*
+* <del>Movie support with integration for meta data from third-parties (via TheMovieDB)</del>
 * <del>Scheduling generic searches</del>
 * <del>Sending search result to SABnzbd+</del>
 * Support for downloading nzb to a watched folder
@@ -55,7 +55,7 @@ Requirements
 * Git (required for install and auto-update)
 * SABnzbd+ (0.5+)
 * Newzbin account
-* Apache + PHP5 (mod-rewrite + virtual host recommended but not required)
+* Web Server + PHP5.2+ (Apache2 + mod-rewrite + virtual host recommended but not required)
 * XBMC (optional)
 	
 Installing
@@ -94,6 +94,27 @@ Everything can be configured through the nzbVR web interface.
 
 If you plan on installing nzbVR in a sub-directory rather than through a virtual host you will need to visit your installation so a `settings.xml` file is generated. You can then manually edit `data/settings.xml` and change the `<base_url>` tag value to `/url/to/nzbvr/`. This also applies if you have no mod-rewrite available but you will need to change the `<base_url>` tag value to `/url/to/nzbvr/index.php/` (make sure to include the trailing slash). The base url setting can be changed from the web interface but on first launch the default url will be incorrect and the dynamic content will fail to load.
 
+### Url Rewrite
+
+#### Apache2
+
+The Apache re-write rules exist in the `.htaccess` file that sits in the root of the nzbVR directory, if your setup picks up `.htaccess` files automatically you wont need to make any changes.
+
+	RewriteEngine On
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+
+	RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+#### Nginx
+
+	# change the /nzbvr to the sub-directory or remove if its a virtual host
+	if (!-d $request_filename) {
+	        rewrite /nzbvr/. /nzbvr/index.php last;
+	}
+
+
 Watchers
 --------
 
@@ -103,7 +124,7 @@ By default nzbVR defines 2 special types of watchers;
 
 ### Series Watchers
 
-Series's watcher's can be setup to watch for new episodes for a particular tv series, it works with daily shows (as long as your scheduling nzbVR to check at least once every 24 hours). <del>nzbVR also pulls in extra data for a tv series so that you can browse the episode lists and download missing episodes easily.</del> When you first add a series, nzbVR will check for new episodes that are being aired after the creation date of the series in nzbVR. 
+Series's watcher's can be setup to watch for new episodes for a particular tv series, it works with daily shows (as long as your scheduling nzbVR to check at least once every 24 hours). nzbVR also pulls in extra data for a tv series so that you can browse the episode lists and download missing episodes easily. When you first add a series, nzbVR will check for new episodes that are being aired after the creation date of the series in nzbVR. 
 
 ### Movie Watchers
 
@@ -112,26 +133,45 @@ Movie watcher's are used to check for upcoming movies automatically, since watch
 Scheduling
 ----------
 
-You can schedule nzbVR to automatically check and update `watchers` through cron or launchctl (on OSX only). This allows nzbVR to automatically check and download new episodes and monitored searches without any input. 
+You can schedule nzbVR to automatically check and update `watchers` through cron or launchctl (on OSX only). This allows nzbVR to automatically check for and download new content from `watchers` without any user input as well as keeping the information up to date.
 
-To create a cron task schedule the command below (do not set the execution to lower than every 15 minutes);
+Unlike other episode downloads, nzbVR provides 2 different tasks that can be scheduled rather than just the 1. The tasks are split because the `update` task does not need to be ran every time you check for new downloads, instead this can be safely scheduled to every 12 hours, thus greatly improving performance of the `check` task.
 
-	php /path/to/nzvbr/check.php >> /path/to/nzvbr/data/nzbvr.log
+### Check and Download Task
+
+The `check` task tells nzbVR to check for and download new content from `watchers`. You should not set this task to schedule lower than every 15 minutes, otherwise your Newzbin account might end up banned.
+
+	php /path/to/nzvbr/check.php
+
+
+### Update Information Task
+
+The `update` task will make nzbVR get the latest information about `watchers` from external series (TVRage, TheTVDB and TheMovieDB) and store the information locally. As the `update` task processes quite a lot of information and the information is only relevant every day or so, you can safely schedule the task to run every 12 hours or so. 
+
+	php /path/to/nzbvr/update.php
 	
+
+### Mac OS X / Launchctl
+
 Under OS X the recommended method for running the scheduler is through launchd, there is a default plist in the `extras` directory that can be easily modified and enabled;
 
 	cd nzbvr
 	
-	# Edit `extras/org.sixones.nzbvr.plist` (you need to set the abolsolute path to `nzbvr/check.php` and the username)
-	mate extras/org.sixones.nzbvr.plist
+	# Edit `extras/org.sixones.nzbvr.check.plist` (you need to set the absolute path to `nzbvr/check.php` and the username to run as)
+	mate extras/org.sixones.nzbvr.check.plist
 	
-	# Copy to `/Library/LaunchDaemons/org.sixones.nzbvr.plist`
-	sudo cp extras/org.sixones.nzbvr.plist /Library/LaunchDaemons/org.sixones.nzbvr.plist
+	# Edit `extras/org.sixones.nzbvr.update.plist` (you need to set the absolute path to `nzbvr/update.php` and the username to run as)
+	mate extras/org.sixones.nzbvr.update.plist
+	
+	# Copy to `/Library/LaunchDaemons/`
+	sudo cp extras/org.sixones.nzbvr.check.plist /Library/LaunchDaemons/org.sixones.nzbvr.check.plist
+	sudo cp extras/org.sixones.nzbvr.update.plist /Library/LaunchDaemons/org.sixones.nzbvr.update.plist
 	
 	# Enable
-	sudo launchctl load /Library/LaunchDaemons/org.sixones.nzbvr.plist
+	sudo launchctl load /Library/LaunchDaemons/org.sixones.nzbvr.check.plist
+	sudo launchctl load /Library/LaunchDaemons/org.sixones.nzbvr.update.plist
 	
-The default plist sets the task to schedule every 15 minutes (900 seconds), its not recommended to set below 15 minutes as nzbVR doesnt include any validation or security for the data being written (it will in the future).
+The default `check` task plist is set to run every 15 minutes (900 seconds), its not recommended to set below this. The `update` task has a default schedule of 12 hours (43200 seconds), there isn't any reason to set this lower.
 	
 [Picnic]: http://github.com/sixones/picnic "Picnic"
 
