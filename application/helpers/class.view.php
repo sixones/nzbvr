@@ -58,6 +58,10 @@ class ViewHelper {
 		if ($removeScript && stripos($base, "/index.php") !== false) {
 			$base = str_replace("/index.php", "", $base);
 		}
+		
+		if ($removeScript && stripos($base, "?req=") !== false) {
+			$base = str_replace("?req=", "", $base);
+		}
 	
 		return $base.$url; //nzbVR::instance()->config->get("base_url")
 	}
