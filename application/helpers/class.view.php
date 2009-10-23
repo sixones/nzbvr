@@ -52,12 +52,18 @@ class ViewHelper {
 		echo "</select>\n";
 	}
 	
-	public static function link($url) {
-		return nzbVR::instance()->settings->base_url.$url; //nzbVR::instance()->config->get("base_url")
+	public static function link($url, $removeScript = true) {
+		$base = nzbVR::instance()->settings->base_url;
+		
+		if ($removeScript && stripos($base, "/index.php") !== false) {
+			$base = str_replace("/index.php", "", $base);
+		}
+	
+		return $base.$url; //nzbVR::instance()->config->get("base_url")
 	}
 	
 	public static function assetLink($url) {
-		return self::link("skins/".nzbVR::instance()->skin()."/assets/".$url);
+		return self::link("skins/".nzbVR::instance()->skin()."/assets/".$url, true);
 	}
 }
 

@@ -49,7 +49,7 @@ class LocalStore {
 		$obj = $this->_store->get($id);
 		
 		if ($obj != null) {
-			return nzbVR::instance()->settings->base_url."data/".$obj->getPath();
+			return ViewHelper::link("data/".$obj->getPath());
 		}
 		
 		return ViewHelper::assetLink("images/no_cover.png");
