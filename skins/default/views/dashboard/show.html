@@ -20,7 +20,14 @@
 	<?php endif; ?>
 	
 	<div class="changelog">
-		<h3>nzbVR <?php echo nzbVR::VERSION; ?> Changelog</h3>
+		<h3>nzbVR <?php echo nzbVR::VERSION; ?> changes</h3>
+		<ul>
+			<li>removed use of DateTime::createFromFormat to allow support in PHP 5.2</li>
+			<li>fixed the time display to recognise day light saving on the local system</li>
+			<li>picnic: created static methods for creating a DateTime object from a string or timestamp</li>
+			<li>picnic: fixed logic for calculating time between benchmarks (fixes display of a negative time span on the nzbVR dashboard)</li>
+		</ul>
+		<h4>0.31 changes</h4>
 		<ul>
 			<li>changed TheTVDB search to use the series name entered by the user rather than the tv rage name</li>
 			<li>completed movie's section with search + info support via TheMovieDB</li>

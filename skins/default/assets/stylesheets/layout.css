@@ -167,6 +167,11 @@ div#content div.container section div.changelog h3 {
 	padding: 5px;
 }
 
+div#content div.container section div.changelog h4 {
+	font-size: 1.1em;
+	padding: 4px 2px 0px;
+}
+
 div#content div.container section ul.list_box li span.text {
 	border-bottom: solid 1px #CCC;
 	padding: 4px 1px 4px 0px;
@@ -381,7 +386,18 @@ dl dd.movie div.information div.identifier {
 dl dd.series div.information div.identifier h3,
 dl dd.movie div.information div.identifier h3 {
 	font-size: 2em;
-	margin: -2px 0px 5px 0px;
+	margin: -2px 0px 8px 0px;
+}
+
+dl dd.series div.information div.identifier h3 a,
+dl dd.movie div.information div.identifier h3 a {
+	border-bottom: solid 1px #CCC;
+	padding-bottom: 1px;
+}
+
+dl dd.series div.information div.identifier h3 a:hover,
+dl dd.movie div.information div.identifier h3 a:hover {
+	opacity: 0.5;
 }
 
 dl dd.series div.information div.identifier nav.actions,
