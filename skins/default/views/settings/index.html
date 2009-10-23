@@ -11,7 +11,14 @@
 				<dd>
 					<input id="base_url" type="text" value="<?php echo  $this->picnic()->controller()->settings->base_url; ?>" />
 				</dd>
+			</dl>
+		</fieldset>
+		<fieldset>
+			<legend>nzbVR Display</legend>
 			
+			<p>nzbVR provides a second skin primarily for an iPhone optimised, this can be accessed via /mobile.html or /m</p>
+			
+			<dl>
 				<dt>
 					<label for="main_skin">Main Skin</label>
 				</dt>
@@ -42,7 +49,7 @@
 					<label for="newzbin_password">Password</label>
 				</dt>
 				<dd>
-					<input id="newzbin_password" type="password" value="" />
+					<input id="newzbin_password" type="password" value="<?php echo base64_decode($this->picnic()->controller()->settings->newzbin_password); ?>" />
 				</dd>
 			</dl>
 		</fieldset>
@@ -87,7 +94,43 @@
 					<label for="xbmc_password">Password</label>
 				</dt>
 				<dd>
-					<input id="xbmc_password" type="password" value="" />
+					<input id="xbmc_password" type="password" value="<?php echo base64_decode($this->picnic()->controller()->settings->xbmc_password); ?>" />
+				</dd>
+			</dl>
+		</fieldset>
+		
+		<fieldset>
+			<legend>Prowl</legend>
+			
+			<p>For <a href="http://prowl.weks.net/">Prowl</a> notifications to work successfully, Curl needs to be compiled with OpenSSL.</p>
+			
+			<dl>
+				<dt>
+					<label for="prowl_apikey">API Key</label>
+				</dt>
+				<dd>
+					<input id="prowl_apikey" type="text" value="<?php echo base64_decode($this->picnic()->controller()->settings->prowl_apikey); ?>" />
+				</dd>
+			</dl>
+		</fieldset>
+		
+		<fieldset>
+			<legend>Growl</legend>
+			
+			<p>To receive notifications via <a href="http://growl.info/">Growl</a> on OS X you need to enable the 'Listen for incoming notifications' and 'Allow remote application registration' options inside the Growl preferences.</p>
+			
+			<dl>
+				<dt>
+					<label for="growl_address">Address</label>
+				</dt>
+				<dd>
+					<input id="growl_address" type="text" value="<?php echo $this->picnic()->controller()->settings->growl_address; ?>" />
+				</dd>
+				<dt>
+					<label for="growl_password">Server Password</label>
+				</dt>
+				<dd>
+					<input id="growl_password" type="password" value="<?php echo base64_decode($this->picnic()->controller()->settings->growl_password); ?>" />
 				</dd>
 			</dl>
 		</fieldset>

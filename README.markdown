@@ -34,7 +34,7 @@ Features
 * Automatic searches for movies
 * Generic automatic searches
 * Newzbin search interface
-* XBMC notification
+* Notifications via XBMC / Plex, Prowl and Growl
 * TV Series information and locally cached posters
 
 Todo
@@ -47,7 +47,7 @@ Todo
 * Support for downloading nzb to a watched folder
 * NZBMatrix search support
 * iPhone web interface *in progress*
-* XBMC notification *in progress*
+* <del>XBMC notification</del>
 
 Requirements
 ------------
@@ -57,6 +57,8 @@ Requirements
 * Newzbin account
 * Web Server + PHP5.2+ (Apache2 + mod-rewrite + virtual host recommended but not required)
 * XBMC (optional)
+* Prowl (optional)
+* Growl (optional)
 	
 Installing
 ----------

@@ -63,8 +63,6 @@ class MovieWatcher extends Watcher implements ILoadableWatcher, ISavableWatcher 
 			}
 		}
 		
-		echo "NOT";
-		
 		return false;
 	}
 	

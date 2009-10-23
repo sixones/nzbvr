@@ -5,6 +5,11 @@ require_once(APPLICATION_DIR . "classes/class.nzbvr.php");
 require_once(APPLICATION_DIR . "classes/class.newzbin.php");
 require_once(APPLICATION_DIR . "classes/class.sabnzbd.php");
 
+require_once(APPLICATION_DIR . "classes/notifiers/class.notifier.php");
+require_once(APPLICATION_DIR . "classes/notifiers/class.growl.php");
+require_once(APPLICATION_DIR . "classes/notifiers/class.prowl.php");
+require_once(APPLICATION_DIR . "classes/notifiers/class.xbmc.php");
+
 require_once(APPLICATION_DIR . "classes/scrapers/class.scraper.php");
 require_once(APPLICATION_DIR . "classes/scrapers/class.moviedb.php");
 require_once(APPLICATION_DIR . "classes/scrapers/class.tvdb.php");

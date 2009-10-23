@@ -23,12 +23,19 @@ class Settings extends XMLModel {
 	public $xbmc_username = "";
 	public $xbmc_password = "";
 	
+	// prowl
+	public $prowl_apikey = "";
+	
+	// growl
+	public $growl_address = "";
+	public $growl_password = "";
+	
 	public function __construct() {
 		parent::__construct("settings.xml");
 	}
 	
 	public function set($key, $value) {
-		$this->$key = ($value == null ? $this->$key : $value);
+		$this->$key = $value;
 	}
 }
 

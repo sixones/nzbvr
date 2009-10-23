@@ -1,3 +1,5 @@
+/* @override http://localhost/nzbvr/skins/default/assets/stylesheets/layout.css?v=824371161 */
+
 body {
 	background: #CCC;
 	color: #000;
@@ -265,6 +267,11 @@ form fieldset select {
 	padding: 5px;
 	outline: none;
 	width: 300px;
+}
+
+form fieldset p {
+	margin: 0px 5px 15px;
+	padding: 5px;
 }
 
 form fieldset input:focus,

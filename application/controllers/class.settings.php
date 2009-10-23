@@ -24,21 +24,29 @@ class SettingsController extends ApplicationController {
 		nzbVR::instance()->settings->set("mobile_skin", $this->params()->get("mobile_skin"));
 		
 		nzbVR::instance()->settings->set("newzbin_username", base64_encode($this->params()->get("newzbin_username")));
-		
-		if ($this->params()->get("newzbin_password") != null && $this->params()->get("newzbin_password") != "") {
-			nzbVR::instance()->settings->set("newzbin_password", base64_encode($this->params()->get("newzbin_password")));
-		}
+		nzbVR::instance()->settings->set("newzbin_password", base64_encode($this->params()->get("newzbin_password")));
 		
 		nzbVR::instance()->settings->set("sabnzbd_address", $this->params()->get("sabnzbd_address"));
 		nzbVR::instance()->settings->set("sabnzbd_apikey", base64_encode($this->params()->get("sabnzbd_apikey")));
 		
 		nzbVR::instance()->settings->set("xbmc_address", $this->params()->get("xbmc_address"));
 		nzbVR::instance()->settings->set("xbmc_username", base64_encode($this->params()->get("xbmc_username")));
+		nzbVR::instance()->settings->set("xbmc_password", base64_encode($this->params()->get("xbmc_password")));
 		
-		if ($this->params()->get("xbmc_password") != null && $this->params()->get("xbmc_password") != "") {
-			nzbVR::instance()->settings->set("xbmc_password", base64_encode($this->params()->get("xbmc_password")));
+		nzbVR::instance()->settings->set("prowl_apikey", base64_encode($this->params()->get("prowl_apikey")));
+	
+		nzbVR::instance()->settings->set("growl_password", base64_encode($this->params()->get("growl_password")));
+		
+		if ($this->params()->get("growl_address") != nzbVR::instance()->settings->growl_address) {
+			nzbVR::instance()->settings->set("growl_address", $this->params()->get("growl_address"));
+		
+			if (nzbVR::instance()->settings->growl_address != "") {
+				$growl = new Growl();
+				$growl->addNotification("Report found for watcher", true);
+				$growl->register();
+			}
 		}
-		
+	
 		nzbVR::instance()->settings->save();
 		
 		//$this->notification("Settings saved successfully", "success");

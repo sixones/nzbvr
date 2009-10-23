@@ -92,6 +92,8 @@ class WatchersController extends ApplicationController {
 				
 					$watcher->mark($results);
 				
+					//PicnicUtils::dump($results);
+				
 					$this->results = array_merge($this->results, $results);
 				
 					$watcher->save();
@@ -103,6 +105,14 @@ class WatchersController extends ApplicationController {
 			$sabnzbd = new SABnzbd(nzbVR::instance()->settings->sabnzbd_address, nzbVR::instance()->settings->sabnzbd_apikey);
 			$sabnzbd->send($this->results);
 		}
+		
+		//$notifiers = new Notifiers();
+		
+		//foreach ($this->results as $result) {
+		//	$notifiers->notification("Sent '{$result->name}' report to SABnzbd+", "Report found");
+		//}
+		
+		$notifiers = null;
 		
 		$this->_watchers->last_benchmark->downloads = sizeof($this->results);
 		
