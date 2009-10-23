@@ -34,8 +34,8 @@ abstract class XMLModel {
 			$data = $this->_storageParser->read();
 		
 			if ($data == null) {
-				// error'd
-				exit("ERROR'D");
+				// error'd or a new install / no watchers yet
+				return $this;
 			}
 		
 			$properties = get_object_vars($data);
