@@ -5,6 +5,8 @@ class ApplicationController extends PicnicController {
 
 	public $notifications = array();
 	
+	protected $_currentUser = null;
+	
 	public function __construct() {
 		parent::__construct();
 		
@@ -37,6 +39,11 @@ class ApplicationController extends PicnicController {
 		}
 		
 		Picnic::getInstance()->view()->useTemplateFolder(ROOT_PATH."skins/".nzbVR::instance()->skin()."/views");
+	}
+	
+	public function requiresAuthentication() {
+		// checks if request is authentication
+		// if not redirect to login
 	}
 	
 	public function notification($message, $class = "info") {
