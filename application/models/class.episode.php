@@ -43,6 +43,12 @@ class Episode {
 		return "{$this->season}x{$num}";
 	}
 	
+	public function dateIdentifier() {
+		$t = strtotime($this->airs_date);
+		
+		return date("Y-m-j", $t);
+	}
+	
 	public function airs_date() {
 		$t = strtotime($this->airs_date);
 		

@@ -57,7 +57,7 @@ class SeriesWatcher extends Watcher implements ILoadableWatcher, ISavableWatcher
 			$next = $this->_series->nextDownload();
 			
 			if ($next != null) {
-				return "^\"{$this->name}\" - {$next->identifier()}";
+				return "^\"{$this->name}\" - {$next->identifier()} OR ^\"{$this->name}\" - {$next->dateIdentifier()}";
 			}
 		}
 		
@@ -89,8 +89,9 @@ class Series extends XMLModel {
 	public $airs_day;
 	public $runtime;
 	public $rage_url;
+	public $timezone;
 	public $status = "Continuing";
-	
+
 	public $seasons = array();
 	
 	private $_parent = null;

@@ -57,7 +57,12 @@ class TVRage extends TVScraper {
 	public function search($name) {
 		$url = str_replace("{show_name}", urlencode($name), "http://services.tvrage.com/feeds/full_search.php?show={show_name}");
 		
-		$xml = new SimpleXMLElement($url, null, true);
+		try {
+			$xml = new SimpleXMLElement($url, null, true);
+		} catch (Exception $ex) {
+			$xml = null;
+			throw new ScraperRequestFailed("TVRage appears to be down, unable to search.");
+		}
 		
 		$results = array();
 		
@@ -88,6 +93,13 @@ class TVRage extends TVScraper {
 	public function update($series) {
 		$url = "http://services.tvrage.com/feeds/full_show_info.php?sid={$series->tvrage_id}";
 
+		try {
+			$xml = new SimpleXMLElement($url, null, true);
+		} catch (Exception $ex) {
+			$xml = null;
+			throw new ScraperRequestFailed("TVRage appears to be down, unable to update information.");
+		}
+
 		$item = new SimpleXMLElement($url, NULL, true);
 		
 		$series->tvrage_id = (string)$item->showid;
@@ -102,6 +114,7 @@ class TVRage extends TVScraper {
 		$series->runtime = (string)$item->runtime;
 		$series->rage_url = (string)$item->showlink;
 		$series->status = (string)$item->status;
+		$series->timezone = (string)$item->timezone;
 		
 		//for ($i = 0; $i < sizeof($item->Episodelist->Season); $i++) {
 		//	$season = $item->Episodelist->Season[$i];

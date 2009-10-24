@@ -1,5 +1,7 @@
 <?php if (!defined("PICNIC")) { header("Location: /"); exit(1); }
 
+class ScraperRequestFailed extends PicnicException { }
+
 abstract class TVScraper {
 	public function search($name) {
 		// searches for a show using the name as the search argument

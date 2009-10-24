@@ -18,7 +18,12 @@ class MovieDB extends TVScraper {
 	public function search($name) {
 		$url = str_replace("{show_name}", urlencode($name), "http://api.themoviedb.org/2.1/Movie.search/en/xml/79574dad8d32843a34126c7afc20fdc2/{show_name}");
 		
-		$xml = new SimpleXMLElement($url, null, true);
+		try {
+			$xml = new SimpleXMLElement($url, null, true);
+		} catch (Exception $ex) {
+			$xml = null;
+			throw new ScraperRequestFailed("MovieDB appears to be down, unable to search.");
+		}
 		
 		$results = array();
 		
@@ -41,7 +46,12 @@ class MovieDB extends TVScraper {
 	public function update($movie) {
 		$url = "http://api.themoviedb.org/2.1/Movie.getInfo/en/xml/79574dad8d32843a34126c7afc20fdc2/{$movie->moviedb_id}";
 
-		$item = new SimpleXMLElement($url, NULL, true);
+		try {
+			$xml = new SimpleXMLElement($url, null, true);
+		} catch (Exception $ex) {
+			$xml = null;
+			throw new ScraperRequestFailed("MovieDB appears to be down, unable to update information.");
+		}
 
 		$item = $item->movies[0]->movie;
 

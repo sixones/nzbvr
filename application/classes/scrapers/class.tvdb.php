@@ -85,7 +85,13 @@ class TVDB extends TVScraper {
 	public function search($name) {
 		$url = self::$__mirrors["xml"][0]."/api/GetSeries.php?seriesname=".urlencode($name);
 		
-		$xml = new SimpleXMLElement($url, null, true);
+		try {
+			$xml = new SimpleXMLElement($url, null, true);
+		} catch (Exception $ex) {
+			$xml = null;
+			throw new ScraperRequestFailed("TVDB appears to be down, unable to search for show.");
+		}
+		
 		$results = array();
 		
 		foreach ($xml->Series as $show) {
@@ -107,7 +113,13 @@ class TVDB extends TVScraper {
 	
 	public function update($series) {
 		$url = self::$__mirrors["xml"][0]."/api/1DBF0A2C61EDB18C/series/".urlencode($series->tvdb_id)."/all/en.xml";
-		$xml = new SimpleXMLElement($url, null, true);
+		
+		try {
+			$xml = new SimpleXMLElement($url, null, true);
+		} catch (Exception $ex) {
+			$xml = null;
+			throw new ScraperRequestFailed("TVDB appears to be down, unable to update information.");
+		}
 		
 		$series->tvdb_id = (string)$xml->Series->id;
 		$series->imdb_id = (string)$xml->Series->IMDB_ID;

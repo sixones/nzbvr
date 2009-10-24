@@ -23,6 +23,9 @@
 		<h3>nzbVR <?php echo nzbVR::VERSION; ?> changes</h3>
 		<ul>
 			<li>added notifications via XBMC / Plex, Prowl or Growl</li>
+			<li>added support for daily shows that use the episode air date as an identifier</li>
+			<li>added newzbin authentication exception if authentication fails when attempting to search</li>
+			<li>improved scraper support for when a provider is down (tvrage, tvdb, moviedb)</li>
 			<li>removed use of DateTime::createFromFormat to allow support in PHP 5.2</li>
 			<li>fixed the time display to recognise day light saving on the local system</li>
 			<li>added new `update.php` task + info on scheduling to README + new launchctl plists</li>

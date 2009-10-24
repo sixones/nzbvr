@@ -1,5 +1,7 @@
 <?php
 
+class NewzbinSearchRequestFailed extends PicnicException { }
+
 class NZBReport {
 	public $newzbin_id;
 	public $name;
@@ -59,11 +61,16 @@ class Newzbin {
 	}
 	
 	protected function searchRequest($url, $marker = null) {
-		
-		$xml = new SimpleXMLElement($url, null, true);
-		
+		$xml = null;
 		$results = array();
-
+		
+		try {
+			$xml = new SimpleXMLElement($url, null, true);
+		} catch (Exception $ex) {
+			$xml = null;
+			throw new NewzbinSearchRequestFailed("Newzbin down or provided authentication is incorrect.");
+		}
+		
 		for ($i = 0; $i < sizeof($xml->entry); $i++) {
 			$item = $xml->entry[$i];
 			
