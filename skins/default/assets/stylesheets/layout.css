@@ -399,6 +399,23 @@ form fieldset.search input#query {
 	width: 98%;
 }
 
+form fieldset.search dl.advanced {
+	display: block !important;
+	padding-top: 10px !important;
+}
+
+form fieldset.search dl.advanced dd {
+	background: #EFEEFE;
+	display: inline;
+	padding: 10px;
+	margin: 5px;
+	width: 10px;
+}
+
+form fieldset.search dl.advanced dd select {
+	width: 160px;
+}
+
 form fieldset.search,
 form fieldset.info {
 	border: none;

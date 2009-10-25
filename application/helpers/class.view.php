@@ -36,7 +36,7 @@ class ViewHelper {
 		echo "<select id=\"{$id}\" name=\"{$id}\">\n";
 		
 		if ($head) {
-			echo "<option".($selected == null ? " selected=\"selected\"" : "").">".(is_string($head) ? $head : "")."</option>\n";
+			echo "<option".($selected == null ? " selected=\"selected\"" : "")." value=\"\">".(is_string($head) ? $head : "")."</option>\n";
 		}
 		
 		if (!PicnicUtils::isAssociativeArray($array)) {

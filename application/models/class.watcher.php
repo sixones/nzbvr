@@ -248,13 +248,17 @@ abstract class Watcher {
 		
 		if ($this->language != null) {
 			foreach ($this->language as $language) {
-				$params[] = "Attr:Language~{$language}";
+				if ($language != "") {
+					$params[] = "Attr:Language~{$language}";
+				}
 			}
 		}
 		
 		if ($this->format != null) {
 			foreach ($this->format as $format) {
-				$params[] = "Attr:VideoFormat~{$format}";
+				if ($format != "") {
+					$params[] = "Attr:VideoFormat~{$format}";
+				}
 			}
 		}
 		
