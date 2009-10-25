@@ -20,7 +20,7 @@
 	</nav>
 	
 	<?php if (sizeof($this->picnic()->controller()->series) > 0): ?>
-	<dl>
+	<dl class="scroller">
 		<?php foreach ($this->picnic()->controller()->series as $series): ?>
 			<?php
 				$last = $series->lastDownload();
@@ -64,4 +64,5 @@
 	<?php else: ?>
 		<p class="empty">Your library is empty, you should add a <a href="#series/new" class="content">new series</a> to watch.</p>
 	<?php endif; ?>
+	<br clear="both" />
 </section>

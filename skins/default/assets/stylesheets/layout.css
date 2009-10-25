@@ -1,14 +1,8 @@
 /* @override 
-	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=2069906834
-	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=1142414525
-	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=1055548575
-	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=783143102
-	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=1954085219
-	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=1313485465
-	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=2029144257
-	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=1252753252
-	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=907362431
-	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=950025927
+	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=*
+	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=375208664
+	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=1091884961
+	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=70333977
 */
 
 body {
@@ -93,6 +87,7 @@ div#content div.loader p.thirdparty {
 	width: 430px;
 }
 
+
 div#content div.container {
 	margin-top: 20px;
 	padding: 0px 20px;
@@ -113,6 +108,25 @@ div#content div.container section {
 	max-width: 1200px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
+	/*position: absolute;
+	bottom: 30px;
+	top: 30px;
+	height: 85%;
+	left: 20px;
+	right: 20px;*/
+}
+
+div#content div.container section .scroller {
+	padding: 10px 5px;
+	/*overflow-y: hidden;
+	left: 0px;
+	right: 0px;
+	top: 10px;
+	height: 90%;*/
+}
+
+div#content div.container section .scroller:hover {
+	overflow-y: scroll;
 }
 
 div#content div.container section p.empty {
