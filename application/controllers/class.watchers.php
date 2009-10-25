@@ -75,6 +75,30 @@ class WatchersController extends ApplicationController {
 		}
 	}
 	
+	protected function checkWatcher($watcher) {
+		$watcher->load();
+	
+		$term = $watcher->toSearchTerm();
+		$reports = $watcher->check();
+	
+		if ($reports != null && is_array($reports) && sizeof($reports) > 0) {
+			$results = array();
+			$results[] = $watcher->findSuitableReport($reports);
+		
+			$watcher->mark($results);
+		
+			//PicnicUtils::dump($results);
+		
+			$this->results = array_merge($this->results, $results);
+		
+			$watcher->save();
+		}
+		
+		if ($term != $watcher->toSearchTerm() && $watcher->toSearchTerm() != null) {
+			$this->checkWatcher($watcher);
+		}
+	}
+	
 	public function check() {
 		$this->results = array();
 		
@@ -95,22 +119,7 @@ class WatchersController extends ApplicationController {
 				|| ($type == "search" && $watcher instanceof SearchWatcher))
 				&& ($id == null || $watcher->id == $id)) {
 
-				$watcher->load();
-			
-				$reports = $watcher->check();
-			
-				if ($reports != null && is_array($reports) && sizeof($reports) > 0) {
-					$results = array();
-					$results[] = $watcher->findSuitableReport($reports);
-				
-					$watcher->mark($results);
-				
-					//PicnicUtils::dump($results);
-				
-					$this->results = array_merge($this->results, $results);
-				
-					$watcher->save();
-				}
+				$this->checkWatcher($watcher);
 			}
 		}
 		

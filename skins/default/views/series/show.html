@@ -66,7 +66,7 @@ $then = $series->nextDownload($next, false);
 						<span class="state"></span>
 						<nav>
 							<?php if ($episode->downloaded): ?>
-							<a href="#">Re-download</a>
+							<a href="#" onclick="$nzbVR.series.downloadEpisode('<?php echo $watcher->id; ?>', '<?php echo $season->num; ?>', '<?php echo $episode->num; ?>', this.parentNode.parentNode);">Re-download</a>
 							<?php else: ?>
 								<?php if (strtotime($episode->airs_date) < time()): ?>
 									<a href="#" onclick="$nzbVR.series.downloadEpisode('<?php echo $watcher->id; ?>', '<?php echo $season->num; ?>', '<?php echo $episode->num; ?>', this.parentNode.parentNode);">Download Now</a>
