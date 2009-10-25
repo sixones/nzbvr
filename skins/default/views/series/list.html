@@ -7,6 +7,18 @@
 		<a href="#watchers/update.html?type=series" class="content slow">Update All</a>
 	</nav>
 	
+	<nav class="sort">
+		<a href="#" class="head">Sort by:</a>
+		<a href="#series.html?sort=upcoming" class="content <?php if ($this->picnic()->controller()->sort == "upcoming"): ?>selected<?php endif; ?>">Upcoming</a>
+		<a href="#series.html?sort=downloaded" class="content <?php if ($this->picnic()->controller()->sort == "downloaded"): ?>selected<?php endif; ?>">Downloaded</a>
+	</nav>
+
+	<nav class="display">
+		<a href="#" class="head">Display as:</a>
+		<a href="#series.html?mode=list" class="content <?php if (nzbVR::instance()->settings->series_display_mode == "list"): ?>selected<?php endif; ?>">List</a>
+		<a href="#series.html?mode=thumbnails" class="content <?php if (nzbVR::instance()->settings->series_display_mode == "thumbnails"): ?>selected<?php endif; ?>">Thumbnails</a>
+	</nav>
+	
 	<?php if (sizeof($this->picnic()->controller()->series) > 0): ?>
 	<dl>
 		<?php foreach ($this->picnic()->controller()->series as $series): ?>
@@ -22,11 +34,11 @@
 				<div class="information">
 					<div class="identifier">
 						<h3><a href="#series/show/<?php echo $series->id; ?>" class="content"><?php echo  $series->watcher->name; ?></a></h3>
-						<span class="runtime"><?php echo  $series->runtime; ?> minutes, <?php echo  $series->airs_day; ?> at <?php echo  $series->airs_time; ?></span>
+						<span class="runtime"><?php echo  $series->runtime; ?> minutes, <?php echo  $series->airs_day; ?> at <?php echo $series->airs_time; ?><?php echo $series->timezone != "" ? " ({$series->timezone})" : ""; ?></span>
 						<nav class="actions">
 							<a href="#watchers/check/<?php echo $series->watcher->id; ?>" class="content slow">Check</a>
 							<a href="#watchers/update/<?php echo $series->watcher->id; ?>" class="content slow">Update Info</a>
-							<a href="#series/delete/<?php echo $series->id; ?>" class="content">Delete</a>
+							<a href="#series/delete/<?php echo $series->id; ?>" class="content confirm_delete">Delete</a>
 						</nav>
 						<nav class="externals">
 							<a href="<?php echo  $series->rage_url; ?>">TVRage</a>

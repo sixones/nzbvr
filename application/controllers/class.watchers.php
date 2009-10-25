@@ -5,11 +5,23 @@ class WatchersController extends ApplicationController {
 
 	public function index() {
 		$this->watchers = array();
+		$this->sort = $this->params()->get("sort", "name");
 		
 		foreach ($this->_watchers->watchers as $watcher) {
 			if ($watcher != null && $watcher instanceof SearchWatcher) {
 				$this->watchers[] = $watcher;
 			}
+		}
+		
+		// sort array
+		switch ($this->sort) {
+			case "category":
+				uasort($this->watchers, "Watcher::sortByCategory");
+				break;
+			default:
+			case "name":
+				uasort($this->watchers, "Watcher::sortByName");
+				break;
 		}
 	}
 	
@@ -18,9 +30,10 @@ class WatchersController extends ApplicationController {
 		$language = $this->params()->get("language");
 		$format = $this->params()->get("format");
 		$source = $this->params()->get("source");
+		$category = $this->params()->get("category");
 		
 		if ($name != null) {
-			$watcher = new SearchWatcher(null, $name, array($language), array($format), array($source));
+			$watcher = new SearchWatcher(null, $name, array($language), array($format), array($source), (int)$category);
 
 			$this->_watchers->add($watcher);
 		

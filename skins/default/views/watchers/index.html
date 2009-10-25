@@ -6,16 +6,20 @@
 		<a href="#watchers/check.html?type=search" class="content slow">Check All</a>
 	</nav>
 	
+	<nav class="sort">
+		<a href="#" class="head">Sort by:</a>
+		<a href="#watchers.html?sort=category" class="content <?php if ($this->picnic()->controller()->sort == "category"): ?>selected<?php endif; ?>">Category</a>
+		<a href="#watchers.html?sort=name" class="content <?php if ($this->picnic()->controller()->sort == "name"): ?>selected<?php endif; ?>">Name</a>
+	</nav>
+	
 	<?php if (sizeof($this->picnic()->controller()->watchers) > 0): ?>
 	<dl class="watchers">
 		<?php foreach ($this->picnic()->controller()->watchers as $watcher): ?>
 			<dd class="report <?php if ($watcher->downloaded): ?>downloaded<?php endif; ?>">			
 				<span class="formats">	
 					<?php if (sizeof($watcher->format) > 0): ?>
-						<?php echo PicnicUtils::implode($watcher->format); ?>
-					<?php else: ?>
-						Unknown
-					<?php endif; ?>
+						<?php echo PicnicUtils::implode($watcher->format); ?> - 
+					<?php endif; ?> (<?php echo nzbVR::$categories[(string)$watcher->category]; ?>)
 				</span>
 
 				<?php if ($watcher->downloaded): ?>
@@ -28,7 +32,7 @@
 					<?php if (!$watcher->downloaded): ?>
 					<a href="#watchers/check/<?php echo $watcher->id; ?> slow" class="content">Check</a>
 					<?php endif; ?>
-					<a href="#watchers/delete/<?php echo $watcher->id; ?>" class="content">Delete</a>
+					<a href="#watchers/delete/<?php echo $watcher->id; ?>" class="content confirm_delete">Delete</a>
 				</nav>
 				
 				<span class="info">
@@ -36,7 +40,9 @@
 						<?php if (sizeof($watcher->source) > 0): ?>
 							<li>Source: <?php echo PicnicUtils::implode($watcher->source); ?></li>
 						<?php endif; ?>
-						<li>Language: <?php echo PicnicUtils::implode($watcher->language); ?></li>
+						<?php if (sizeof($watcher->language) > 0): ?>
+							<li>Language: <?php echo PicnicUtils::implode($watcher->language); ?></li>
+						<?php endif; ?>
 					</ul>
 				</span>
 			</dd>

@@ -41,9 +41,9 @@
 							<p class="overview"><?php echo $movie->overview; ?></p>
 						<?php endif; ?>
 						<nav class="actions">
-							<a href="#watchers/check/<?php echo $movie->watcher->id; ?> slow" class="content">Check</a>
-							<a href="#watchers/update/<?php echo $movie->watcher->id; ?> slow" class="content">Update Info</a>
-							<a href="#movies/delete/<?php echo $movie->id; ?>" class="content">Delete</a>
+							<a href="#watchers/check/<?php echo $movie->watcher->id; ?>" class="content slow">Check</a>
+							<a href="#watchers/update/<?php echo $movie->watcher->id; ?>" class="content slow">Update Info</a>
+							<a href="#movies/delete/<?php echo $movie->id; ?>" class="content confirm_delete">Delete</a>
 						</nav>
 						<?php if ($movie->moviedb_id != 0): ?>
 						<nav class="externals">

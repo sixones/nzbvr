@@ -1,7 +1,11 @@
 <section>
 	<h2>New Watcher</h2>
 	
-	<form class="slow" action="/watchers/new" method="post">
+	<nav class="content_nav">
+		<a href="#watchers" class="content">Back to Watchers</a>
+	</nav>
+	
+	<form class="slow" action="#watchers/new" method="post">
 		<fieldset class="info">
 			<dl>
 				<dt>
@@ -23,7 +27,7 @@
 					<label for="format">Format</label>
 				</dt>
 				<dd>
-					<?php ViewHelper::select("format", nzbVR::$formats, "x264", false); ?>
+					<?php ViewHelper::select("format", nzbVR::$formats); ?>
 				</dd>
 				
 				<dt>
@@ -37,12 +41,10 @@
 					<label for="language">Language</label>
 				</dt>
 				<dd>
-					<?php ViewHelper::select("language", nzbVR::$languages, null, false); ?>
+					<?php ViewHelper::select("language", nzbVR::$languages); ?>
 				</dd>
 			</dl>
 		</fieldset>
-		
-		<input id="tvrage_id" type="hidden" value="0" />
 		
 		<div class="buttons">
 			<button type="submit" class="save_btn">Save</button>

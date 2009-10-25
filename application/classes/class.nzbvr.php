@@ -1,7 +1,7 @@
 <?php if (!defined("PICNIC")) { header("Location: /"); exit(1); }
 
 class nzbVR {
-	const VERSION = "0.32";
+	const VERSION = "0.33";
 	
 	public $settings = null;
 	public $localStore = null;
@@ -38,6 +38,12 @@ class nzbVR {
 		
 		$this->settings = new Settings();
 		$this->settings->load();
+		
+		$path = ROOT_PATH."config.php";
+		
+		if (file_exists($path)) {
+			$this->settings->loadFile($path);
+		}
 		
 		$this->localStore = new LocalStore();
 	}

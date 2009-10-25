@@ -106,6 +106,50 @@ class Series extends XMLModel {
 		$this->_parent = $parent;
 	}
 	
+	public static function sortByDownloaded($a, $b) {
+		$aD = $a->lastDownload();
+		$bD = $b->lastDownload();
+
+		if ($aD == null) {
+			return -1;
+		}
+
+		if ($bD == null) {
+			return 1;
+		}
+
+		$aT = strtotime($aD->airs_date);
+		$bT = strtotime($bD->airs_date);
+
+		if ($aT == $bT) {
+			return 0;
+		}
+
+		return ($aT < $bT) ? -1 : 1;
+	}
+	
+	public static function sortByUpcoming($a, $b) {
+		$aD = $a->nextDownload();
+		$bD = $b->nextDownload();
+
+		if ($aD == null) {
+			return 1;
+		}
+
+		if ($bD == null) {
+			return -1;
+		}
+
+		$aT = strtotime($aD->airs_date);
+		$bT = strtotime($bD->airs_date);
+
+		if ($aT == $bT) {
+			return 0;
+		}
+
+		return ($aT < $bT) ? -1 : 1;
+	}
+	
 	public function storagePath() {
 		return "{$this->id}.xml";
 	}

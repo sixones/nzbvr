@@ -3,6 +3,7 @@
 class SeriesController extends ApplicationController {
 	public function index() {
 		$this->series = array();
+		$this->sort = $this->params()->get("sort", "upcoming");
 		
 		foreach ($this->_watchers->watchers as $watcher) {
 			if ($watcher != null && $watcher instanceof SeriesWatcher) {
@@ -15,6 +16,17 @@ class SeriesController extends ApplicationController {
 			}
 		}
 		
+		// sort array
+		switch ($this->sort) {
+			case "downloaded":
+				uasort($this->series, "Series::sortByDownloaded");
+				break;
+			default:
+			case "upcoming":
+				uasort($this->series, "Series::sortByUpcoming");
+				break;
+		}
+
 		$mode = $this->params()->get("mode");
 		
 		if ($mode != null) {

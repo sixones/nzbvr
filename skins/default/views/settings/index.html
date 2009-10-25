@@ -32,7 +32,14 @@
 				<dd>
 					<?php ViewHelper::select("mobile_skin", $this->picnic()->controller()->skins, $this->picnic()->controller()->settings->mobile_skin, false); ?>
 				</dd>
-			</dl>	
+
+				<!--<dt>
+					<label for="remember_sortorder">Remember Sort Order</label>
+				</dt>
+				<dd>
+					<input id="remember_sortorder" class="checkbox" type="checkbox" value="1" <?php echo $this->picnic()->controller()->settings->remember_sortorder ? "checked=\"checked\"" : ""; ?> />
+				</dd>-->
+			</dl>
 		</fieldset>
 		
 		<fieldset>

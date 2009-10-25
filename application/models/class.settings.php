@@ -9,6 +9,7 @@ class Settings extends XMLModel {
 	public $mobile_skin = "iphone";
 	
 	public $series_display_mode = "list";
+	public $remember_sortorder = false;
 	
 	// newzbin
 	public $newzbin_username = "";
@@ -30,12 +31,28 @@ class Settings extends XMLModel {
 	public $growl_address = "";
 	public $growl_password = "";
 	
+	protected $_rawConfiguration = array();
+	
 	public function __construct() {
 		parent::__construct("settings.xml");
 	}
 	
+	public function rawConfiguration() {
+		return $this->_rawConfiguration;
+	}
+	
 	public function set($key, $value) {
 		$this->$key = $value;
+	}
+	
+	public function loadFile($path) {
+		include($path);
+		
+		$this->_rawConfiguration = $c;
+		
+		foreach ($this->_rawConfiguration as $key => $val) {
+			$this->set($key, $val);
+		}
 	}
 }
 

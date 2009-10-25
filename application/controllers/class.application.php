@@ -13,7 +13,7 @@ class ApplicationController extends PicnicController {
 		if (!class_exists("PicnicUpdateRequiredException", false)) {
 			throw new PicnicMissingRequirementException("You need to update the picnic framework to continue;\n<pre><code>cd nzbvr/picnic\n\ngit pull origin master</code></pre>", 0, "ApplicationController", "__construct");
 		}
-		
+
 		if (isset($_SESSION["nzbvr-skin-mode"])) {
 			$mode = $_SESSION["nzbvr-skin-mode"];
 			

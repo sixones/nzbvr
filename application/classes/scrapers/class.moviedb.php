@@ -53,7 +53,7 @@ class MovieDB extends TVScraper {
 			throw new ScraperRequestFailed("MovieDB appears to be down, unable to update information.");
 		}
 
-		$item = $item->movies[0]->movie;
+		$item = $xml->movies[0]->movie;
 
 		$movie->moviedb_id = (string)$item->id;
 		$movie->imdb_id = (string)$item->imdb_id;

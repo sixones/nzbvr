@@ -100,6 +100,25 @@ class Movie extends XMLModel {
 		parent::__construct("{$this->id}.xml", "movies");
 	}
 	
+	public static function sortByUpcoming($a, $b) {
+		if ($a == null) {
+			return 1;
+		}
+
+		if ($b == null) {
+			return -1;
+		}
+
+		$aT = strtotime($a->released);
+		$bT = strtotime($b->released);
+
+		if ($aT == $bT) {
+			return 0;
+		}
+
+		return ($aT < $bT) ? -1 : 1;
+	}
+	
 	public function storagePath() {
 		return "{$this->id}.xml";
 	}

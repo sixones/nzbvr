@@ -120,6 +120,38 @@ abstract class Watcher {
 		$this->created = strtotime(date("Y-m-d"));
 	}
 	
+	public static function sortByCategory($a, $b) {
+		if ($a == null) {
+			return 1;
+		}
+
+		if ($b == null) {
+			return -1;
+		}
+		
+		if (nzbVR::$categories[(string)$a->category] == nzbVR::$categories[(string)$b->category]) {
+			return 0;
+		}
+
+		return (nzbVR::$categories[(string)$a->category] < nzbVR::$categories[(string)$b->category]) ? -1 : 1;
+	}
+	
+	public static function sortByName($a, $b) {
+		if ($a == null) {
+			return 1;
+		}
+
+		if ($b == null) {
+			return -1;
+		}
+		
+		if ((string)$a->name == (string)$b->name) {
+			return 0;
+		}
+
+		return ((string)$a->name < (string)$b->name) ? -1 : 1;
+	}
+	
 	public function findSuitableReport($results) {
 		foreach ($results as $report) {
 			if ($this->isReportSuitable($report)) {

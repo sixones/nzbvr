@@ -14,6 +14,8 @@ class MoviesController extends ApplicationController {
 				$this->movies[] = $movie;
 			}
 		}
+		
+		uasort($this->movies, "Movie::sortByUpcoming");
 	}
 	
 	public function check() {

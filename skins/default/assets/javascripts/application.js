@@ -164,8 +164,8 @@ function nzbVRSeries() {
 	},
 
 	this.search = function (name) {
-		if (this._request != null) {
-			this._request.abort();
+		if ($nzbVR.view._request != null) {
+			$nzbVR.view._request.abort();
 		}
 		
 		$("form fieldset.info").addClass("hide");
@@ -177,7 +177,7 @@ function nzbVRSeries() {
 		
 		$nzbVR.view._allow_submit = false;
 		
-		this._request = $.get(BASE_URL+"series/search/"+name+".json", null, function(data) {
+		$nzbVR.view._request = $.get(BASE_URL+"series/search/"+name+".json", null, function(data) {
 			//trace(data);
 			
 			$data = data;
@@ -238,11 +238,18 @@ function nzbVRView() {
 	this.content_url = "",
 	this.content_params = null,
 	this._allow_submit = false,
+	this._request = null,
 	
 	this.capture_links = function() {
 		$("div#content div.container a.content").click(function(e) {
 			if ($(this).hasClass("slow")) {
 				$("div#content div.loader").addClass("slow");
+			}
+			
+			if ($(this).hasClass("confirm_delete")) {
+				if (!confirm("Are you sure you want to delete this watcher?\n\nThis cannot be undone, and all history will be lost")) {
+					return false;
+				}
 			}
 			
 			$nzbVR.view.content($nzbVR.utils.parse_hash(this.href));
@@ -295,6 +302,10 @@ function nzbVRView() {
 		var hash2 = hash;
 		var split = hash.indexOf("/");
 		
+		if (split == -1) {
+			split = hash.indexOf(".");
+		}
+		
 		if (split != -1) {
 			hash2 = hash.substring(split, 0);
 		}
@@ -343,7 +354,11 @@ function nzbVRView() {
 		$("div#content div.container").queue(function() {
 			$nzbVR.view.show_loader();
 			
-			$.post($nzbVR.view.content_url, $nzbVR.view.content_params, function(data) {
+			if ($nzbVR.view._request != null) {
+				$nzbVR.view._request.abort();
+			}
+			
+			$nzbVR.view._request = $.post($nzbVR.view.content_url, $nzbVR.view.content_params, function(data) {
 				$("div#content div.container").html(data);
 				
 				$nzbVR.view.set_active_link($nzbVR.view.content_hash);
@@ -424,7 +439,11 @@ function nzbVRSearch() {
 		}
 		
 		$("div#search_results section#results").queue(function() {
-			$.post(BASE_URL+"search", params, function(data) {
+			if ($nzbVR.view._request != null) {
+				$nzbVR.view._request.abort();
+			}
+			
+			$nzbVR.view._request = $.post(BASE_URL+"search", params, function(data) {
 				$("div#search_results section#results").html(data);
 			
 				$nzbVR.view.capture_links();
@@ -507,7 +526,7 @@ function nzbVRMovies() {
 	this.applySearch = function() {
 		this._index = -1;
 		
-		//$nzbVR.view.allow_submit(false);
+		$nzbVR.view.allow_submit(true);
 	
 		$("section fieldset.search.movies input#name").keyup(function(e) {
 			var c = $(this).val().length;
@@ -580,17 +599,15 @@ function nzbVRMovies() {
 	},
 
 	this.search = function (name) {
-		if (this._request != null) {
-			this._request.abort();
+		if ($nzbVR.view._request!= null) {
+			$nzbVR.view._request.abort();
 		}
 		
 		$("fieldset.search input#name").addClass("searching");
 		$("fieldset.search input#name").css("background", "#FFFFFF url("+SKIN_URL+"images/ticker.gif) no-repeat 99%");
 	
 		
-		$nzbVR.view._allow_submit = false;
-		
-		this._request = $.get(BASE_URL+"movies/search/"+name+".json", null, function(data) {
+		$nzbVR.view._request = $.get(BASE_URL+"movies/search/"+name+".json", null, function(data) {
 			//trace(data);
 			
 			$data = data;

@@ -1,3 +1,16 @@
+/* @override 
+	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=2069906834
+	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=1142414525
+	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=1055548575
+	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=783143102
+	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=1954085219
+	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=1313485465
+	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=2029144257
+	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=1252753252
+	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=907362431
+	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=950025927
+*/
+
 body {
 	background: #CCC;
 	color: #000;
@@ -39,6 +52,7 @@ header nav {
 header nav a {
 	border: solid 1px #CCC;
 	color: #222;
+	font-size: 1.1em;
 	margin: 5px 2px;
 	padding: 4px 8px 4px 8px;
 	outline: none;
@@ -80,7 +94,8 @@ div#content div.loader p.thirdparty {
 }
 
 div#content div.container {
-	margin-top: 30px;
+	margin-top: 20px;
+	padding: 0px 20px;
 }
 
 div#content div.container a {
@@ -92,10 +107,10 @@ div#content div.container section {
 	background: #FFFFFF;
 	border: solid 1px #FFFFFF;
 	display: block;
-	margin: 25px auto;
-	padding: 20px;
+	margin: 25px auto 0px;
+	padding: 20px 20px 15px;
 	min-width: 500px;
-	max-width: 800px;
+	max-width: 1200px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
@@ -184,6 +199,7 @@ div#content div.container section ul.list_box li span.text {
 
 div#content div.container section dl {
 	margin-top: -5px;
+	padding: 5px 0px;
 }
 
 div#content div.container section.series dl,
@@ -202,8 +218,9 @@ div#content div.container section h2 {
 }
 
 div#content div.container section nav.content_nav {
-	font-size: 1em;
+	font-size: 1.1em;
 	float: right;
+	margin-top: -28px;
 }
 
 div#content div.container section nav.content_nav a {
@@ -213,6 +230,46 @@ div#content div.container section nav.content_nav a {
 	padding: 3px 6px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
+}
+
+div#content div.container section nav.sort,
+div#content div.container section nav.display {
+	float: right;
+	margin-top: 5px;
+}
+
+div#content div.container section nav.display {
+	float: left;
+}
+
+div#content div.container section nav.sort a,
+div#content div.container section nav.display a {
+	background: #FFF;
+	border-color: #FFF;
+	margin: 0px;
+	padding: 3px 6px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+div#content div.container section nav.sort a:hover,
+div#content div.container section nav.display a:hover {
+	background: #EEE;
+	border-color: #CCC;
+}
+
+div#content div.container section nav.sort a.head,
+div#content div.container section nav.display a.head {
+	background: #FFF;
+	border: none;
+	margin: 0px;
+	padding: 3px 6px;
+}
+
+div#content div.container section nav.sort a.selected,
+div#content div.container section nav.display a.selected {
+	background: #fEfEfE;
+	border-color: #BBB;
 }
 
 div#content div.container section nav.content_nav a:hover {
@@ -249,7 +306,7 @@ form fieldset dl dt {
 	float: left;
 	margin: 5px 0px;
 	padding: 5px;
-	width: 100px;
+	width: 150px;
 }
 
 form fieldset dl dd {
@@ -273,6 +330,10 @@ form fieldset select {
 	padding: 5px;
 	outline: none;
 	width: 300px;
+}
+
+form fieldset input.checkbox {
+	margin: 5px;
 }
 
 form fieldset p {
@@ -340,8 +401,14 @@ dl dd.movie {
 	border: solid 1px #dae2f1;
 	margin: 15px;
 	padding: 10px;
+	position: relative;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
+}
+
+dl dd.series:first-child,
+dl dd.movie:first-child {
+	margin-top: -10px;
 }
 
 dl dd.series div.coverart,
@@ -356,20 +423,31 @@ dl dd.movie div.coverart {
 }
 
 dl.thumbnails {
-	clear: both;
-	margin: 10px;
+	margin: 30px 0px !important;
 }
 
 dl.thumbnails dd.series,
 dl.thumbnails dd.movie {
 	float: left;
-	margin: 10px;
-	padding: 5px;
+	margin: 5px;
+	padding: 4px;
 }
 
 dl.thumbnails dd.series div.coverart,
 dl.thumbnails dd.movie div.coverart {
 	float: none;
+}
+
+div#content dl.thumbnails dd:hover {
+	background: #CCC;
+}
+
+div#content dl.thumbnails dd div.coverart:hover {
+	background: #AAA;
+}
+
+dl.thumbnails dd.series div.coverart a {
+	border: none !important;
 }
 
 dl dd.series div.coverart img,
@@ -383,7 +461,7 @@ dl dd.movie div.coverart img {
 
 dl dd.series div.information,
 dl dd.movie div.information {
-	height: 130px;
+	height: 128px;
 	padding-left: 110px;
 }
 
@@ -416,25 +494,31 @@ dl dd.movie div.information div.identifier h3 a:hover {
 
 dl dd.series div.information div.identifier nav.actions,
 dl dd.movie div.information div.identifier nav.actions {
-	display: block;
-	padding: 32px 0px 0px;
-}
-
-dl dd.movie div.information div.identifier nav.actions {
 	padding-top: 22px;
+	position: absolute;
+	bottom: 30px;
+	right: 10px;
 }
 
 dl dd.series div.information div.identifier nav.externals,
 dl dd.movie div.information div.identifier nav.externals {
-	display: block;
-	padding: 5px 0px 0px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
 }
 
 dl dd div.information div.identifier nav.actions a,
 dl dd div.information div.identifier nav.externals a {
 	border-bottom: none !important;
 	color: #000;
-	padding: 3px 0px 3px 5px;
+	padding: 3px 4px 5px 4px;
+}
+
+dl dd div.information div.identifier nav a:hover {
+	background: #FFF;
+	border-bottom: solid 1px #CCC !important;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 }
 
 dl dd.series div.information span.runtime,
@@ -498,6 +582,7 @@ form ul#results li.selected {
 	background: #EEEEEE;
 }
 
+form ul#results li span.released,
 form ul#results li span.first_aired {
 	display: inline;
 	color: #666666;
@@ -527,10 +612,12 @@ div#content section.search-results dl {
 div#content section.search-results dl dd.report {
 	background: #EEE;
 	margin: 0px 5px 5px;
-	padding: 10px;
+	padding: 15px 10px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 }
+
+div#content section.search-results dl dd.report
 
 div#content section.search-results dl dd.report.downloaded {
 	background: #CCC;
@@ -600,6 +687,23 @@ div#content section.search-results dl dd.report span.formats {
 	float: right;
 }
 
+dl.watchers dd.report span.formats {
+	margin-top: -5px;
+}
+
+body div#content div.container section.search-results dl.watchers dd.report h3 {
+	font-size: 1.4em;
+	margin-top: -5px;
+}
+
+body div#content div.container section.search-results dl.watchers dd.report nav.actions {
+	margin-top: -2px;
+}
+
+body div#content div.container section.search-results dl.watchers dd.report nav.actions a {
+	border-color: #BBB;
+}
+
 div#content section.search-results dl dd.report span.downloaded {
 	color: #000;
 	font-weight: bold;
@@ -612,7 +716,15 @@ div#content span.runtime {
 	color: #777;
 	display: inline;
 	padding: 12px 0px;
-	
+}
+
+dd.movie {
+	position: relative;
+}
+
+dd.movie h3 {
+	text-align: right;
+	width: 640px;
 }
 
 dd.movie span.info {
@@ -679,6 +791,10 @@ div#content section.series section.episode-list {
 div#content section.series section.episode-list dl {
 	margin: 0px;
 	padding: 0px;
+}
+
+div#content section.series section.episode-list dl nav a {
+	border-bottom: none;
 }
 
 div#content section.series section.episode-list dl dd.season dl.episodes {
