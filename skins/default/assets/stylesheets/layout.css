@@ -126,7 +126,7 @@ div#content div.container section .scroller {
 }
 
 div#content div.container section .scroller:hover {
-	overflow-y: scroll;
+	/*overflow-y: scroll;*/
 }
 
 div#content div.container section p.empty {
