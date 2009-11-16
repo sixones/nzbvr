@@ -11,7 +11,9 @@ class SABnzbd {
 	
 	public function send(array $reports) {
 		foreach ($reports as $report) {
-			$this->sendID($report->newzbin_id);
+			if ($report != null) {
+				$this->sendID($report->newzbin_id);
+			}
 		}
 	}
 	
