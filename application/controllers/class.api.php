@@ -11,7 +11,7 @@ class APIController extends ApplicationController {
 	}
 
 	public function sendID() {
-		$id = $this->picnic()->currentRoute()->getSegment(0);
+		$id = $this->route()->getSegment(0);
 
 		if ($id != null) {
 			$sabnzbd = new SABnzbd();

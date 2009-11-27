@@ -51,8 +51,8 @@ class WatchersController extends ApplicationController {
 		$type = $this->params()->get("type");
 		$id = null;
 		
-		if (sizeof($this->picnic()->currentRoute()->segments()) == 1) {
-			$id = $this->picnic()->currentRoute()->getSegment(0);
+		if (sizeof($this->route()->segments()) == 1) {
+			$id = $this->route()->getSegment(0);
 		}
 
 		foreach ($this->_watchers->watchers as $watcher) {
@@ -105,8 +105,8 @@ class WatchersController extends ApplicationController {
 		$type = $this->params()->get("type");
 		$id = null;
 		
-		if (sizeof($this->picnic()->currentRoute()->segments()) == 1) {
-			$id = $this->picnic()->currentRoute()->getSegment(0);
+		if (sizeof($this->route()->segments()) == 1) {
+			$id = $this->route()->getSegment(0);
 		}
 
 		$this->_watchers->last_benchmark = new WatcherBenchmark();
@@ -147,7 +147,7 @@ class WatchersController extends ApplicationController {
 	}
 	
 	public function delete() {
-		$id = $this->picnic()->currentRoute()->getSegment(0);
+		$id = $this->route()->getSegment(0);
 		
 		$copy = $this->_watchers->watchers;
 		

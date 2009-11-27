@@ -28,6 +28,8 @@ class SettingsController extends ApplicationController {
 		
 		nzbVR::instance()->settings->set("sabnzbd_address", $this->params()->get("sabnzbd_address"));
 		nzbVR::instance()->settings->set("sabnzbd_apikey", base64_encode($this->params()->get("sabnzbd_apikey")));
+		nzbVR::instance()->settings->set("sabnzbd_username", base64_encode($this->params()->get("sabnzbd_username")));
+		nzbVR::instance()->settings->set("sabnzbd_password", base64_encode($this->params()->get("sabnzbd_password")));
 		
 		nzbVR::instance()->settings->set("xbmc_address", $this->params()->get("xbmc_address"));
 		nzbVR::instance()->settings->set("xbmc_username", base64_encode($this->params()->get("xbmc_username")));

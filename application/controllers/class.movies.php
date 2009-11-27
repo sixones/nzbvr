@@ -53,7 +53,7 @@ class MoviesController extends ApplicationController {
 	}
 	
 	public function search() {
-		$name = urldecode($this->picnic()->currentRoute()->getSegment(0));
+		$name = urldecode($this->route()->getSegment(0));
 		
 		$moviedb = new MovieDB();
 		$results = $moviedb->search($name);
@@ -62,7 +62,7 @@ class MoviesController extends ApplicationController {
 	}
 	
 	public function delete() {
-		$id = $this->picnic()->currentRoute()->getSegment(0);
+		$id = $this->route()->getSegment(0);
 		
 		$copy = $this->_watchers->watchers;
 		

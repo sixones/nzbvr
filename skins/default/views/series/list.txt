@@ -1,0 +1,15 @@
+<?php if (sizeof($this->picnic()->controller()->series) > 0): ?>
+<?php foreach ($this->picnic()->controller()->series as $series): ?>
+<?php
+	$last = $series->lastDownload();
+	$next = $series->nextDownload();
+?>
+<?php echo $series->watcher->name; ?>
+
+
+<?php if ($last != null): ?>Last: <?php echo $last->identifier(); ?> - <?php echo $last->name; ?> (<?php echo $last->airs_date(); ?>)
+<?php endif; ?><?php if ($next != null): ?>Next: <?php echo $next->identifier(); ?> - <?php echo $next->name; ?> (<?php echo $next->airs_date(); ?>)
+<?php endif; ?>
+		
+<?php endforeach; ?>
+<?php endif; ?>

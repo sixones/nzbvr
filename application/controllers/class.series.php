@@ -36,21 +36,27 @@ class SeriesController extends ApplicationController {
 			$mode = nzbVR::instance()->settings->series_display_mode;
 		}
 		
-		$this->useTemplate("{$mode}.html");
+		
+		
+		if ($this->router()->outputType() == "txt") {
+			$this->useTemplate("list");
+		} else {
+			$this->useTemplate("{$mode}");
+		}
 		
 		//$this->redirect($mode."Display");
 	}
 	
 	public function download() {
-		$id = $this->picnic()->currentRoute()->getSegment(0);
+		$id = $this->route()->getSegment(0);
 		
 		$watcher = $this->_watchers->get($id);
 		
 		$this->result = null;
 		
 		if ($watcher != null) {
-			$season_id = $this->picnic()->currentRoute()->getSegment(1);
-			$episode_id = $this->picnic()->currentRoute()->getSegment(2);
+			$season_id = $this->route()->getSegment(1);
+			$episode_id = $this->route()->getSegment(2);
 			
 			$watcher->load();
 			
@@ -93,10 +99,12 @@ class SeriesController extends ApplicationController {
 	}
 	
 	public function show() {
-		$id = $this->picnic()->currentRoute()->getSegment(0);
-		
+		$id = $this->route()->getSegment(0);
+
 		if ($id != null && $id != 0) {
+
 			foreach ($this->_watchers->watchers as $watcher) {
+				
 				if ($watcher != null && $watcher instanceof SeriesWatcher && $watcher->id == $id) {
 					$watcher->load();
 					
@@ -123,7 +131,7 @@ class SeriesController extends ApplicationController {
 	}
 	
 	public function delete() {
-		$id = $this->picnic()->currentRoute()->getSegment(0);
+		$id = $this->route()->getSegment(0);
 		
 		$copy = $this->_watchers->watchers;
 		
@@ -170,7 +178,7 @@ class SeriesController extends ApplicationController {
 	}
 	
 	public function search() {
-		$name = urldecode($this->picnic()->currentRoute()->getSegment(0));
+		$name = urldecode($this->route()->getSegment(0));
 		
 		$tvrage = new TVRage();
 		$results = $tvrage->search($name);

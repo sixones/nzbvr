@@ -38,7 +38,7 @@ class ApplicationController extends PicnicController {
 			$_SESSION["nzbvr-skin-mode"] = $mode;
 		}
 		
-		Picnic::getInstance()->view()->useTemplateFolder(ROOT_PATH."skins/".nzbVR::instance()->skin()."/views");
+		$this->view()->useTemplateFolder(ROOT_PATH."skins/".nzbVR::instance()->skin()."/views");
 	}
 	
 	public function requiresAuthentication() {

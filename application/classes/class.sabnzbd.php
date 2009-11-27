@@ -7,6 +7,9 @@ class SABnzbd {
 	public function __construct() {
 		$this->_address = nzbVR::instance()->settings->sabnzbd_address;
 		$this->_apikey = base64_decode(nzbVR::instance()->settings->sabnzbd_apikey);
+		
+		$username = base64_decode(nzbVR::instance()->settings->sabnzbd_username);
+		$password = base64_decode(nzbVR::instance()->settings->sabnzbd_password);
 	}
 	
 	public function send(array $reports) {
@@ -29,7 +32,14 @@ class SABnzbd {
 	}
 	
 	public function request($cmd) {
-		$url = "http://".$this->_address."/api/".$cmd;
+		$url = "http://{$this->_address}/api/{$cmd}";
+		
+		$username = base64_decode(nzbVR::instance()->settings->sabnzbd_username);
+		$password = base64_decode(nzbVR::instance()->settings->sabnzbd_password);
+		
+		if ($username != null && $password != null) {
+			$url .= "&ma_username={$username}&ma_password={$password}";
+		}
 		
 		$curl = new NetworkRequest();
 		$curl->set($url, array(CURLOPT_RETURNTRANSFER => 1));

@@ -77,6 +77,20 @@
 				<dd>
 					<input id="sabnzbd_apikey" type="text" value="<?php echo  base64_decode($this->picnic()->controller()->settings->sabnzbd_apikey); ?>" />
 				</dd>
+				
+				<dt>
+					<label for="sabnzbd_username">Username</label>
+				</dt>
+				<dd>
+					<input id="sabnzbd_username" type="text" value="<?php echo  base64_decode($this->picnic()->controller()->settings->sabnzbd_username); ?>" />
+				</dd>
+			
+				<dt>
+					<label for="sabnzbd_password">Password</label>
+				</dt>
+				<dd>
+					<input id="sabnzbd_password" type="password" value="<?php echo base64_decode($this->picnic()->controller()->settings->sabnzbd_password); ?>" />
+				</dd>
 			</dl>
 		</fieldset>
 		

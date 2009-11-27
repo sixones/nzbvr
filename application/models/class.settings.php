@@ -18,6 +18,8 @@ class Settings extends XMLModel {
 	// sabnzbd
 	public $sabnzbd_address = "";
 	public $sabnzbd_apikey = "";
+	public $sabnzbd_username = "";
+	public $sabnzbd_password = "";
 	
 	// xbmc
 	public $xbmc_address = "";
