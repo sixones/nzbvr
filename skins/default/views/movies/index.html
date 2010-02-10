@@ -16,7 +16,7 @@
 				</div>
 				<div class="information">
 					<div class="identifier">
-						<h3><?php echo $movie->watcher->name; ?></h3>
+						<h3><?php echo $movie->watcher->name; ?> <span class="format">(<?php echo PicnicUtils::implode($movie->watcher->format) ?>)</span></h3>
 						<?php if ($movie->moviedb_id != 0): ?><span class="runtime"><?php echo $movie->runtime; ?> minutes, released <?php echo $movie->released; ?></span>
 						<?php else: ?><span class="runtime">Information not found on MovieDB</span><?php endif; ?>
 						<span class="info">

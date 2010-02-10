@@ -9,7 +9,7 @@ $next = $series->nextDownload();
 $then = $series->nextDownload($next, false);
 ?>
 <section class="series">
-	<h2><?php echo $watcher->name; ?></h2>
+	<h2><?php echo $watcher->name; ?> <span class="format">(<?php echo PicnicUtils::implode($watcher->format) ?>)</span></h2>
 	
 	<nav class="content_nav">
 		<a href="#series" class="content">Back to Series</a>

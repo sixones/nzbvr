@@ -57,7 +57,7 @@ class SeriesWatcher extends Watcher implements ILoadableWatcher, ISavableWatcher
 			$next = $this->_series->nextDownload();
 			
 			if ($next != null) {
-				return "^\"{$this->name}\" - {$next->identifier()} - OR ^\"{$this->name}\" - {$next->dateIdentifier()} -";
+				return "^\"{$this->name}\" - ({$next->identifier()} OR {$next->dateIdentifier()})";
 			}
 		}
 		

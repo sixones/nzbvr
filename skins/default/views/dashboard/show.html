@@ -20,7 +20,19 @@
 	<?php endif; ?>
 	
 	<div class="changelog">
+		<h4>Upcoming Changes</h4>
+		
+		<ul>
+			<p>nzbVR is being re-written into a Ruby application to provide a more well rounded package with new functionality. Part of the new functionality, will be the ability for nzbVR to handle post-processing rules from SABnzbd (re-encode, move to the correct folder). The changes also mean that nzbVR will be a much tighter package allowing automatic updates without CRON or scheduled tasks. The Ruby version of nzbVR will no longer include the Picnic framework or the XML data model and instead use SQLite3 (or MySQL etc).</p>
+			<p>If you would like to help with the Ruby version or think nzbVR needs a certain feature, give me a shout on <a href="http://github.com/sixones">GitHub!</a></p>
+			<p>P.S. Until the Ruby version is released and stable, the PHP version will be maintained.</p>
+		</ul>
 		<h3>nzbVR <?php echo nzbVR::VERSION; ?> changes</h3>
+		<ul>
+			<li>fixed issues related to series downloading in the incorrect format</li>
+			<li>added format to the Series list</li>
+		</ul>
+		<h4>0.34 changes</h4>
 		<ul>
 			<li>added thumbnails display option to series and added selector</li>
 			<li>added sort by upcoming and recently downloaded options to series</li>

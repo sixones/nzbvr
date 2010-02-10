@@ -40,7 +40,8 @@ class Newzbin {
 	
 	public function search($watcher, $marker = null) {
 		$url = $this->createSearchURL($watcher->toNewzbinQuery(), $watcher->category);
-
+		//echo $url."<br />";
+		//return array();
 		$results = $this->searchRequest($url, $marker);
 
 		return $results;

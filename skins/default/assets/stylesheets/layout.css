@@ -3,6 +3,7 @@
 	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=375208664
 	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=1091884961
 	http://nzbvr.dev/skins/default/assets/stylesheets/layout.css?v=70333977
+	http://localhost/skins/default/assets/stylesheets/layout.css?v=1892282003
 */
 
 body {
@@ -510,6 +511,11 @@ dl dd.series div.information div.identifier h3,
 dl dd.movie div.information div.identifier h3 {
 	font-size: 2em;
 	margin: -2px 0px 8px 0px;
+}
+
+dl dd.series div.information div.identifier h3 span.format,
+dl dd.movie div.information div.identifier h3 span.format {
+	color: #618181;
 }
 
 dl dd.series div.information div.identifier h3 a,
