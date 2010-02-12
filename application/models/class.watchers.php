@@ -22,6 +22,22 @@ class Watchers extends XMLModel {
 		$this->watchers[] = $watcher;
 	}
 	
+	public function getTypeOf($type = null) {
+		$watchers = array();
+		
+		if ($type != null) {
+			foreach ($this->watchers as $w) {
+				if ($w instanceof $type) {
+					$watchers[] = $w;
+				}
+			}
+		} else {
+			$watchers = $this->watchers;
+		}
+		
+		return $watchers;
+	}
+	
 	public function size($type = null) {
 		$watchers = array();
 		

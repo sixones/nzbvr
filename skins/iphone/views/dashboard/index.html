@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xml:lang="en-us" lang="en-us">
-<head>
+<html xml:lang="en-us" lang="en-us" manifest="<?php echo ViewHelper::assetLink("offline.manifest"); ?>">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta charset="UTF-8" />
 	
@@ -10,7 +9,7 @@
 	
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	
-	<link rel="apple-touch-icon" href="<?php echo  ViewHelper::assetLink("images/touch-icon.png"); ?>" />
+	<link rel="apple-touch-icon" href="<?php echo ViewHelper::assetLink("images/touch-icon.png"); ?>" />
 	<link rel="apple-touch-startup-image" href="<?php echo  ViewHelper::assetLink("images/touch-startup.png"); ?>" />
 	
 	<?php echo  ViewHelper::stylesheet("layout.css"); ?>
@@ -28,6 +27,7 @@
 		<h1><a href="/mobile.html">nzb<span class="vr">VR</span> <?php echo nzbVR::VERSION; ?></a></h1>
 		<span class="back-btn"><a class="content" href="#back">Back</a></span>
 		<span class="new-btn"><a class="content" href="#new">+</a></span>
+		<span class="check-btn"><a class="content" href="#watchers/check.html">Check All</a></span>
 	</header>
 
 	<section id="content">

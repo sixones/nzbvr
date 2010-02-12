@@ -1,0 +1,15 @@
+CACHE MANIFEST
+# nzbVR Cache manifest version 0.1
+
+mobile.html
+
+skins/iphone/assets/stylesheets/layout.css
+
+skins/iphone/assets/javascripts/jquery.js
+skins/iphone/assets/javascripts/application.js
+
+skins/iphone/assets/images/touch-icon.png
+skins/iphone/assets/images/touch-startup.png
+
+FALLBACK:
+skins/iphone/assets/

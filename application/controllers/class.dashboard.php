@@ -16,8 +16,33 @@ class DashboardController extends ApplicationController {
 	
 	public function show() {
 		$this->watchers = $this->_watchers;
+		
+		$series = array();
+		$movies = array();
+		$generics = array();
+		
+		foreach ($this->_watchers->watchers as $watcher) {
+			if ($watcher != null) {
+				if ($watcher instanceof SeriesWatcher) {
+					$watcher->load();
+				
+					$series[] = $watcher;
+				} else if ($watcher instanceof MovieWatcher) {
+					$watcher->load();
+				
+					$movies[] = $watcher;
+				} else {
+					$generics[] = $watcher;
+				}
+			}
+		}
+		
+		uasort($series, "Series::sortByUpcomingWatcher");
+		uasort($movies, "Movie::sortByUpcomingWatcher");
+
+		$this->sortedWatchers = array_merge($series, $movies, $generics);
 	}
-	
+
 	public function mobile() {
 		// set skin mode
 		$this->setSkinMode("mobile");

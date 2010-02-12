@@ -1,0 +1,10 @@
+<section>
+	<nav>
+		<a href="#">Found <?php echo sizeof($this->picnic()->controller()->results)?> new reports</a>
+	<?php foreach ($this->picnic()->controller()->results as $watcher): ?>
+		<a href="#" class="special">
+		<?php echo $watcher->name; ?><span class="action special"><?php echo $watcher->type(); ?></span>
+		</a>
+	<?php endforeach; ?>
+	</nav>
+</section>

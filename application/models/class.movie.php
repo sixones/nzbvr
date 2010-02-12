@@ -16,6 +16,10 @@ class MovieWatcher extends Watcher implements ILoadableWatcher, ISavableWatcher 
 		return PicnicDateTime::createFromTimestamp($this->downloaded_at);
 	}
 	
+	public function type() {
+		return "Movie";
+	}
+	
 	public function movie() {
 		return $this->_movie;
 	}
@@ -117,6 +121,10 @@ class Movie extends XMLModel {
 		}
 
 		return ($aT < $bT) ? -1 : 1;
+	}
+	
+	public static function sortByUpcomingWatcher($a, $b) {
+		return Movie::sortByUpcoming($a->movie(), $b->movie());
 	}
 	
 	public function storagePath() {

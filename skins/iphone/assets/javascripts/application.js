@@ -44,6 +44,13 @@ function slide_panel(url, page){
 
 }
 
+function update_cache() {
+	//if (navigator.onLine != undefined && navigator.onLine) {
+		//window.applicationCache.update();
+		//window.applicationCache.swapCache();
+	//}
+}
+
 function capture_links(doc) {
 	if (doc == undefined || doc == null) {
 		doc = document;
@@ -93,6 +100,15 @@ $(document).ready(function() {
 	capture_links();
 	
 	slide_panel("dashboard", 0);
+	
+	if (navigator.onLine != undefined) {
+		//update_cache();
+		
+		var cache = window.applicationCache;
+		
+		cache.addEventListener("updateready", update_cache, false);
+		cache.addEventListener("error", function(e) { console.log(e); alert("Failed to update offline cache."); }, false);
+	}
 });
 
 function nzbVRUtils() {

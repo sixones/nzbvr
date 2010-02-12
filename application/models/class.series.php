@@ -9,6 +9,10 @@ class SeriesWatcher extends Watcher implements ILoadableWatcher, ISavableWatcher
 		parent::__construct($id, $name, $language, $format, $source, 8);
 	}
 	
+	public function type() {
+		return "Series";
+	}
+	
 	public function series() {
 		return $this->_series;
 	}
@@ -148,6 +152,10 @@ class Series extends XMLModel {
 		}
 
 		return ($aT < $bT) ? -1 : 1;
+	}
+	
+	public static function sortByUpcomingWatcher($a, $b) {
+		return Series::sortByUpcoming($a->series(), $b->series());
 	}
 	
 	public function storagePath() {

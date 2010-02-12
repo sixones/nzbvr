@@ -21,9 +21,18 @@ header span.back-btn {
 	display: none;
 	background: #EEE;
 	float: left;
-	margin: -40px 0px;
+	margin: -32px 0px;
 	padding: 4px 5px;
 	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+header span.check-btn {
+	background: #EEE;
+	float: right;
+	margin: -32px 0px;
+	padding: 4px 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 }
 
 header span.new-btn {
@@ -33,12 +42,14 @@ header span.new-btn {
 	margin: -40px 0px;
 	padding: 3px 6px 5px;
 	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 }
 
 header h1 {
 	color: #222;
+	font-size: 1.2em;
 	font-weight: bold;
-	margin: 2px 5px 10px;
+	margin: 2px 4px 6px;
 	padding: 2px 0px;
 	text-align: center;
 }
@@ -54,6 +65,7 @@ body section div.container {
 	padding: 0px;
 	margin-bottom: 5px;
 	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 }
 
 body section div.container nav {
@@ -110,6 +122,12 @@ section.episode-list dl dd.season dl.episodes dd.downloaded {
 
 body section div.container nav a:last-child {
 	border-bottom: none;
+}
+
+body section div.container nav a.special {
+	background: #EDEDED;
+	border-color: #B3B3B3;
+	font-weight: bold;
 }
 
 body section div.container nav a span.action {

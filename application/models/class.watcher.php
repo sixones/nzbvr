@@ -120,6 +120,10 @@ abstract class Watcher {
 		$this->created = strtotime(date("Y-m-d"));
 	}
 	
+	public function type() {
+		return "Generic";
+	}
+	
 	public static function sortByCategory($a, $b) {
 		if ($a == null) {
 			return 1;
