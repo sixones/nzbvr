@@ -1,8 +1,0 @@
-<section>
-	<nav>
-		<?php foreach ($this->picnic()->controller()->watchers as $watcher): ?>
-			<a href="#watchers/show/<?php echo $watcher->id; ?>" class="content"><?php echo $watcher->name; ?><span class="action">&gt;</span></a>
-		<?php endforeach; ?>
-	</nav>
-</section>
-<script type="text/javascript">$back_button = "dashboard";</script>
