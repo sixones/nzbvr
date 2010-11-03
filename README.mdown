@@ -1,0 +1,88 @@
+nzbVR 0.9
+=========
+
+**NOTE: the README has been written as a partial specification document, the contents is still in-progress and does not indicate the current state or capabilities of nzbVR**
+
+Features
+--------
+
+- Searches across multiple NZB providers and organises the results
+- Capable of updating your watching list from many sources
+- Driven completely by plugins, included by default:
+  - XBMC Content Source
+  - NZBMatrix Provider
+  - Newzbin Provider
+  - Television Harvester
+  - Movie Harvester
+  - SABnzbd+ Connecter
+- Plugins can be created to add extra providers, content sources, harvesters or downloader connectors
+- SQL database, capable of using SQLite3 (default), MySQL, PostreSQL
+- Written in Ruby 1.9 and packaged nicely for Mac OS X and Windows or as RubyGem
+
+In-the pipeline:
+
+- Built-in NZB report downloader
+- Content organiser with rule management
+  - Encode via FFMpeg 
+  - Zip + Par + Rar extraction
+  - Move and Delete
+- Stupidity, suggestions on new things to download based on what your currently watching
+  - Using public sites for related content rather than some bespoke centralised tracking system
+- Simple proxy support
+
+Library Classes
+---------------
+
+- API
+  - Provides simple methods for performing actions in the nzbVR framework
+  - Some actions are ran through plugins and the API manages the collection of the data from plugins
+    - Plugins are provided from the Plugins class
+- Integrator
+  - Manages initial YAML configuration
+  - Establishes and manages database connection
+- Plugins
+  - Searches possible plugin directories for plugins
+  - Manages installing a plugin and the plugins state
+- Skins
+  - Manages the current skin
+  - Searches possible skin directories for skins
+- Runner
+  - Manages the backend service and web server
+
+Models
+------
+
+Plugin Types
+------------
+
+A single plugin can act as many different types as long as each type is implemented on the plugin the correct manner. All plugins within nzbVR act like filters, rather than each plugin being an end point for a certain instruction, the instruction and results from the plugin will be passed down into the next plugin so at the end of the stack were left with a bit of data that is capable of producing a result.
+
+- NZB Provider
+  - Allows NZB reports to be searched from a specified Query
+  - Allows NZB reports to be downloaded
+  
+  Search Query -> NZB Provider -> Reports
+  Report -> NZB Provider -> NZB
+  
+  Stackable, multiple NZB Providers can be searched and there results merged
+  
+- Content Source
+  - Sources of content that already exist
+  
+  Content Source -> Watchers
+  
+  Stackable, multiple Content Sources can be accessed and there results merged
+  
+- Downloader
+  - Sends a NZB report to a configured host application
+  
+  NZB -> Downloader
+  
+  Stacked, each Downloader plugin active can accept or reject the NZB based on the metadata
+  
+- Harvester
+  - Collects extra information about a Watcher to fine tune the end Query
+
+  Watcher -> Harvester -> Watcher + Options
+  
+  Stacked, each Harvester can add extra information to the watcher and describe how it effects the Search Query
